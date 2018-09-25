@@ -105,16 +105,8 @@ public class Solution {
 		while (sc.hasNext()) {
 			String line = sc.nextLine();
 			tokens = line.split(" ");
-			if (!p.isOpen(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]))) {
-				p.open(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
-			}
+			p.open(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]));
 		}
-		if (p.isOpen(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]))) {
-			if (p.isFull(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]))) {
-				System.out.println(p.percolates());
-			}
-		} else {
-			System.out.println(p.percolates());
-		}
+		System.out.println(p.percolates());
 	}
 }

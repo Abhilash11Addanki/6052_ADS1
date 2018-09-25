@@ -113,6 +113,8 @@ public class Solution {
 			if (p.isFull(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]))) {
 				System.out.println(p.percolates());
 			}
+		} else {
+			System.out.println(p.percolates());
 		}
 	}
 }

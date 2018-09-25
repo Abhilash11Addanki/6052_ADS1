@@ -126,11 +126,12 @@ class WeightedQuickUnionUF {
      * @param      p     node.
      * @return     root of the node.
      */
-    public int find(int p) {
+    public int find(final int p) {
         int p1 = p;
         validate(p1);
-        while (p1 != parent[p1])
+        while (p1 != parent[p1]) {
             p1 = parent[p1];
+        }
         return p1;
     }
     /**
@@ -140,8 +141,8 @@ class WeightedQuickUnionUF {
     private void validate(final int p) {
         int n = parent.length;
         if (p < 0 || p >= n) {
-            throw new IllegalArgumentException("index " + p +
-                                               " is not between 0 and " + (n - 1));
+            throw new IllegalArgumentException("index " + p
+                + " is not between 0 and " + (n - 1));
         }
     }
     /**
@@ -162,7 +163,9 @@ class WeightedQuickUnionUF {
     public void union(final int p, final int q) {
         int rootP = find(p);
         int rootQ = find(q);
-        if (rootP == rootQ) return;
+        if (rootP == rootQ) {
+            return;
+        }
 
         if (size[rootP] < size[rootQ]) {
             parent[rootP] = rootQ;
@@ -177,7 +180,13 @@ class WeightedQuickUnionUF {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
     /**
      * main method which takes the input and checks
        whether it is percolating or not.

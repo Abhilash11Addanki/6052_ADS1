@@ -27,7 +27,7 @@ class Percolation {
      * Constructs the object.
      * @param      n     number of nodes.
      */
-    public Percolation(final int n) {
+    Percolation(final int n) {
         size = n;
         bottom = size * size + 1;
         qf = new WeightedQuickUnionUF(size * size + 2);
@@ -105,7 +105,7 @@ class WeightedQuickUnionUF {
      * Constructs the object.
      * @param      n     no of nodes.
      */
-    public WeightedQuickUnionUF(final int n) {
+    WeightedQuickUnionUF(final int n) {
         count = n;
         parent = new int[n];
         size = new int[n];
@@ -127,10 +127,11 @@ class WeightedQuickUnionUF {
      * @return     root of the node.
      */
     public int find(int p) {
-        validate(p);
-        while (p != parent[p])
-            p = parent[p];
-        return p;
+        int p1 = p;
+        validate(p1);
+        while (p1 != parent[p1])
+            p1 = parent[p1];
+        return p1;
     }
     /**
      * validate method.

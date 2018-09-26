@@ -7,7 +7,6 @@ class Solution {
 		for (int i = 0; i < size; i++) {
 			arr[i] = sc.nextInt();
 		}
-		Arrays.sort(arr);
 		int cnt = 0;
 		for (int i = 0; i < size - 2; i++) {
 			int j = i + 1;
@@ -16,7 +15,7 @@ class Solution {
 				if (arr[i] + arr[j] + arr[k] == 0) {
 					cnt++;
 				}
-				j++;k++;
+				j++; k++;
 			}
 		}
 		System.out.println(cnt);

@@ -3,7 +3,13 @@ import java.util.Arrays;
 /**
  * Class for solution.
  */
-class Solution {
+final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
     /**
      * main method to sort the two arrays and print them.
      * @param      args  The arguments
@@ -32,7 +38,7 @@ class Solution {
      * @param      arr1  The arr 1
      * @param      arr2  The arr 2
      */
-    public static void mergesort(int[] arr1, int[] arr2) {
+    public static void mergesort(final int[] arr1, final int[] arr2) {
         int i = 0, j = 0;
         int[] result = new int[arr1.length + arr2.length];
         for (int k = 0; k < result.length; k++) {

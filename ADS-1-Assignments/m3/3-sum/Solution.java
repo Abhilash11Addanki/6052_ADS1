@@ -9,7 +9,7 @@ class Solution {
 		}
 		Arrays.sort(arr);
 		int cnt = 0, j = 0, k = 0;
-		for (int i = 0; i < size - 2; i++) {
+		for (int i = 0; i <= size - 2; i++) {
 			j = i + 1;
 			k = j + 1;
 			if (arr[i] + arr[j] + arr[k] == 0) {

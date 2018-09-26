@@ -12,6 +12,8 @@ class Solution {
 		for (int i = 0; i < size - 2; i++) {
 			int j = i + 1;
 			int k = j + 1;
+			System.out.println(j);
+			System.out.println(k);
 			if (arr[i] + arr[j] + arr[k] == 0) {
 				cnt++;
 			}

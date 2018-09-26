@@ -3,7 +3,13 @@ import java.util.Scanner;
 /**
  * Class for solution.
  */
-class Solution {
+final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
     /**
      * main method that prints the count of pairs.
      * @param      args  The arguments
@@ -20,7 +26,9 @@ class Solution {
         for (int i = 0; i < size; i++) {
             for (int j = i + 1; j < size; j++) {
                 int k = Arrays.binarySearch(arr, -(arr[i] + arr[j]));
-                if (k > j) count++;
+                if (k > j) {
+                    count++;
+                }
             }
         }
         System.out.println(count);

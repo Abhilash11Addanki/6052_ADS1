@@ -8,10 +8,10 @@ class Solution {
 			arr[i] = sc.nextInt();
 		}
 		Arrays.sort(arr);
-		int cnt = 0, j = 0, k = 0;
+		int cnt = 0;
 		for (int i = 0; i < size - 2; i++) {
-			j = i + 1;
-			k = j + 1;
+			int j = i + 1;
+			int k = j + 1;
 			while (j < size - 1 && k < size) {
 				if (arr[i] + arr[j] + arr[k] == 0) {
 					cnt++;

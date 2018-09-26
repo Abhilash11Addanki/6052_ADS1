@@ -10,12 +10,16 @@ class Solution {
 		int cnt = 0;
 		for (int i = 0; i < size - 2; i++) {
 			int j = i + 1;
-			int k = j + 1;
-			while (j < size - 1 && k < size) {
-				if (arr[i] + arr[j] + arr[k] == 0) {
-					cnt++;
+			int k = i + 1;
+			while (j < size - 1) {
+				while (k < size) {
+					if (arr[i] + arr[j] + arr[k] == 0) {
+						cnt++;
+					}
+					k++;
+					break;
 				}
-				j++; k++;
+				j++;
 			}
 		}
 		System.out.println(cnt);

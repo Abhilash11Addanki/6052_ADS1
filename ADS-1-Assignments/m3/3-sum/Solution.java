@@ -14,6 +14,7 @@ class Solution {
 				for (int k = j + 1; k < size; k++) {
 					if (arr[i] + arr[j] + arr[k] == 0) {
 						cnt++;
+						break;
 					}
 				}
 			}

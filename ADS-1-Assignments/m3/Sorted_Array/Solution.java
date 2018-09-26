@@ -8,6 +8,9 @@ public class Solution {
 		String[] arr2 = sc.nextLine().split(",");
 		int[] array1 = new int[arr1.length];
 		int[] array2 = new int[arr2.length];
+		if (arr1[0].equals("")) {
+			array1 = new int[0];
+		}
 		for (int i = 0; i < array1.length; i++) {
 			array1[i] = Integer.parseInt(arr1[i]);
 		}

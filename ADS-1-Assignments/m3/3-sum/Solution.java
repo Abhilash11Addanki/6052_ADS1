@@ -15,6 +15,7 @@ class Solution {
 				while (k < size) {
 					if (arr[i] + arr[j] + arr[k] == 0) {
 						cnt++;
+						break;
 					}
 					k++;
 				}

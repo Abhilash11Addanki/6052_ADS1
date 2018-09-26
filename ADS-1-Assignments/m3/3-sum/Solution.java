@@ -8,13 +8,14 @@ class Solution {
 			arr[i] = sc.nextInt();
 		}
 		Arrays.sort(arr);
-		int cnt = 0;
+		int cnt = 0, j = 0, k = 0;
 		for (int i = 0; i < size - 2; i++) {
-			int j = i + 1;
-			int k = j + 1;
-			System.out.println(i + " " + j + " " + k);
-			if (arr[i] + arr[j] + arr[k] == 0) {
-				cnt++;
+			while (j < size - 1 && k < size) {
+				j = i + 1;
+				k = j + 1;
+				if (arr[i] + arr[j] + arr[k] == 0) {
+					cnt++;
+				}
 			}
 		}
 		System.out.println(cnt);

@@ -18,6 +18,7 @@ class Solution {
 					}
 					k++;
 				}
+				break;
 			}
 		}
 		System.out.println(cnt);

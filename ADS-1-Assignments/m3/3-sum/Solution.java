@@ -17,7 +17,6 @@ class Solution {
 						cnt++;
 					}
 					k++;
-					break;
 				}
 				j++;
 			}

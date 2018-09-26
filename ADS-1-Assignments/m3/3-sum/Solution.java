@@ -14,9 +14,9 @@ class Solution {
 			int k = j + 1;
 			if (arr[i] + arr[j] + arr[k] == 0) {
 				cnt++;
-				j++;
-				k++;
 			}
+			j++;
+			k++;
 		}
 		System.out.println(cnt);
 	}

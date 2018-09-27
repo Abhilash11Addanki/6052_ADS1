@@ -58,6 +58,7 @@ class isBalanced {
 				if (!isMatchingPair(st.pop(), arr[i])) {
 					return false;
 				}
+				return true;
 			}
 		}
 		if (st.isEmpty()) {

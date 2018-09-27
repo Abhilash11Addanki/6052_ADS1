@@ -74,7 +74,7 @@ class IsBalanced {
         return false;
     }
     /**
-     * areBalanced method to check 
+     * areBalanced method to check
        whether the parenthesis are balanced or not.
      * @param      arr   The arr
      * @return     True if balanced, False otherwise.

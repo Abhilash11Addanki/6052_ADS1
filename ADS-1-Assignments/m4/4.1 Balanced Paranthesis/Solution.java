@@ -61,9 +61,8 @@ class isBalanced {
 		}
 		if (st.isEmpty()) {
 			return true;
-		} else {
-			return false;
 		}
+		return false;
 	}
 }
 public class Solution {
@@ -74,7 +73,11 @@ public class Solution {
 			String line = sc.nextLine();
 			String[] arr = line.split("");
 			isBalanced b = new isBalanced();
-			System.out.println(b.areBalanced(arr));
+			if (b.areBalanced(arr)) {
+				System.out.println("Yes");
+			} else {
+				System.out.println("No");
+			}
 			noofinputs--;
 		}
 	}

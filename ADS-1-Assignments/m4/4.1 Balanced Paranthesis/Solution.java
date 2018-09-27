@@ -22,7 +22,7 @@ class Stack {
 			return null;
 		}
 		String ele = arr[top];
-		top--;
+		//top--;
 		return ele;
 	}
 	boolean isEmpty() {
@@ -48,8 +48,9 @@ class isBalanced {
 	boolean areBalanced(String[] arr) {
 		Stack st = new Stack(arr.length);
 		for (int i = 0; i < arr.length; i++) {
+			if (arr[i].equals('{') || arr[i].equals('(') || arr[i].equals('[')) {
 				st.push(arr[i]);
-			
+			}
 			if (arr[i].equals('}') || arr[i].equals(')') || arr[i].equals(']')) {
 				if (st.isEmpty()) {
 					return false;
@@ -58,7 +59,7 @@ class isBalanced {
 					return false;
 				}
 			}
-		 }
+		}
 		if (st.isEmpty()) {
 			return true;
 		}

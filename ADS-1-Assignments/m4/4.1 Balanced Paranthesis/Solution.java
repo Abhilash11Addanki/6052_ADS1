@@ -62,7 +62,7 @@ class isBalanced {
 			if (arr[i].equals('{') || arr[i].equals('(') || arr[i].equals('[')) {
 				st.push(arr[i]);
 			}
-			if (arr[i].equals('}') || arr[i].equals(')') || arr[i].equals(']')) {
+			else if (arr[i].equals('}') || arr[i].equals(')') || arr[i].equals(']')) {
 				if (st.isEmpty()) {
 					return false;
 				}

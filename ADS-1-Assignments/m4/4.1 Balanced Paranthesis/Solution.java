@@ -43,13 +43,14 @@ class isBalanced {
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i].equals("{") || arr[i].equals("(") || arr[i].equals("[")) {
 				st.push(arr[i]);
-			} else if (arr[i].equals("}") || arr[i].equals(")") || arr[i].equals("]")) {
+			}
+			if (arr[i].equals("}") || arr[i].equals(")") || arr[i].equals("]")) {
 				if (st.isEmpty()) {
 					return false;
 				}
-			}
-			if (!isMatchingPair(st.pop(), arr[i])) {
-				return false;
+				if (!isMatchingPair(st.pop(), arr[i])) {
+					return false;
+				}
 			}
 		}
 		if (st.isEmpty()) {

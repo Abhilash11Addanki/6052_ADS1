@@ -27,7 +27,6 @@ class Stack {
 }
 class isBalanced {
 	boolean isMatchingPair(String str1, String str2) {
-		System.out.println(str1 + " " + str2);
 		if (str1.equals("(") && str2.equals(")")) {
 			return true;
 		}
@@ -45,7 +44,7 @@ class isBalanced {
 			if (arr[i].equals("{") || arr[i].equals("(") || arr[i].equals("[")) {
 				st.push(arr[i]);
 			}
-			if (arr[i].equals("}") || arr[i].equals(")") || arr[i].equals("]")) {
+			else if (arr[i].equals("}") || arr[i].equals(")") || arr[i].equals("]")) {
 				if (st.isEmpty()) {
 					return false;
 				}

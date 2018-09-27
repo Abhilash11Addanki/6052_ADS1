@@ -48,9 +48,8 @@ class isBalanced {
 	boolean areBalanced(String[] arr) {
 		Stack st = new Stack(arr.length);
 		for (int i = 0; i < arr.length; i++) {
-			if (arr[i].equals('{') || arr[i].equals('(') || arr[i].equals('[')) {
 				st.push(arr[i]);
-			}
+			
 			if (arr[i].equals('}') || arr[i].equals(')') || arr[i].equals(']')) {
 				if (st.isEmpty()) {
 					return false;
@@ -61,9 +60,9 @@ class isBalanced {
 			}
 		 }
 		if (st.isEmpty()) {
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 }
 public class Solution {

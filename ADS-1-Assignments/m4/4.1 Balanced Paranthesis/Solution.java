@@ -15,6 +15,7 @@ class Stack {
 		} else {
 			arr[++top] = x;
 		}
+		System.out.println(Arrays.toString(arr));
 	}
 	String pop() {
 		if (top == -1) {

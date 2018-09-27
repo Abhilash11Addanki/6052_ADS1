@@ -58,13 +58,12 @@ class isBalanced {
 				if (!isMatchingPair(st.pop(), arr[i])) {
 					return false;
 				}
-				return true;
 			}
-		}
+		 }
 		if (st.isEmpty()) {
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 }
 public class Solution {

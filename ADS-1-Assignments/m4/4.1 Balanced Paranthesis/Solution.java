@@ -10,12 +10,9 @@ class Stack {
 		arr = new String[n];
 	}
 	void push(String x) {
-		arr[this.top++] = x;
-			
+		arr[top++] = x;
+
 	}
-
-	
-
 	String pop() {
 		if (top == 0) {
 			System.out.println("Underflow error");
@@ -26,7 +23,7 @@ class Stack {
 		return ele;
 	}
 	boolean isEmpty() {
-		if (this.top == 0) {
+		if (top == 0) {
 			return true;
 		}
 		return false;
@@ -34,13 +31,13 @@ class Stack {
 }
 class isBalanced {
 	boolean isMatchingPair(String str1, String str2) {
-		if (str1.equals('(') && str2.equals(')')) {
+		if (str1.equals("(") && str2.equals(")")) {
 			return true;
 		}
-		if (str1.equals('{') && str2.equals('}')) {
+		if (str1.equals("{") && str2.equals("}")) {
 			return true;
 		}
-		if (str1.equals('[') && str2.equals(']')) {
+		if (str1.equals("[") && str2.equals("]")) {
 			return true;
 		}
 		return false;
@@ -50,16 +47,13 @@ class isBalanced {
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i].equals("{") || arr[i].equals("(") || arr[i].equals("[")) {
 				st.push(arr[i]);
-			}
-			else if (arr[i].equals("}") || arr[i].equals(")") || arr[i].equals("]")) {
+			} else if (arr[i].equals("}") || arr[i].equals(")") || arr[i].equals("]")) {
 				if (st.isEmpty()) {
 					return false;
 				}
-
 				if (!isMatchingPair(st.pop(), arr[i])) {
 					return false;
-				} 
-
+				}
 			}
 		}
 		if (st.isEmpty()) {

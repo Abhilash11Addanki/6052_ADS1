@@ -6,18 +6,18 @@ class Stack {
 	private int n;
 	Stack(int size) {
 		n = size;
-		top = -1;
+		top = 0;
 		arr = new String[n];
 	}
 	void push(String x) {
 		if (top == n - 1) {
 			System.out.println("Stack is full");
 		} else {
-			arr[++top] = x;
+			arr[top++] = x;
 		}
 	}
 	String pop() {
-		if (top == -1) {
+		if (top == 0) {
 			System.out.println("Underflow error");
 			return null;
 		}
@@ -26,8 +26,7 @@ class Stack {
 		return ele;
 	}
 	boolean isEmpty() {
-		if (top == -1) {
-			System.out.println(top);
+		if (top == 0) {
 			return true;
 		}
 		return false;

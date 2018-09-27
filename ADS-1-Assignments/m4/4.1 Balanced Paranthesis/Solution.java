@@ -30,10 +30,10 @@ class isBalanced {
 		if (str1.equals("(") && str2.equals(")")) {
 			return true;
 		}
-		if (str1.equals("{") && str2.equals("}")) {
+		else if (str1.equals("{") && str2.equals("}")) {
 			return true;
 		}
-		if (str1.equals("[") && str2.equals("]")) {
+		else if (str1.equals("[") && str2.equals("]")) {
 			return true;
 		}
 		return false;

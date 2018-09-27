@@ -15,7 +15,6 @@ class Stack {
 		} else {
 			arr[++top] = x;
 		}
-		System.out.println(Arrays.toString(arr));
 	}
 	String pop() {
 		if (top == -1) {
@@ -28,6 +27,7 @@ class Stack {
 	}
 	boolean isEmpty() {
 		if (top == -1) {
+			System.out.println(top);
 			return true;
 		}
 		return false;

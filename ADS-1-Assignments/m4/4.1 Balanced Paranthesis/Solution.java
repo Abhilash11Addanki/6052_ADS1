@@ -54,7 +54,8 @@ class isBalanced {
 			if (arr[i].equals('}') || arr[i].equals(')') || arr[i].equals(']')) {
 				if (st.isEmpty()) {
 					return false;
-				} else if (!isMatchingPair(st.pop(), arr[i])) {
+				}
+				if (!isMatchingPair(st.pop(), arr[i])) {
 					return false;
 				}
 			}
@@ -74,9 +75,9 @@ public class Solution {
 			String[] arr = line.split("");
 			isBalanced b = new isBalanced();
 			if (b.areBalanced(arr)) {
-				System.out.println("Yes");
+				System.out.println("YES");
 			} else {
-				System.out.println("No");
+				System.out.println("NO");
 			}
 			noofinputs--;
 		}

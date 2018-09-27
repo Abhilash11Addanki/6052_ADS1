@@ -14,10 +14,6 @@ class Stack {
 
 	}
 	String pop() {
-		if (top == 0) {
-			System.out.println("Underflow error");
-			return null;
-		}
 		String ele = arr[top];
 		top--;
 		return ele;

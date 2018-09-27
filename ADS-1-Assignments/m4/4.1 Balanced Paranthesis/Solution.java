@@ -6,11 +6,11 @@ class Stack {
 	private int n;
 	Stack(int size) {
 		n = size;
-		top = 0;
+		top = -1;
 		arr = new String[n];
 	}
 	void push(String x) {
-		arr[top++] = x;
+		arr[++top] = x;
 
 	}
 	String pop() {
@@ -19,7 +19,7 @@ class Stack {
 		return ele;
 	}
 	boolean isEmpty() {
-		if (top == 0) {
+		if (top == -1) {
 			return true;
 		}
 		return false;
@@ -44,7 +44,7 @@ class isBalanced {
 			if (arr[i].equals("{") || arr[i].equals("(") || arr[i].equals("[")) {
 				st.push(arr[i]);
 			}
-			else if (arr[i].equals("}") || arr[i].equals(")") || arr[i].equals("]")) {
+			if (arr[i].equals("}") || arr[i].equals(")") || arr[i].equals("]")) {
 				if (st.isEmpty()) {
 					return false;
 				}

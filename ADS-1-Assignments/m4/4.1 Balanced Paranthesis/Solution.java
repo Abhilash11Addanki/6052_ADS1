@@ -16,6 +16,16 @@ class Stack {
 			arr[top++] = x;
 		}
 	}
+
+	String pop2() {
+		if (top == 0) {
+			System.out.println("Underflow error");
+			return null;
+		}
+		String ele = arr[top];
+		return ele;
+	}
+
 	String pop() {
 		if (top == 0) {
 			System.out.println("Underflow error");
@@ -57,14 +67,18 @@ class isBalanced {
 					return false;
 				}
 
-				if (!isMatchingPair(st.pop(), arr[i])) {
+				if (!isMatchingPair(st.pop2(), arr[i])) {
 					return false;
+				} else {
+					st.pop();
 				}
 
 			}
 		}
-		
-		return true;
+		if (st.isEmpty()) {
+			return true;
+		}
+		return false;
 	}
 }
 public class Solution {

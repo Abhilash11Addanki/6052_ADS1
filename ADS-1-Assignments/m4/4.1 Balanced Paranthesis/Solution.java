@@ -22,11 +22,12 @@ class Stack {
 			return null;
 		}
 		String ele = arr[top];
-		//top--;
+		top--;
 		return ele;
 	}
 	boolean isEmpty() {
 		if (top == 0) {
+			//System.out.println("called");
 			return true;
 		}
 		return false;
@@ -55,15 +56,15 @@ class isBalanced {
 				if (st.isEmpty()) {
 					return false;
 				}
+
 				if (!isMatchingPair(st.pop(), arr[i])) {
 					return false;
 				}
+
 			}
 		}
-		if (st.isEmpty()) {
-			return true;
-		}
-		return false;
+		
+		return true;
 	}
 }
 public class Solution {

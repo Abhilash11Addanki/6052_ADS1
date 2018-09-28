@@ -47,12 +47,20 @@ public class Solution {
 				d.display();
 				break;
 			case "popLeft":
-				d.popLeft();
-				d.display();
+				if (d.size() == 0) {
+					System.out.println("Deck is empty");
+				} else {
+					d.popLeft();
+					d.display();
+				}
 				break;
 			case "popRight":
-				d.popRight();
-				d.display();
+				if (d.size() == 0) {
+					System.out.println("Deck is empty");
+				} else {
+					d.popRight();
+					d.display();
+				}
 				break;
 			default:
 				break;

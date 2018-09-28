@@ -103,6 +103,7 @@ class LinkedList<E> {
 	}
 	void display() {
 		if (size == 0) {
+			System.out.println("[]");
 			return;
 		}
 		if (head.getnext() == null) {
@@ -113,7 +114,7 @@ class LinkedList<E> {
 		System.out.print("[" + head.getdata());
 		first = head.getnext();
 		while (first.getnext() != null) {
-			System.out.print(", "+ first.getdata());
+			System.out.print(", " + first.getdata());
 			first = first.getnext();
 		}
 		System.out.print(", " + first.getdata() + "]" + "\n");

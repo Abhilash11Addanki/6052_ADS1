@@ -89,8 +89,15 @@ class AddLargeNumbers {
 		LinkedList list = new LinkedList();
 		Node first = list1.gethead();
 		Node second = list2.gethead();
-		list.insertAtEnd(Integer.toString(Integer.parseInt(list1.gethead().getdata())
-			+ Integer.parseInt(list2.gethead().getdata())));
+		String firstele = Integer.toString(Integer.parseInt(list1.gethead().getdata())
+			+ Integer.parseInt(list2.gethead().getdata()));
+		String temp = "";
+		if (firstele.length() >= 2) {
+			temp += firstele.split("")[0];
+			list.insertAtEnd(firstele.split("")[1]);
+		} else {
+			list.insertAtEnd(firstele);
+		}
 		first = list1.gethead().getnext();
 		second = list2.gethead().getnext();
 		while (first.getnext() != null && second.getnext() != null) {

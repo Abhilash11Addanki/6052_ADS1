@@ -100,17 +100,31 @@ class AddLargeNumbers {
 		LinkedList list = new LinkedList();
 		Node first = list1.gethead();
 		Node second = list2.gethead();
-		list.insertAtStart(Integer.toString(Integer.parseInt(list1.gethead().getdata())
-			+ Integer.parseInt(list2.gethead().getdata())));
+		String digit = "";
+		String firstele = Integer.toString(Integer.parseInt(list1.gethead().getdata())
+		                                   + Integer.parseInt(list2.gethead().getdata()));
+		if (firstele.length() >= 2) {
+			digit += firstele.split("")[0];
+			list.insertAtStart(firstele.split("")[1]);
+		} else {
+			list.insertAtStart(firstele);
+		}
 		first = list1.gethead().getnext();
 		second = list2.gethead().getnext();
+		String digit1 = "";
 		while (first.getnext() != null && second.getnext() != null) {
-			list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata())
-				+ Integer.parseInt(second.getdata())));
+			String secele = Integer.toString(Integer.parseInt(first.getdata())
+			                                 + Integer.parseInt(second.getdata() + Integer.parseInt(digit)));
+			if (secele.length() >= 2) {
+				digit1 += secele.split("")[0];
+				list.insertAtStart(secele.split("")[1]);
+			} else {
+				list.insertAtStart(secele);
+			}
 			first = first.getnext();
 			second = second.getnext();
 		}
-		list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata()) + Integer.parseInt(second.getdata())));
+		list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata()) + Integer.parseInt(second.getdata()) + Integer.parseInt(digit1)));
 		return list;
 	}
 }

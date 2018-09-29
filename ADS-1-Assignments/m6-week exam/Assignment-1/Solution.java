@@ -155,7 +155,13 @@ class LinkedList {
 /**
  * Class for add large numbers.
  */
-class AddLargeNumbers {
+final class AddLargeNumbers {
+    /**
+     * Constructs the object.
+     */
+    private AddLargeNumbers() {
+
+    }
     /**
      * converts numbers to digits.
      * @param      number  The number
@@ -188,7 +194,8 @@ class AddLargeNumbers {
         LinkedList list = new LinkedList();
         Node first = list1.gethead();
         Node second = list2.gethead();
-        String firstele = Integer.toString(Integer.parseInt(list1.gethead().getdata())
+        String firstele = Integer.toString(Integer.parseInt(list1
+            .gethead().getdata())
                 + Integer.parseInt(list2.gethead().getdata()));
         String digit = "";
         if (firstele.length() >= 2) {

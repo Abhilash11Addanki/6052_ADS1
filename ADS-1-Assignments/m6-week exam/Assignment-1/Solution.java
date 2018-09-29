@@ -48,6 +48,10 @@ class LinkedList {
 	}
 	String ListToString() {
 		String str = "";
+		if (head.getnext() == null) {
+			str += head.getdata();
+			return str;
+		}
 		Node first = head;
 		str += head.getdata();
 		first = head.getnext();
@@ -65,10 +69,6 @@ class AddLargeNumbers {
     public static LinkedList numberToDigits(String number) {
     	LinkedList list = new LinkedList();
     	String[] num = number.split("");
-    	if (num[0].equals("0") && num.length == 1) {
-    		list.insertAtEnd(num[0]);
-    		return list;
-    	}
     	for (int i = 0; i < num.length; i++) {
     		list.insertAtEnd(num[i]);
     	}

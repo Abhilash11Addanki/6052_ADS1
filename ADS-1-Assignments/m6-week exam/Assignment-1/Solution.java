@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Stack;
 /**
  * Class for node.
  */
@@ -136,7 +135,7 @@ class LinkedList {
      * converts the linked list to String.
      * @return     string str
      */
-    String ListToString() {
+    String listtoString() {
         String str = "";
         if (head.getnext() == null) {
             str += head.getdata();
@@ -176,7 +175,7 @@ class AddLargeNumbers {
      * @return     String
      */
     public static String digitsToNumber(final LinkedList list) {
-        return list.ListToString();
+        return list.listtoString();
     }
     /**
      * Adds large numbers.
@@ -184,7 +183,8 @@ class AddLargeNumbers {
      * @param      list2  The list 2
      * @return     Linked list.
      */
-    public static LinkedList addLargeNumbers(final LinkedList list1, final LinkedList list2) {
+    public static LinkedList addLargeNumbers(final LinkedList list1,
+            final LinkedList list2) {
         LinkedList list = new LinkedList();
         Node first = list1.gethead();
         Node second = list2.gethead();
@@ -213,7 +213,8 @@ class AddLargeNumbers {
             first = first.getnext();
             second = second.getnext();
         }
-        list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata()) + Integer.parseInt(second.getdata()) + Integer.parseInt(digit1)));
+        list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata())
+                                            + Integer.parseInt(second.getdata()) + Integer.parseInt(digit1)));
         return list;
     }
 }
@@ -250,7 +251,12 @@ public final class Solution {
             LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
             System.out.println(AddLargeNumbers.digitsToNumber(result));
             break;
+        default:
+            break;
         }
     }
 
 }
+
+
+

@@ -102,7 +102,7 @@ class AddLargeNumbers {
 		second = list2.gethead().getnext();
 		while (first.getnext() != null && second.getnext() != null) {
 			String secele = Integer.toString(Integer.parseInt(first.getdata())
-			                                 + Integer.parseInt(second.getdata()));
+			                                 + Integer.parseInt(second.getdata()) + Integer.parseInt(temp));
 			String temp1 = "";
 			if (secele.length() >= 2) {
 				temp1 += secele.split("")[0];

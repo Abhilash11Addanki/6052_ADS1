@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Scanner;
+import java.util.Stack;
 class Node {
 	private String data;
 	private Node next;
@@ -100,32 +100,17 @@ class AddLargeNumbers {
 		LinkedList list = new LinkedList();
 		Node first = list1.gethead();
 		Node second = list2.gethead();
-		String firstele = Integer.toString(Integer.parseInt(list1.gethead().getdata())
-		                                   + Integer.parseInt(list2.gethead().getdata()));
-		String temp = "";
-		if (firstele.length() >= 2) {
-			temp += firstele.split("")[0];
-			list.insertAtStart(firstele.split("")[1]);
-		} else {
-			list.insertAtStart(firstele);
-		}
+		list.insertAtStart(Integer.toString(Integer.parseInt(list1.gethead().getdata())
+			+ Integer.parseInt(list2.gethead().getdata())));
 		first = list1.gethead().getnext();
 		second = list2.gethead().getnext();
-		String temp1 = "";
 		while (first.getnext() != null && second.getnext() != null) {
-			String secele = Integer.toString(Integer.parseInt(first.getdata())
-			                                 + Integer.parseInt(second.getdata()) + Integer.parseInt(temp));
-			temp1 = "";
-			if (secele.length() >= 2) {
-				temp1 += secele.split("")[0];
-				list.insertAtStart(secele.split("")[1]);
-			} else {
-				list.insertAtStart(secele);
-			}
+			list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata())
+				+ Integer.parseInt(second.getdata())));
 			first = first.getnext();
+			second = second.getnext();
 		}
-		list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata())
-		                                  + Integer.parseInt(second.getdata()) + Integer.parseInt(temp1)));
+		list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata()) + Integer.parseInt(second.getdata())));
 		return list;
 	}
 }

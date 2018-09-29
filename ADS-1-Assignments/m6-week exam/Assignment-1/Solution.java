@@ -90,7 +90,7 @@ class AddLargeNumbers {
 		Node first = list1.gethead();
 		Node second = list2.gethead();
 		String firstele = Integer.toString(Integer.parseInt(list1.gethead().getdata())
-			+ Integer.parseInt(list2.gethead().getdata()));
+		                                   + Integer.parseInt(list2.gethead().getdata()));
 		String temp = "";
 		if (firstele.length() >= 2) {
 			temp += firstele.split("")[0];
@@ -101,12 +101,19 @@ class AddLargeNumbers {
 		first = list1.gethead().getnext();
 		second = list2.gethead().getnext();
 		while (first.getnext() != null && second.getnext() != null) {
-			list.insertAtEnd(Integer.toString(Integer.parseInt(first.getdata())
-				+ Integer.parseInt(second.getdata())));
+			String secele = Integer.toString(Integer.parseInt(first.getdata())
+			                                 + Integer.parseInt(second.getdata()));
+			String temp1 = "";
+			if (secele.length() >= 2) {
+				temp1 += secele.split("")[0];
+				list.insertAtEnd(secele.split("")[1]);
+			} else {
+				list.insertAtEnd(secele);
+			}
 			first = first.getnext();
 		}
 		list.insertAtEnd(Integer.toString(Integer.parseInt(first.getdata())
-			+ Integer.parseInt(second.getdata())));
+		                                  + Integer.parseInt(second.getdata())));
 		return list;
 	}
 }

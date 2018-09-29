@@ -52,6 +52,17 @@ class LinkedList {
 			tail = first;
 		}
 	}
+	void insertAtStart(String data) {
+		Node first = new Node(data, null);
+		size++;
+		if (head == null) {
+			head = first;
+			tail = head;
+		} else {
+			first.setnext(head);
+			head = first;
+		}
+	}
 	String ListToString() {
 		String str = "";
 		if (head.getnext() == null) {
@@ -94,9 +105,9 @@ class AddLargeNumbers {
 		String temp = "";
 		if (firstele.length() >= 2) {
 			temp += firstele.split("")[0];
-			list.insertAtEnd(firstele.split("")[1]);
+			list.insertAtStart(firstele.split("")[1]);
 		} else {
-			list.insertAtEnd(firstele);
+			list.insertAtStart(firstele);
 		}
 		first = list1.gethead().getnext();
 		second = list2.gethead().getnext();
@@ -107,13 +118,13 @@ class AddLargeNumbers {
 			temp1 = "";
 			if (secele.length() >= 2) {
 				temp1 += secele.split("")[0];
-				list.insertAtEnd(secele.split("")[1]);
+				list.insertAtStart(secele.split("")[1]);
 			} else {
-				list.insertAtEnd(secele);
+				list.insertAtStart(secele);
 			}
 			first = first.getnext();
 		}
-		list.insertAtEnd(Integer.toString(Integer.parseInt(first.getdata())
+		list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata())
 		                                  + Integer.parseInt(second.getdata()) + Integer.parseInt(temp1)));
 		return list;
 	}

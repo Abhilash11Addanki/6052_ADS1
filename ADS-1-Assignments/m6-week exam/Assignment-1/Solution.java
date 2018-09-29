@@ -189,7 +189,7 @@ class AddLargeNumbers {
         Node first = list1.gethead();
         Node second = list2.gethead();
         String firstele = Integer.toString(Integer.parseInt(list1.gethead().getdata())
-                                           + Integer.parseInt(list2.gethead().getdata()));
+                + Integer.parseInt(list2.gethead().getdata()));
         String digit = "";
         if (firstele.length() >= 2) {
             digit += firstele.split("")[0];
@@ -202,7 +202,7 @@ class AddLargeNumbers {
         String digit1 = "";
         while (first.getnext() != null && second.getnext() != null) {
             String secele = Integer.toString(Integer.parseInt(first.getdata())
-                                             + Integer.parseInt(second.getdata() + Integer.parseInt(digit)));
+            + Integer.parseInt(second.getdata() + Integer.parseInt(digit)));
             digit1 = "";
             if (secele.length() >= 2) {
                 digit1 += secele.split("")[0];
@@ -214,7 +214,7 @@ class AddLargeNumbers {
             second = second.getnext();
         }
         list.insertAtStart(Integer.toString(Integer.parseInt(first.getdata())
-                                            + Integer.parseInt(second.getdata()) + Integer.parseInt(digit1)));
+            + Integer.parseInt(second.getdata()) + Integer.parseInt(digit1)));
         return list;
     }
 }
@@ -248,7 +248,8 @@ public final class Solution {
         case "addLargeNumbers":
             pDigits = AddLargeNumbers.numberToDigits(p);
             qDigits = AddLargeNumbers.numberToDigits(q);
-            LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
+            LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits,
+                qDigits);
             System.out.println(AddLargeNumbers.digitsToNumber(result));
             break;
         default:

@@ -114,7 +114,7 @@ class AddLargeNumbers {
 			first = first.getnext();
 		}
 		list.insertAtEnd(Integer.toString(Integer.parseInt(first.getdata())
-		                                  + Integer.parseInt(second.getdata())) + Integer.parseInt(temp1));
+		                                  + Integer.parseInt(second.getdata()) + Integer.parseInt(temp1)));
 		return list;
 	}
 }

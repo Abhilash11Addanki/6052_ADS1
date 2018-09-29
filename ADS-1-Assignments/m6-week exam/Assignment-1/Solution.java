@@ -100,10 +100,11 @@ class AddLargeNumbers {
 		}
 		first = list1.gethead().getnext();
 		second = list2.gethead().getnext();
+		String temp1 = "";
 		while (first.getnext() != null && second.getnext() != null) {
 			String secele = Integer.toString(Integer.parseInt(first.getdata())
 			                                 + Integer.parseInt(second.getdata()) + Integer.parseInt(temp));
-			String temp1 = "";
+			temp1 = "";
 			if (secele.length() >= 2) {
 				temp1 += secele.split("")[0];
 				list.insertAtEnd(secele.split("")[1]);
@@ -113,7 +114,7 @@ class AddLargeNumbers {
 			first = first.getnext();
 		}
 		list.insertAtEnd(Integer.toString(Integer.parseInt(first.getdata())
-		                                  + Integer.parseInt(second.getdata())));
+		                                  + Integer.parseInt(second.getdata())) + Integer.parseInt(temp1));
 		return list;
 	}
 }

@@ -35,15 +35,15 @@ class LinkedList {
 	int getsize() {
 		return size;
 	}
-	void insertAtStart(String data) {
+	void insertAtEnd(String data) {
 		Node first = new Node(data, null);
 		size++;
 		if (head == null) {
 			head = first;
 			tail = head;
 		} else {
-			first.setnext(head);
-			head = first;
+			tail.setnext(first);
+			tail = first;
 		}
 	}
 	String ListToString() {
@@ -66,7 +66,7 @@ class AddLargeNumbers {
     	LinkedList list = new LinkedList();
     	String[] num = number.split("");
     	for (int i = 0; i < num.length; i++) {
-    		list.insertAtStart(num[i]);
+    		list.insertAtEnd(num[i]);
     	}
     	return list;
     }

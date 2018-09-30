@@ -108,6 +108,6 @@ class LinkedList<E> {
 			System.out.print(temp.data + ", ");
 			temp = temp.link;
 		}
-		System.out.println(temp.data);
+		System.out.println(temp.data + "]");
 	}
 }

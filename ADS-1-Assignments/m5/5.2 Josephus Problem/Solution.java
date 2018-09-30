@@ -1,22 +1,43 @@
 import java.util.Scanner;
+/**
+ * Class for josephus.
+ */
 class Josephus {
-	void CalculateJosephus(int n, int m) {
+	/**
+	 * Calculates the josephus.
+	 * @param      n     number of members
+	 * @param      m     mth person
+	 */
+	void CalculateJosephus(final int n, final int m) {
 		CircularLinkedList c = new CircularLinkedList();
 		for (int i = 0; i < n; i++) {
 			c.add(i);
 		}
 		String str = "";
 		while (!c.isEmpty()) {
-			int t2 = 0;
+			int t1 = 0;
 			for (int i = 0; i < m; i++) {
-				t2 = c.getNext();
+				t1 = c.getNext();
 			}
-			str += c.remove(t2) + " ";
+			str += c.remove(t1) + " ";
 		}
 		System.out.println(str.trim());
 	}
 }
-public class Solution {
+/**
+ * Class for solution.
+ */
+public final class Solution {
+	/**
+	 * Constructs the object.
+	 */
+	private Solution() {
+
+	}
+	/**
+	 * main method to drive the program.
+	 * @param      args  The arguments
+	 */
 	public static void main(final String[] args) {
 		Josephus j = new Josephus();
 		Scanner sc = new Scanner(System.in);

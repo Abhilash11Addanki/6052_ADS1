@@ -1,122 +1,113 @@
 class LinkedList<E> {
 	class Node {
-		private E data;
-		private Node next;
-		Node(final E d, final Node n) {
-			data = d;
-			next = n;
-		}
-		E getdata() {
-			return data;
-		}
-		void setdata(final E d) {
-			data = d;
-		}
-		Node getnext() {
-			return next;
-		}
-		void setnext(final Node n) {
-			next = n;
-		}
+		E data;
+		Node link;
 	}
-	private Node head;
-	private Node tail;
-	private int size;
-	LinkedList() {
-		head = null;
-		tail = null;
-		size = 0;
-	}
+	Node head;
+	int size;
 	boolean isEmpty() {
-		return head == null;
+		return size == 0;
 	}
 	int getsize() {
 		return size;
 	}
 	void insertAtStart(E data) {
-		Node first = new Node(data, null);
+		Node node = new Node();
 		size++;
 		if (head == null) {
-			head = first;
-			tail = head;
+			node.data = data;
+			node.link = null;
+			head = node;
 		} else {
-			first.setnext(head);
-			head = first;
+			node.data = data;
+			node.link = head;
+			head = node;
 		}
 	}
 	void insertAtEnd(E data) {
-		Node first = new Node(data, null);
+		Node node = new Node();
 		size++;
 		if (head == null) {
-			head = first;
-			tail = head;
+			node.data = data;
+			node.link = null;
+			head = node;
 		} else {
-			tail.setnext(first);
-			tail = first;
+			Node temp = head;
+			while (temp.link != null) {
+				temp = temp.link;
+			}
+			node.data = data;
+			temp.link = node;
+			node.link = null;
 		}
 	}
 	void insertAtPos(E data, int pos) {
-		Node first = new Node(data, null);
-		Node second = head;
-		pos--;
-		for (int i = 1; i < size; i++) {
-			if (i == pos) {
-				Node temp = second.getnext();
-				second.setnext(first);
-				first.setnext(temp);
-				break;
-			}
-			second = second.getnext();
+		Node node = new Node();
+		if (pos == 0) {
+			return;
 		}
+		if (pos == 1) {
+			insertAtStart(data);
+			return;
+		}
+		pos--;
+		Node temp = head;
+		while (pos != 1) {
+			temp = temp.link;
+			pos--;
+		}
+		node.data = data;
+		node.link = temp.link;
+		temp.link = node;
 		size++;
 	}
+	void deleteAtStart() {
+		Node node = new Node();
+		Node temp = head;
+		temp = temp.link;
+		head.link = null;
+		head = temp;
+		size--;
+	}
+	void deleteAtEnd() {
+		Node node = new Node();
+		Node temp = head;
+		while (temp.link.link != null) {
+			temp = temp.link;
+		}
+		temp.link = null;
+		size--;
+	}
 	void deleteAtPos(int pos) {
+		if (pos == 0) return;
 		if (pos == 1) {
-			head = head.getnext();
-			size--;
+			deleteAtStart();
 			return;
 		}
-		if (pos == size) {
-			Node s = head;
-			Node t = head;
-			while (s != tail) {
-				t = s;
-				s = s.getnext();
-			}
-			tail = t;
-			tail.setnext(null);
-			size --;
-			return;
-		}
-		Node first = head;
 		pos--;
-		for (int i = 1; i < size - 1; i++) {
-			if (i == pos) {
-				Node tmp = first.getnext();
-				tmp = tmp.getnext();
-				first.setnext(tmp);
-				break;
-			}
-			first = first.getnext();
+		Node temp = head;
+		while (pos != 1) {
+			temp = temp.link;
+			pos--;
 		}
-		size-- ;
+		temp.link = temp.link.link;
+		size--;
 	}
 	void display() {
 		if (size == 0) {
 			System.out.println("[]");
 			return;
 		}
-		if (head.getnext() == null) {
-			System.out.println("[" + head.getdata() + "]");
+		if (head.link == null) {
+			System.out.println("[" + head.data + "]");
 			return;
 		}
-		Node first = head;
-		System.out.print("[" + head.getdata());
-		first = head.getnext();
-		while (first.getnext() != null) {
-			System.out.print(", " + first.getdata());
-			first = first.getnext();
+		Node temp = head;
+		System.out.print("[");
+		while (temp.link != null) {
+			System.out.print(temp.data + ", ");
+			temp = temp.link;
 		}
-		System.out.print(", " + first.getdata() + "]" + "\n");
+		System.out.println(temp.data);
 	}
 }

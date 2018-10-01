@@ -55,6 +55,9 @@ final class AddLargeNumbers {
         s2.push(temp1.data);
         int result = 0;
         while (!s1.isEmpty() && !s2.isEmpty()) {
+            if (s1.isEmpty() || s2.isEmpty()) {
+                
+            }
             int firstele = Integer.parseInt(s1.pop());
             int secele = Integer.parseInt(s2.pop());
             int temp2 = result / 10;

@@ -70,6 +70,7 @@ final class AddLargeNumbers {
             }
             res.insertAtStart(Integer.toString(result % 10));
         }
+        res.insertAtStart(Integer.toString(result / 10));
         return res;
     }
 }

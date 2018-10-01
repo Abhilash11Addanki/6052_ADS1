@@ -1,8 +1,8 @@
+class Node {
+	String data;
+	Node link;
+}
 class LinkedList {
-	class Node {
-		String data;
-		Node link;
-	}
 	Node head;
 	int size;
 	void insertAtStart(String data) {

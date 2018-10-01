@@ -41,20 +41,22 @@ final class AddLargeNumbers {
         Stack s1 = new Stack();
         Stack s2 = new Stack();
         LinkedList res = new LinkedList();
-        while (list1.head.link != null) {
-            s1.push(list1.head.data);
-            list1.head = list1.head.link;
+        Node temp = list1.head;
+        while (temp.link != null) {
+            s1.push(temp.data);
+            temp = temp.link;
         }
-        while (list2.head.link != null) {
-            s2.push(list2.head.data);
-            list2.head = list2.head.link;
+        Node temp1 = list2.head;
+        while (temp1.link != null) {
+            s2.push(temp1.data);
+            temp1 = temp1.link;
         }
         int result = 0;
         while (s1.isEmpty() && s2.isEmpty()) {
             int firstele = Integer.parseInt(s1.pop());
             int secele = Integer.parseInt(s2.pop());
-            int temp = result / 10;
-            result = firstele + secele + temp;
+            int temp2 = result / 10;
+            result = firstele + secele + temp2;
             res.insertAtStart(Integer.toString(result % 10));
         }
         return res;

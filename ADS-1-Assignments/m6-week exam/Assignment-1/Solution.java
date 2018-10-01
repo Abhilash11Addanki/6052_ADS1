@@ -49,12 +49,13 @@ final class AddLargeNumbers {
             s2.push(list2.head.data);
             list2.head = list2.head.link;
         }
+        int result = 0;
         while (s1.isEmpty() && s2.isEmpty()) {
             int firstele = Integer.parseInt(s1.pop());
             int secele = Integer.parseInt(s2.pop());
-            int result = firstele + secele;
+            int temp = result / 10;
+            result = firstele + secele + temp;
             res.insertAtStart(Integer.toString(result % 10));
-            result += result / 10;
         }
         return res;
     }

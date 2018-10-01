@@ -57,7 +57,7 @@ final class AddLargeNumbers {
         int firstele = 0;
         int secele = 0;
         int temp2 = 0;
-        while (!s1.isEmpty() && !s2.isEmpty()) {
+        while (s1.top != -1 && s2.top != -1) {
             if (s2.top == -1) {
                 firstele = Integer.parseInt(s1.pop());
                 temp2 = result / 10;
@@ -74,6 +74,8 @@ final class AddLargeNumbers {
                 result = firstele + secele + temp2;
             }
             res.insertAtStart(Integer.toString(result % 10));
+            s1.top--;
+            s2.top--;
         }
         res.insertAtStart(Integer.toString(result / 10));
         return res;

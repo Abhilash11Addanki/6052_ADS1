@@ -75,7 +75,9 @@ final class AddLargeNumbers {
             res.insertAtStart(Integer.toString(result % 10));
         }
         if (s1.size == s2.size) {
-            res.insertAtStart(Integer.toString(result / 10));
+                res.insertAtStart(Integer.toString(result / 10));
+        } else {
+            res.deleteAtStart();
         }
         return res;
     }

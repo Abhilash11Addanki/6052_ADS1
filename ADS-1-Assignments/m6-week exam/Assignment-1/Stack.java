@@ -6,7 +6,7 @@ class Stack {
 	Node head;
 	int top = -1;
 	boolean isEmpty() {
-		return head == null;
+		return top == -1;
 	}
 	void push(String data) {
 		Node node = new Node();

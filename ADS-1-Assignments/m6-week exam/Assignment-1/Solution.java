@@ -38,7 +38,25 @@ final class AddLargeNumbers {
      */
     public static LinkedList addLargeNumbers(final LinkedList list1,
             final LinkedList list2) {
-        return null;
+        Stack s1 = new Stack();
+        Stack s2 = new Stack();
+        LinkedList res = new LinkedList();
+        while (list1.head.link != null) {
+            s1.push(list1.head.data);
+            list1.head = list1.head.link;
+        }
+        while (list2.head.link != null) {
+            s2.push(list2.head.data);
+            list2.head = list2.head.link;
+        }
+        while (s1.isEmpty() && s2.isEmpty()) {
+            int firstele = Integer.parseInt(s1.pop());
+            int secele = Integer.parseInt(s2.pop());
+            int result = firstele + secele;
+            res.insertAtStart(Integer.toString(result % 10));
+            result += result / 10;
+        }
+        return res;
     }
 }
 /**
@@ -72,7 +90,7 @@ public final class Solution {
             pDigits = AddLargeNumbers.numberToDigits(p);
             qDigits = AddLargeNumbers.numberToDigits(q);
             LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits,
-                qDigits);
+                                qDigits);
             System.out.println(AddLargeNumbers.digitsToNumber(result));
             break;
         default:

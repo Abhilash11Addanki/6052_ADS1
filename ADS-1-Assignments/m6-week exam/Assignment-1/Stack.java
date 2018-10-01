@@ -5,6 +5,9 @@ class Stack {
 	}
 	Node head;
 	int top = -1;
+	boolean isEmpty() {
+		return head == null;
+	}
 	void push(String data) {
 		Node node = new Node();
 		++top;
@@ -18,10 +21,11 @@ class Stack {
 			head = node;
 		}
 	}
-	void pop() {
+	String pop() {
 		top--;
-		System.out.println(head.data);
+		Node temp = head;
 		head = head.link;
+		return temp.data;
 	}
 	void display() {
 		if (top == -1) {

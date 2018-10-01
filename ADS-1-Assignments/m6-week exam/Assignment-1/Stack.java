@@ -5,8 +5,12 @@ class Stack {
 	}
 	Node head;
 	int top = -1;
+	int size;
 	boolean isEmpty() {
 		return top == -1;
+	}
+	int getsize() {
+		return size;
 	}
 	void push(String data) {
 		Node node = new Node();
@@ -20,11 +24,13 @@ class Stack {
 			node.link = head;
 			head = node;
 		}
+		size++;
 	}
 	String pop() {
 		top--;
 		Node temp = head;
 		head = head.link;
+		size--;
 		return temp.data;
 	}
 	void display() {

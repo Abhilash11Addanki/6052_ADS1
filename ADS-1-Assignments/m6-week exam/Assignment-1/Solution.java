@@ -52,7 +52,7 @@ final class AddLargeNumbers {
             temp1 = temp1.link;
         }
         int result = 0;
-        while (s1.isEmpty() && s2.isEmpty()) {
+        while (!s1.isEmpty() && !s2.isEmpty()) {
             int firstele = Integer.parseInt(s1.pop());
             int secele = Integer.parseInt(s2.pop());
             int temp2 = result / 10;

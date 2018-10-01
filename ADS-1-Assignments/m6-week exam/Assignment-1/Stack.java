@@ -30,7 +30,6 @@ class Stack {
 		top--;
 		Node temp = head;
 		head = head.link;
-		size--;
 		return temp.data;
 	}
 	void display() {

@@ -1,11 +1,11 @@
-class Stack<T> {
+class Stack {
 	class Node {
-		T data;
+		String data;
 		Node link;
 	}
 	Node head;
 	int top = -1;
-	void push(T data) {
+	void push(String data) {
 		Node node = new Node();
 		++top;
 		if (head == null) {

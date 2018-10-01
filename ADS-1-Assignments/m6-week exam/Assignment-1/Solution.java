@@ -74,8 +74,9 @@ final class AddLargeNumbers {
             }
             res.insertAtStart(Integer.toString(result % 10));
         }
-        System.out.println(s1.size);
-        System.out.println(s2.size);
+        if (s1.size == s2.size) {
+            res.insertAtStart(Integer.toString(result / 10));
+        }
         return res;
     }
 }

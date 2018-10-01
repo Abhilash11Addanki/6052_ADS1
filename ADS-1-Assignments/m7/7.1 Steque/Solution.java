@@ -5,6 +5,7 @@ public class Solution {
 		int testcases = Integer.parseInt(sc.nextLine());
 		for (int i = 0; i < testcases; i++) {
 			Steque<Integer> st = new Steque<Integer>();
+			System.out.println();
 			while (sc.hasNext()) {
 				String[] tokens = sc.nextLine().split(" ");
 				switch (tokens[0]) {

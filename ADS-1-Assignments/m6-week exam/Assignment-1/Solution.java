@@ -58,11 +58,11 @@ final class AddLargeNumbers {
         int secele = 0;
         int temp2 = 0;
         while (!s1.isEmpty() && !s2.isEmpty()) {
-            if (s2.isEmpty()) {
+            if (s2.isEmpty() && !s1.isEmpty()) {
                 firstele = Integer.parseInt(s1.pop());
                 temp2 = result / 10;
                 result = firstele + temp2;
-            } else if (s1.isEmpty()) {
+            } else if (s1.isEmpty() && !s2.isEmpty()) {
                 System.out.println("Working");
                 secele = Integer.parseInt(s2.pop());
                 temp2 = result / 10;

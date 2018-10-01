@@ -53,13 +53,13 @@ final class AddLargeNumbers {
             temp1 = temp1.link;
         }
         s2.push(temp1.data);
+        s2.display();
         int result = 0;
         int firstele = 0;
         int secele = 0;
         int temp2 = 0;
         while (!s1.isEmpty() && !s2.isEmpty()) {
             if (s1.isEmpty()) {
-                System.out.println("Empty");
                 secele = Integer.parseInt(s2.pop());
                 temp2 = result / 10;
                 result = secele + temp2;

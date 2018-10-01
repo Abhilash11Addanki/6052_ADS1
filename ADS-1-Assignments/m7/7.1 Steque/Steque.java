@@ -19,6 +19,9 @@ class Node {
 		}
 	}
 	void pop() {
+		if (size == 0) {
+			return;
+		}
 		Node node = new Node();
 		Node temp = head;
 		temp = temp.link;

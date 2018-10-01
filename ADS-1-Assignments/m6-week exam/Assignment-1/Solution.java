@@ -63,6 +63,7 @@ final class AddLargeNumbers {
                 temp2 = result / 10;
                 result = firstele + temp2;
             } else if (s1.isEmpty()) {
+                System.out.println("Working");
                 secele = Integer.parseInt(s2.pop());
                 temp2 = result / 10;
                 result = secele + temp2;

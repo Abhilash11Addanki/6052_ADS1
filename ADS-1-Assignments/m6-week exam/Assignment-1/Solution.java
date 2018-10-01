@@ -72,11 +72,7 @@ final class AddLargeNumbers {
                 temp2 = result / 10;
                 result = firstele + secele + temp2;
             }
-            if (s1.size == s2.size) {
-                res.insertAtStart(Integer.toString(result % 10));
-            } else {
-                res.insertAtStart(Integer.toString(result));
-            }
+            res.insertAtStart(Integer.toString(result % 10));
         }
         return res;
     }

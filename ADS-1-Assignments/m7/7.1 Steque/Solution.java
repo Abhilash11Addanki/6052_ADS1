@@ -6,7 +6,11 @@ public class Solution {
 		for (int i = 0; i < testcases; i++) {
 			Steque<Integer> st = new Steque<Integer>();
 			while (sc.hasNext()) {
-				String[] tokens = sc.nextLine().split(" ");
+				String tmp = sc.nextLine();
+				if (tmp.equals("")) {
+					break;
+				}
+				String[] tokens = tmp.split(" ");
 				switch (tokens[0]) {
 				case "push":
 					st.push(Integer.parseInt(tokens[1]));
@@ -24,7 +28,6 @@ public class Solution {
 					break;
 				}
 			}
-			System.out.println();
 		}
 	}
 }

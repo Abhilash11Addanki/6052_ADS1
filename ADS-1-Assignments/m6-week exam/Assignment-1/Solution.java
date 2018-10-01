@@ -72,6 +72,8 @@ final class AddLargeNumbers {
                 temp2 = result / 10;
                 result = firstele + secele + temp2;
             }
+            System.out.println(s1.size);
+            System.out.println(s2.size);
             res.insertAtStart(Integer.toString(result % 10));
         }
         return res;
@@ -117,9 +119,3 @@ public final class Solution {
     }
 
 }
-
-
-
-
-
-

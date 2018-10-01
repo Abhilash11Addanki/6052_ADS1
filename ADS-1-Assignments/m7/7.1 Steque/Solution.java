@@ -23,7 +23,6 @@ public class Solution {
 				default:
 					break;
 				}
-				System.out.println("Test");
 			}
 		}
 	}

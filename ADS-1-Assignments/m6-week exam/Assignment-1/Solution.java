@@ -46,11 +46,13 @@ final class AddLargeNumbers {
             s1.push(temp.data);
             temp = temp.link;
         }
+        s1.push(temp.data);
         Node temp1 = list2.head;
         while (temp1.link != null) {
             s2.push(temp1.data);
             temp1 = temp1.link;
         }
+        s2.push(temp1.data);
         int result = 0;
         while (!s1.isEmpty() && !s2.isEmpty()) {
             int firstele = Integer.parseInt(s1.pop());

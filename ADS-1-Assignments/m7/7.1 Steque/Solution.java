@@ -4,8 +4,8 @@ public class Solution {
 		Scanner sc = new Scanner(System.in);
 		int testcases = Integer.parseInt(sc.nextLine());
 		for (int i = 0; i < testcases; i++) {
+			Steque<Integer> st = new Steque<Integer>();
 			while (sc.hasNext()) {
-				Steque<Integer> st = new Steque<Integer>();
 				String[] tokens = sc.nextLine().split(" ");
 				switch (tokens[0]) {
 				case "push":

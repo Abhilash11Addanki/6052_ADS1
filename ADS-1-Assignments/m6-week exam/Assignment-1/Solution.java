@@ -54,12 +54,17 @@ final class AddLargeNumbers {
         }
         s2.push(temp1.data);
         int result = 0;
+        int firstele = 0;
+        int secele = 0;
         while (!s1.isEmpty() && !s2.isEmpty()) {
-            if (s1.isEmpty() || s2.isEmpty()) {
-                
+            if (s2.isEmpty()) {
+                firstele = Integer.parseInt(s1.pop());
+            } else if (s1.isEmpty()) {
+                secele = Integer.parseInt(s2.pop());
+            } else {
+                firstele = Integer.parseInt(s1.pop());
+                secele = Integer.parseInt(s2.pop());
             }
-            int firstele = Integer.parseInt(s1.pop());
-            int secele = Integer.parseInt(s2.pop());
             int temp2 = result / 10;
             result = firstele + secele + temp2;
             res.insertAtStart(Integer.toString(result % 10));

@@ -47,14 +47,12 @@ final class AddLargeNumbers {
             temp = temp.link;
         }
         s1.push(temp.data);
-        s1.display();
         Node temp1 = list2.head;
         while (temp1.link != null) {
             s2.push(temp1.data);
             temp1 = temp1.link;
         }
         s2.push(temp1.data);
-        s2.display();
         int result = 0;
         int firstele = 0;
         int secele = 0;

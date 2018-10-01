@@ -74,8 +74,6 @@ final class AddLargeNumbers {
                 result = firstele + secele + temp2;
             }
             res.insertAtStart(Integer.toString(result % 10));
-            s1.top--;
-            s2.top--;
         }
         res.insertAtStart(Integer.toString(result / 10));
         return res;

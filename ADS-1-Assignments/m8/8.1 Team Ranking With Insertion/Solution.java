@@ -69,25 +69,21 @@ class Teams {
 		}
 		return s.substring(0, s.length() - 1);
 	}
-}
-class SelectionSort {
-	Teams t = new Teams();
-	Teams sort() {
-		for (int i = 0; i < t.size - 1; i++) {
+	void sort() {
+		for (int i = 0; i < size - 1; i++) {
 			int index = i;
-			for (int j = i + 1; j < t.size; j++) {
-				if (less(t.arr, j, index)) {
+			for (int j = i + 1; j < size; j++) {
+				if (less(arr, j, index)) {
 					index = j;
 				}
 			}
-			exch(t.arr, i , index);
+			exch(arr, i , index);
 		}
-		return t;
 	}
 	void exch(Team[] arr, int i, int j) {
-		Team te = t.arr[j];
-		t.arr[j] = t.arr[i];
-		t.arr[i] = te;
+		Team te = arr[j];
+		arr[j] = arr[i];
+		arr[i] = te;
 	}
 	boolean less(Team[] arr, int i, int j) {
 		return arr[i].compareTo(arr[j]) > 0;
@@ -106,7 +102,7 @@ public final class Solution {
 			t.add(new Team(tokens[0], Integer.parseInt(tokens[1]),
 			               Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3])));
 		}
-		t = s.sort();
+		t.sort();
 		System.out.println(t);
 	}
 }

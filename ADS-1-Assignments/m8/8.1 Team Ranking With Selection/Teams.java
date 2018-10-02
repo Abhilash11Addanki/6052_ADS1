@@ -1,5 +1,4 @@
 class Teams {
-	SelectionSort s = new SelectionSort();
 	/**
 	 * { var_description }.
 	 */
@@ -32,6 +31,7 @@ class Teams {
 		return s.substring(0, s.length() - 1);
 	}
 	void sort() {
+		SelectionSort s = new SelectionSort();
 		s.sort();
 	}
 }

@@ -1,0 +1,8 @@
+Given array is E A S Y Q U E S T I O N
+1st - A E S Y Q U E S T I O N
+2nd - A E E Y Q U S S T I O N
+3rd - A E E I Q U S S T Y O N
+4th - A E E I N U S S T Y O Q
+5th - A E E I N O S S T Y U Q
+6th - A E E I N O Q S S Y U T
+7th - A E E I N O Q S S T U Y

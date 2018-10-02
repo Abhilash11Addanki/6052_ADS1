@@ -41,7 +41,7 @@ class Teams {
 	/**
 	 * { var_description }.
 	 */
-	Team[] teams;
+	Team[] arr;
 	/**
 	 * { var_description }.
 	 */
@@ -50,7 +50,8 @@ class Teams {
 	 * Constructs the object.
 	 */
 	Teams() {
-		teams = new Team[10];
+		arr = new Team[10];
+		size = 0;
 	}
 	/**
 	 * { function_description }.
@@ -59,34 +60,30 @@ class Teams {
 	public void add(final Team item) {
 		//Inserts the specified element at the end of the list.
 		//You can modify the code in this method.
-		teams[size++] = item;
+		arr[size++] = item;
 	}
 	public String toString() {
 		String s = "";
 		for (int i = 0; i < size; i++) {
-			s += teams[i].teamname + ",";
+			s += arr[i].teamname + ",";
 		}
 		return s.substring(0, s.length() - 1);
 	}
-}
-class SelectionSort {
-	Teams team = new Teams();
-	Teams sort(Teams team) {
-		for (int i = 0; i < team.size - 1; i++) {
+	void sort() {
+		for (int i = 0; i < size - 1; i++) {
 			int index = i;
-			for (int j = i + 1; j < team.size; j++) {
-				if (less(team.teams, j, index)) {
+			for (int j = i + 1; j < size; j++) {
+				if (less(arr, j, index)) {
 					index = j;
 				}
 			}
-			exch(team.teams, i , index);
+			exch(arr, i , index);
 		}
-		return team;
 	}
-	void exch(Team[] t, int i, int j) {
-		Team t1 = team.teams[j];
-		team.teams[j] = team.teams[i];
-		team.teams[i] = t1;
+	void exch(Team[] arr, int i, int j) {
+		Team te = arr[j];
+		arr[j] = arr[i];
+		arr[i] = te;
 	}
 	boolean less(Team[] arr, int i, int j) {
 		return arr[i].compareTo(arr[j]) > 0;
@@ -105,7 +102,7 @@ public final class Solution {
 			t.add(new Team(tokens[0], Integer.parseInt(tokens[1]),
 			               Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3])));
 		}
-		t = s.sort(t);
+		t.sort();
 		System.out.println(t);
 	}
 }

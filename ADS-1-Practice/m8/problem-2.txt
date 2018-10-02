@@ -1,0 +1,14 @@
+Insertion sort
+given arrray is E A S Y Q U E S T I O N
+E - E A S Y Q U E S T I O N
+A - [E] A S Y Q U E S T I O N
+S - [A,E] S Y Q U E S T I O N
+Y - [A,E,S] Y Q U E S T I O N
+Q - [A,E,S,Y] Q U E S T I O N
+U - [A,E,Q,S,Y] U E S T I O N
+E - [A,E,Q,S,U,Y] S T I O N
+T - [A,E,E,Q,S,S,U,Y] T I O N
+I - [A,E,E,Q,S,S,T,U,Y] I O N
+O - [A,E,E,I,Q,S,S,T,U,Y] O N
+N - [A,E,E,I,O,Q,S,S,T,U,Y] N
+[A,E,E,I,N,O,Q,S,S,T,U,Y]

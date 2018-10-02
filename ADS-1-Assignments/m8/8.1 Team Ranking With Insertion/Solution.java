@@ -72,7 +72,7 @@ class Teams {
 }
 class SelectionSort {
 	Teams t = new Teams();
-	void sort() {
+	Teams sort() {
 		for (int i = 0; i < t.size - 1; i++) {
 			int index = i;
 			for (int j = i + 1; j < t.size; j++) {
@@ -82,6 +82,7 @@ class SelectionSort {
 			}
 			exch(t.arr, i , index);
 		}
+		return t;
 	}
 	void exch(Team[] arr, int i, int j) {
 		Team te = t.arr[j];
@@ -105,7 +106,7 @@ public final class Solution {
 			t.add(new Team(tokens[0], Integer.parseInt(tokens[1]),
 			               Integer.parseInt(tokens[2]), Integer.parseInt(tokens[3])));
 		}
-		s.sort();
+		t = s.sort();
 		System.out.println(t);
 	}
 }

@@ -1,0 +1,4 @@
+Which method runs faster for an array with all keys identical, basic selection sort or basic insertion sort ?
+
+When the keys are identical, then basic insertion sort works faster as we break the the statement whenever the if condition doesn't satisfy.
+We come out of this loop where as in selection sort, we keep performing the for loop for all the identical keys.

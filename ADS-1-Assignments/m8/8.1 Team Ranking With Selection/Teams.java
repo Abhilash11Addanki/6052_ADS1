@@ -1,4 +1,5 @@
 class Teams {
+	SelectionSort s = new SelectionSort();
 	/**
 	 * { var_description }.
 	 */
@@ -31,22 +32,6 @@ class Teams {
 		return s.substring(0, s.length() - 1);
 	}
 	void sort() {
-		for (int i = 0; i < size - 1; i++) {
-			int index = i;
-			for (int j = i + 1; j < size; j++) {
-				if (less(arr, j, index)) {
-					index = j;
-				}
-			}
-			exch(arr, i , index);
-		}
-	}
-	void exch(Team[] arr, int i, int j) {
-		Team te = arr[j];
-		arr[j] = arr[i];
-		arr[i] = te;
-	}
-	boolean less(Team[] arr, int i, int j) {
-		return arr[i].compareTo(arr[j]) > 0;
+		s.sort();
 	}
 }

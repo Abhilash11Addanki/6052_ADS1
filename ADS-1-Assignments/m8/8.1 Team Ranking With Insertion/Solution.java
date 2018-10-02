@@ -19,10 +19,10 @@ class Team implements Comparable<Team> {
 		if (wins < t.wins) {
 			return -1;
 		}
-		if (losses > t.losses) {
+		if (losses < t.losses) {
 			return 1;
 		}
-		if (losses < t.losses) {
+		if (losses > t.losses) {
 			return -1;
 		}
 		if (draws > t.draws) {

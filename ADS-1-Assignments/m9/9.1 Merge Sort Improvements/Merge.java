@@ -23,7 +23,7 @@ class Merge {
         assert isSorted(arr, mid + 1, hi);
         int i = lo;
         int j = mid + 1;
-        for (int k = lo; k < hi; k++) {
+        for (int k = lo; k <= hi; k++) {
             if (i > mid) {
                 aux[k] = arr[j++];
             } else if (j > hi) {

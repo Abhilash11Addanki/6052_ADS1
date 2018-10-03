@@ -34,6 +34,7 @@ class Merge {
                 aux[k] = arr[i++];
             }
         }
+        assert isSorted(aux, lo, hi);
     }
     /**
      * sort method.
@@ -47,7 +48,7 @@ class Merge {
         final int lo, final int hi) {
         if (hi <= lo + x) {
             insertionSort(aux, lo, hi);
-            System.out.println("Insertion sort method invoked...");
+            System.out.println("Insertion sort method invoked..");
             return;
         }
         int mid = lo + (hi - lo) / 2;

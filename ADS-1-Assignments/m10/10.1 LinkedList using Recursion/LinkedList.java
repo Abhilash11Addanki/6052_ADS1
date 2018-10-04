@@ -63,7 +63,7 @@ class LinkedList<E> {
 	void reverse() {
 		Node first;
 		Node rest;
-		if (head.link == null) {
+		if (head == null) {
 			return;
 		}
 		first = head;

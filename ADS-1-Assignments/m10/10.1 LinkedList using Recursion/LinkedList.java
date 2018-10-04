@@ -44,7 +44,7 @@ class LinkedList {
 			insertAtStart(data);
 			return;
 		}
-		if (pos == size) {
+		if (pos == size - 1) {
 			insertAtEnd(data);
 			return;
 		}

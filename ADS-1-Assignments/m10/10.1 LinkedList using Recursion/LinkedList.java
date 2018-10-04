@@ -47,10 +47,7 @@ class LinkedList {
 		}
 		pos--;
 		Node temp = head;
-		if (pos == 0) {
-			return;
-		}
-		else {
+		if (pos != 0) {
 			insertAtPos(pos, data);
 			temp = temp.link;
 		}

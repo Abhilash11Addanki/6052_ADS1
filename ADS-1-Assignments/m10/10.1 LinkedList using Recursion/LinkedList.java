@@ -12,7 +12,7 @@ class LinkedList {
 		pos--;
 		int curind = 0;
 		if (curind == pos) {
-			Node node1 = temp.link;
+			Node node1 = temp;
 			temp.link = node;
 			node.link = node1;
 		} else {

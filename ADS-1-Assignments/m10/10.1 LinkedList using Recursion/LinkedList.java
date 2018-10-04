@@ -1,26 +1,22 @@
 class Node {
 	int data;
 	Node link;
+	Node(int d) {
+		data = d;
+	}
 }
 class LinkedList {
 	Node head;
 	int size;
-	void insertAtPos(int pos, int data) {
-		Node node = new Node();
-		node.data = data;
-		Node temp = head;
-		pos--;
-		int curind = 0;
-		if (curind == pos) {
-			Node node1 = temp;
-			temp.link = node;
-			node.link = node1;
-		} else {
-			curind = curind + 1;
-			insertAtPos(curind, data);
-			temp = temp.link;
+	Node insertAt(Node cur, Node newNode, int pos, int curPos) {
+		if (cur == null) {
+			return newNode;
+		} else if (curPos == pos) {
+			newNode.link = cur;
+			return newNode;
 		}
-		size++;
+		cur.link = insertAt(cur.link, newNode, pos, curPos + 1);
+		return cur;
 	}
 	Node reverse(Node cur, Node prev) {
 		if (cur == null) {

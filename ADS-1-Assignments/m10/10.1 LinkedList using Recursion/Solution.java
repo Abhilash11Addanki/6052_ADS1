@@ -1,6 +1,6 @@
 import java.util.Scanner;
 public class Solution {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		LinkedList l = new LinkedList();
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNext()) {
@@ -8,9 +8,10 @@ public class Solution {
 			switch (tokens[0]) {
 			case "insertAt":
 				if (Integer.parseInt(tokens[1]) < 0 || Integer.parseInt(tokens[1]) > l.size) {
-					System.out.println("Can't insert at this position.");
+					throw new Exception("Can't insert at this position");
 				} else {
-					l.insertAtPos(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
+					l.insertAt(l.head, new Node(Integer.parseInt(tokens[2])),
+						Integer.parseInt(tokens[1]), 0);
 					l.display();
 				}
 				break;

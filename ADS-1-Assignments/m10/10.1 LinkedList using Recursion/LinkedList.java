@@ -5,34 +5,21 @@ class Node {
 class LinkedList {
 	Node head;
 	int size;
-	void insertAtStart(int data) {
-		Node node = new Node();
-		size++;
-		if (head == null) {
-			node.data = data;
-			node.link = head;
-			head = node;
-		} else {
-			node.data = data;
-			node.link = head;
-			head = node;
-		}
-	}
 	void insertAtPos(int pos, int data) {
 		Node node = new Node();
-		if (pos == 0) {
-			insertAtStart(data);
-			return;
-		}
-		pos--;
+		node.data = data;
 		Node temp = head;
-		if (pos != 0) {
-			insertAtPos(pos, data);
+		pos--;
+		int curind = 0;
+		if (curind == pos) {
+			Node node1 = temp.link;
+			temp.link = node;
+			node.link = node1;
+		} else {
+			curind = curind + 1;
+			insertAtPos(curind, data);
 			temp = temp.link;
 		}
-		node.data = data;
-		node.link = temp.link;
-		temp.link = node;
 		size++;
 	}
 	Node reverse(Node cur, Node prev) {

@@ -10,7 +10,7 @@ class LinkedList {
 	int size;
 	Node insertAt(Node cur, Node newNode, int pos, int curPos) {
 		if (pos < 0 || pos > size) {
-			return cur;
+			return null;
 		}
 		if (cur == null) {
 			return newNode;

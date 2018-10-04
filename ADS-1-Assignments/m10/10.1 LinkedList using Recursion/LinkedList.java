@@ -38,15 +38,12 @@ class LinkedList {
 	void insertAtPos(int pos, int data) {
 		Node node = new Node();
 		if (pos == 0) {
-			return;
-		}
-		if (pos == 1) {
 			insertAtStart(data);
 			return;
 		}
 		pos--;
 		Node temp = head;
-		if (pos == 1) {
+		if (pos == 0) {
 			return;
 		}
 		else {

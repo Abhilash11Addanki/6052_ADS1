@@ -8,16 +8,18 @@ public class Solution {
 			switch (tokens[0]) {
 			case "insertAt":
 				try {
-					l.head = l.insertAt(l.head, new Node(Integer.parseInt(tokens[2])),
+					Node head = l.gethead();
+					head = l.insertAt(l.gethead(), new Node(Integer.parseInt(tokens[2])),
 					                    Integer.parseInt(tokens[1]), 0);
-					l.size++;
+					int size = l.getsize();
+					size++;
 					l.display();
 				} catch (Exception e) {
 					System.out.println(e.getMessage());
 				}
 				break;
 			case "reverse":
-				l.reverse(l.head, null);
+				l.reverse(l.gethead(), null);
 				l.display();
 				break;
 			default:

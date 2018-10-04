@@ -8,6 +8,12 @@ class Node {
 class LinkedList {
 	Node head;
 	int size;
+	Node gethead() {
+		return head;
+	}
+	int getsize() {
+		return size;
+	}
 	Node insertAt(Node cur, Node newNode, int pos, int curPos) throws Exception {
 		if (pos < 0 || pos > size) {
 			throw new Exception("Can't insert at this position.");

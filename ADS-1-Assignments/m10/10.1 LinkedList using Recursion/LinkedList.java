@@ -10,7 +10,6 @@ class LinkedList {
 	int size;
 	Node insertAt(Node cur, Node newNode, int pos, int curPos) {
 		if (pos < 0 || pos > size) {
-			System.out.println("Can't insert at this position.");
 			return null;
 		}
 		if (cur == null) {

@@ -9,8 +9,12 @@ public class Solution {
 			case "insertAt":
 				l.head = l.insertAt(l.head, new Node(Integer.parseInt(tokens[2])),
 				                    Integer.parseInt(tokens[1]), 0);
-				l.size++;
-				l.display();
+				if (l.head == null) {
+					System.out.println("Can't insert at this position.");
+				} else {
+					l.size++;
+					l.display();
+				}
 				break;
 			case "reverse":
 				l.reverse(l.head, null);

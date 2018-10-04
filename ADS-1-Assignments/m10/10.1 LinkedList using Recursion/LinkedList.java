@@ -1,29 +1,62 @@
 class Node {
 	int data;
 	Node link;
-	Node (int d) {
-		data = d;
-	}
 }
 class LinkedList {
 	Node head;
 	int size;
-	Node insert(int pos, int data) {
-		int cnt = 0;
-		Node node = new Node(data);
+	void insertAtStart(int data) {
+		Node node = new Node();
+		size++;
 		if (head == null) {
-			return head;
+			node.data = data;
+			node.link = head;
+			head = node;
+		} else {
+			node.data = data;
+			node.link = head;
+			head = node;
 		}
-		Node temp = head;
-		while (temp.link != null) {
-			if (cnt == pos) {
-				break;
+	}
+	void insertAtEnd(int data) {
+		Node node = new Node();
+		size++;
+		if (head == null) {
+			node.data = data;
+			node.link = null;
+			head = node;
+		} else {
+			Node temp = head;
+			while (temp.link != null) {
+				temp = temp.link;
 			}
-			temp = temp.link;
-			cnt++;
+			node.data = data;
+			temp.link = node;
+			node.link = null;
 		}
-		temp.link = insert(cnt, data);
-		return temp;
+	}
+	void insertAtPos(int pos, int data) {
+		Node node = new Node();
+		if (pos == 0) {
+			return;
+		}
+		if (pos == 1) {
+			insertAtStart(data);
+			return;
+		}
+		pos--;
+		Node temp = head;
+		if (pos == 1) {
+			return;
+		}
+		else {
+			insertAtPos(pos, data);
+			temp = temp.link;
+		}
+		node.data = data;
+		node.link = temp.link;
+		temp.link = node;
+		size++;
 	}
 	Node reverse(Node cur, Node prev) {
 		if (cur == null) {

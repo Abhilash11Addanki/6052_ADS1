@@ -41,6 +41,10 @@ class LinkedList {
 			insertAtStart(data);
 			return;
 		}
+		if (pos == size) {
+			insertAtEnd(data);
+			return;
+		}
 		pos--;
 		Node temp = head;
 		if (pos == 0) {

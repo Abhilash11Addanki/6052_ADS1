@@ -18,23 +18,6 @@ class LinkedList {
 			head = node;
 		}
 	}
-	void insertAtEnd(int data) {
-		Node node = new Node();
-		size++;
-		if (head == null) {
-			node.data = data;
-			node.link = null;
-			head = node;
-		} else {
-			Node temp = head;
-			while (temp.link != null) {
-				temp = temp.link;
-			}
-			node.data = data;
-			temp.link = node;
-			node.link = null;
-		}
-	}
 	void insertAtPos(int pos, int data) {
 		Node node = new Node();
 		if (pos == 0) {
@@ -43,7 +26,9 @@ class LinkedList {
 		}
 		pos--;
 		Node temp = head;
-		if (pos != 0) {
+		if (pos == 0) {
+			return;
+		} else {
 			insertAtPos(pos, data);
 			temp = temp.link;
 		}

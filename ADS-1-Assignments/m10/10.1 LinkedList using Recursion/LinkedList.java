@@ -67,11 +67,7 @@ class LinkedList<E> {
 			return;
 		}
 		first = head;
-		if (first.link == null) {
-			rest = first;
-		} else {
-			rest = first.link;
-		}
+		rest = first.link;
 		if (rest == null) {
 			return;
 		}

@@ -13,7 +13,6 @@ class LinkedList {
 			return node;
 		}
 		head.link = insert(head.link, data, pos - 1);
-		size++;
 		return head;
 	}
 	Node reverse(Node cur, Node prev) {

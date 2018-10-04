@@ -7,7 +7,7 @@ public class Solution {
 			String[] tokens = sc.nextLine().split(" ");
 			switch (tokens[0]) {
 			case "insertAt":
-				if (Integer.parseInt(tokens[1]) >= l.size) {
+				if (Integer.parseInt(tokens[1]) > l.size) {
 					System.out.println("Can't insert at this position.");
 				} else {
 					l.insertAtPos(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));

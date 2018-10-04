@@ -79,7 +79,7 @@ class LinkedList<E> {
 	}
 	void display() {
 		if (size == 0) {
-			System.out.println("Empty");
+			System.out.println("No elements to reverse.");
 			return;
 		}
 		if (head.link == null) {

@@ -42,9 +42,9 @@ Can't insert at this position.
 75, 32, 32, 32, 32, 32, 66, 66, 66, 66, 66, 71, 9, 27, 27, 17, 17, 7
 32, 75
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 No elements to reverse.
 Your Output: 
-Empty
+No elements to reverse.
 ----------------------------------------

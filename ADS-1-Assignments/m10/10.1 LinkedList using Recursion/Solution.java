@@ -7,11 +7,15 @@ public class Solution {
 			String[] tokens = sc.nextLine().split(" ");
 			switch (tokens[0]) {
 			case "insertAt":
+			try {
 				l.head = l.insertAt(l.head, new Node(Integer.parseInt(tokens[2])),
-					Integer.parseInt(tokens[1]), 0);
+				                    Integer.parseInt(tokens[1]), 0);
 				l.size++;
 				l.display();
 				break;
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
 			case "reverse":
 				l.reverse(l.head, null);
 				l.display();

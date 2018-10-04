@@ -29,8 +29,6 @@ class LinkedList {
 		if (pos != 0) {
 			insertAtPos(pos, data);
 			temp = temp.link;
-		} else {
-			return;
 		}
 		node.data = data;
 		node.link = temp.link;

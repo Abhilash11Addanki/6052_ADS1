@@ -56,6 +56,23 @@ class LinkedList<E> {
 		temp.link = node;
 		size++;
 	}
+	void reverse() {
+		Node first;
+		Node rest;
+		if (head == null) {
+			return;
+		}
+		first = head;
+		rest = first.link;
+		if (rest == null) {
+			return;
+		}
+		head = rest;
+		reverse();
+		first.link.link = first;
+		first.link = null;
+		head = rest;
+	}
 	void display() {
 		if (size == 0) {
 			System.out.println("Empty");

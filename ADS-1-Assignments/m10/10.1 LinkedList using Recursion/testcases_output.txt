@@ -8,6 +8,7 @@ Your Output:
 5
 7, 5
 7, 6, 5
+6, 7
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -28,7 +29,8 @@ Your Output:
 5
 7, 5
 7, 9, 5
-7, 9, 8, 8, 8, 8, 5, 8
+9, 7
+9, 7, 8, 8, 8, 8, 8
 Exception in thread "main" java.lang.StackOverflowError
 	at LinkedList.insertAtPos(LinkedList.java:51)
 	at LinkedList.insertAtPos(LinkedList.java:51)
@@ -1059,5 +1061,5 @@ Exception in thread "main" java.lang.StackOverflowError
 Expected Output: 
 No elements to reverse.
 Your Output: 
-
+Empty
 ----------------------------------------

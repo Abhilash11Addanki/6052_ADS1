@@ -71,8 +71,7 @@ class LinkedList<E> {
 		if (rest == null) {
 			return;
 		}
-		head = rest;
-		reverse(head);
+		reverse(rest.link);
 		first.link.link = first;
 		first.link = null;
 		head = rest;

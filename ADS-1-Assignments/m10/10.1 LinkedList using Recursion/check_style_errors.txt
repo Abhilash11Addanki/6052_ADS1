@@ -5,7 +5,7 @@ Starting audit...
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m10\10.1 LinkedList using Recursion\Solution.java:3:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m10\10.1 LinkedList using Recursion\Solution.java:3:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m10\10.1 LinkedList using Recursion\Solution.java:3:33: Parameter args should be final. [FinalParameters]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m10\10.1 LinkedList using Recursion\Solution.java:8:31: 'switch' is not followed by whitespace. [WhitespaceAround]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m10\10.1 LinkedList using Recursion\Solution.java:10: Line is longer than 80 characters (found 104). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m10\10.1 LinkedList using Recursion\Solution.java:11: Line is longer than 80 characters (found 93). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m10\10.1 LinkedList using Recursion\Solution.java:13: Line is longer than 80 characters (found 112). [LineLength]
 Audit done.
 Checkstyle ends with 8 errors.

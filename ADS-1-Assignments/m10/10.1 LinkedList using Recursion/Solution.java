@@ -5,16 +5,20 @@ public class Solution {
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNext()) {
 			String[] tokens = sc.nextLine().split(" ");
-			switch(tokens[0]) {
-				case "insertAt":
-				l.insertAtPos(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
-				l.display();
+			switch (tokens[0]) {
+			case "insertAt":
+				if (Integer.parseInt(tokens[1]) >= l.size) {
+					System.out.println("Can't insert at this position.");
+				} else {
+					l.insertAtPos(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
+					l.display();
+				}
 				break;
-				case "reverse":
+			case "reverse":
 				l.reverse(l.head, null);
 				l.display();
 				break;
-				default:
+			default:
 				break;
 			}
 		}

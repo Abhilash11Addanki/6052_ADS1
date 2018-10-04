@@ -8,9 +8,9 @@ class Node {
 class LinkedList {
 	Node head;
 	int size;
-	Node insertAt(Node cur, Node newNode, int pos, int curPos) {
+	Node insertAt(Node cur, Node newNode, int pos, int curPos) throws Exception {
 		if (pos < 0 || pos > size) {
-			return null;
+			throw new Exception("Can't insert at this position.");
 		}
 		if (cur == null) {
 			return newNode;

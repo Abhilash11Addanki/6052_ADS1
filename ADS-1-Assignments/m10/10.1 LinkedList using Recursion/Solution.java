@@ -7,13 +7,13 @@ public class Solution {
 			String[] tokens = sc.nextLine().split(" ");
 			switch (tokens[0]) {
 			case "insertAt":
-				l.head = l.insertAt(l.head, new Node(Integer.parseInt(tokens[2])),
-				                    Integer.parseInt(tokens[1]), 0);
-				if (l.head == null) {
-					System.out.println("Can't insert at this position.");
-				} else {
+				try {
+					l.head = l.insertAt(l.head, new Node(Integer.parseInt(tokens[2])),
+					                    Integer.parseInt(tokens[1]), 0);
 					l.size++;
 					l.display();
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
 				}
 				break;
 			case "reverse":

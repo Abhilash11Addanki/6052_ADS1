@@ -61,6 +61,9 @@ class LinkedList {
 		size++;
 	}
 	Node reverse(Node cur, Node prev) {
+		if (cur == null) {
+			return null;
+		}
 		if (cur.link == null) {
 			head = cur;
 			cur.link = prev;

@@ -24,11 +24,12 @@ class LinkedList {
 			insertAtStart(data);
 			return;
 		}
+		pos--;
 		Node temp = head;
-		if (pos == 0) {
+		if (pos == 1) {
 			return;
 		} else {
-			insertAtPos(pos--, data);
+			insertAtPos(pos, data);
 			temp = temp.link;
 		}
 		node.data = data;

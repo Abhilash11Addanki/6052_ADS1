@@ -37,6 +37,9 @@ class LinkedList<E> {
 	}
 	void insertAtPos(int pos, E data) {
 		Node node = new Node();
+		if (pos < 0 || pos > size) {
+			System.out.println("Can't insert at this position.");
+		}
 		if (pos == 0) {
 			insertAtStart(data);
 			return;
@@ -67,7 +70,7 @@ class LinkedList<E> {
 		if (rest == null) {
 			return;
 		}
-		head = rest;
+		head = rest.link;
 		reverse();
 		first.link.link = first;
 		first.link = null;

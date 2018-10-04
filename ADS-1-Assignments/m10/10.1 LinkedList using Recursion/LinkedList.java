@@ -1,13 +1,16 @@
 class Node {
 	int data;
 	Node link;
+	Node (int d) {
+		data = d;
+	}
 }
 class LinkedList {
 	Node head;
 	int size;
 	Node insert(int pos, int data) {
 		int cnt = 0;
-		Node node = new Node();
+		Node node = new Node(data);
 		if (head == null) {
 			return head;
 		}

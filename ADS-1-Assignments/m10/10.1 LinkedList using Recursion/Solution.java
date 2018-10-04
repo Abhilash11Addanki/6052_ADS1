@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Solution {
 	public static void main(String[] args) {
-		LinkedList<Integer> l = new LinkedList<Integer>();
+		LinkedList l = new LinkedList();
 		Scanner sc = new Scanner(System.in);
 		while (sc.hasNext()) {
 			String[] tokens = sc.nextLine().split(" ");
@@ -11,7 +11,7 @@ public class Solution {
 				l.display();
 				break;
 				case "reverse":
-				l.reverse(l.head);
+				l.reverse(l.head, null);
 				l.display();
 				break;
 				default:

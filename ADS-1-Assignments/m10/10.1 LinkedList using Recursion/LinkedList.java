@@ -1,11 +1,11 @@
-class LinkedList<E> {
-	class Node {
-		E data;
-		Node link;
-	}
+class Node {
+	int data;
+	Node link;
+}
+class LinkedList {
 	Node head;
 	int size;
-	void insertAtStart(E data) {
+	void insertAtStart(int data) {
 		Node node = new Node();
 		size++;
 		if (head == null) {
@@ -18,7 +18,7 @@ class LinkedList<E> {
 			head = node;
 		}
 	}
-	void insertAtEnd(E data) {
+	void insertAtEnd(int data) {
 		Node node = new Node();
 		size++;
 		if (head == null) {
@@ -35,7 +35,7 @@ class LinkedList<E> {
 			node.link = null;
 		}
 	}
-	void insertAtPos(int pos, E data) {
+	void insertAtPos(int pos, int data) {
 		Node node = new Node();
 		if (pos < 0 || pos > size) {
 			System.out.println("Can't insert at this position.");
@@ -60,21 +60,16 @@ class LinkedList<E> {
 		temp.link = node;
 		size++;
 	}
-	void reverse(Node head) {
-		Node first;
-		Node rest;
-		if (head == null) {
-			return;
+	Node reverse(Node cur, Node prev) {
+		if (cur.link == null) {
+			head = cur;
+			cur.link = prev;
+			return head;
 		}
-		first = head;
-		rest = first.link;
-		if (rest == null) {
-			return;
-		}
-		reverse(rest);
-		first.link.link = first;
-		first.link = null;
-		head = rest;
+		Node next = cur.link;
+		cur.link = prev;
+		reverse(next, cur);
+		return head;
 	}
 	void display() {
 		if (size == 0) {

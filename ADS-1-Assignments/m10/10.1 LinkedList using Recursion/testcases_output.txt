@@ -1,4 +1,4 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 5
 7, 5
@@ -8,7 +8,7 @@ Your Output:
 5
 7, 5
 7, 6, 5
-7
+5, 6, 7
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -29,22 +29,24 @@ Your Output:
 5
 7, 5
 7, 9, 5
-7
+5, 9, 7
 Can't insert at this position.
-7
+5, 9, 7
 Can't insert at this position.
-7
-7, 17, 17
-7, 27, 27, 17, 17
-71, 7, 27, 27, 17, 17
-75, 71, 7, 27, 27, 17, 17
-75, 66, 66, 66, 66, 66, 71, 7, 27, 27, 17, 17
-75, 32, 32, 32, 32, 32, 66, 66, 66, 66, 66, 71, 7, 27, 27, 17, 17
-75
+5, 9, 7
+5, 17, 17, 9, 7
+5, 27, 27, 17, 17, 9, 7
+71, 5, 27, 27, 17, 17, 9, 7
+75, 71, 5, 27, 27, 17, 17, 9, 7
+75, 66, 66, 66, 66, 66, 71, 5, 27, 27, 17, 17, 9, 7
+75, 32, 32, 32, 32, 32, 66, 66, 66, 66, 66, 71, 5, 27, 27, 17, 17, 9, 7
+7, 9, 17, 17, 27, 27, 5, 71, 66, 66, 66, 66, 66, 32, 32, 32, 32, 32, 75
 ----------------------------------------
-########## Testcase 2: Passed ##########
+########## Testcase 2: Failed ##########
 Expected Output: 
 No elements to reverse.
 Your Output: 
-No elements to reverse.
+Exception in thread "main" java.lang.NullPointerException
+	at LinkedList.reverse(LinkedList.java:64)
+	at Solution.main(Solution.java:14)
 ----------------------------------------

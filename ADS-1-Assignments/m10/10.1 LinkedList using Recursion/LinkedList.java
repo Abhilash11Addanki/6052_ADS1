@@ -50,7 +50,7 @@ class LinkedList {
 		}
 		pos--;
 		Node temp = head;
-		if (pos != 0) {
+		if (pos != 1) {
 			insertAtPos(pos, data);
 			temp = temp.link;
 		}

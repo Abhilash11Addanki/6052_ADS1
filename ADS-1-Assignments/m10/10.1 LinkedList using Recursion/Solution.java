@@ -10,7 +10,7 @@ public class Solution {
 				if (Integer.parseInt(tokens[1]) < 0 || Integer.parseInt(tokens[1]) > l.size) {
 					System.out.println("Can't insert at this position.");
 				} else {
-					l.insert(l.head, Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
+					l.insert(l.head, Integer.parseInt(tokens[2]), Integer.parseInt(tokens[1]));
 					l.display();
 				}
 				break;

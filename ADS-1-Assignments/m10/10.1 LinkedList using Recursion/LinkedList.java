@@ -60,7 +60,7 @@ class LinkedList<E> {
 		temp.link = node;
 		size++;
 	}
-	void reverse() {
+	void reverse(Node head) {
 		Node first;
 		Node rest;
 		if (head == null) {
@@ -72,7 +72,7 @@ class LinkedList<E> {
 			return;
 		}
 		head = rest;
-		reverse();
+		reverse(head);
 		first.link.link = first;
 		first.link = null;
 		head = rest;

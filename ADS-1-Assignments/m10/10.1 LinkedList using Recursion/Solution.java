@@ -11,7 +11,7 @@ public class Solution {
 				l.display();
 				break;
 				case "reverse":
-				l.reverse();
+				l.reverse(l.head);
 				l.display();
 				break;
 				default:

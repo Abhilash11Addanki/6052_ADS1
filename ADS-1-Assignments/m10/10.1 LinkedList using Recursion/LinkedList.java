@@ -26,7 +26,7 @@ class LinkedList {
 		}
 		pos--;
 		Node temp = head;
-		if (pos == 1) {
+		if (pos == 0) {
 			return;
 		} else {
 			insertAtPos(pos, data);

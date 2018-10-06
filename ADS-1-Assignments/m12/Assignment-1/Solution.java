@@ -36,15 +36,6 @@ public class Solution {
 			cnt++;
 		}
 		for (int i = cnt; i < noofstudents; i++) {
-			if (noofvacancies == 0) {
-				break;
-			}
-			if (s.arr[i].reservationcat.equals("Open")) {
-				System.out.println(s.show(i));
-				noofvacancies--;
-			}
-		}
-		for (int i = cnt; i < noofstudents; i++) {
 			if (noofbccat == 0) {
 				break;
 			}
@@ -52,6 +43,15 @@ public class Solution {
 				System.out.println(s.show(i));
 				noofvacancies--;
 				noofbccat--;
+			}
+		}
+		for (int i = cnt; i < noofstudents; i++) {
+			if (noofvacancies == 0) {
+				break;
+			}
+			if (s.arr[i].reservationcat.equals("Open")) {
+				System.out.println(s.show(i));
+				noofvacancies--;
 			}
 		}
 		for (int i = cnt; i < noofstudents; i++) {

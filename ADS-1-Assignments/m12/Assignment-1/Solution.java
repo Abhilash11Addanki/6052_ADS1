@@ -8,16 +8,25 @@ public class Solution {
 		int noofbccat = Integer.parseInt(sc.nextLine());
 		int noofsccat = Integer.parseInt(sc.nextLine());
 		int noofstcat = Integer.parseInt(sc.nextLine());
+		int n = noofstudents;
 		Students s = new Students(noofstudents);
-		while (noofstudents != 0) {
+		while (n != 0) {
 			String[] arr = sc.nextLine().split(",");
 			arr[1] = arr[1].split("-")[2];
 			s.add(new StudentInfo(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]),
-				Integer.parseInt(arr[3]), Integer.parseInt(arr[4]), Integer.parseInt(arr[5]),
-				arr[6]));
-			noofstudents--;
+			                      Integer.parseInt(arr[3]), Integer.parseInt(arr[4]), Integer.parseInt(arr[5]),
+			                      arr[6]));
+			n--;
 		}
 		s.sort();
-		s.show();
+		for (int i = 0; i < noofstudents; i++) {
+			System.out.println(s.show(i));
+		}
+		System.out.println();
+		int cnt = 0;
+		for (int i = 0; i < noofunreversedcat; i++) {
+			System.out.println(s.show(i));
+			cnt++;
+		}
 	}
 }

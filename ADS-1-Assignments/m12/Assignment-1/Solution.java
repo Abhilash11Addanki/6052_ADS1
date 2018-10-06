@@ -24,9 +24,44 @@ public class Solution {
 		}
 		System.out.println();
 		int cnt = 0;
-		for (int i = 0; i < noofunreversedcat; i++) {
+		for (int i = 0; i < noofstudents; i++) {
+			if (noofunreversedcat == 0) {
+				break;
+			}
 			System.out.println(s.show(i));
+			noofvacancies--;
+			noofunreversedcat--;
 			cnt++;
+		}
+		for (int i = cnt; i < noofstudents; i++) {
+			if (noofstcat == 0) {
+				break;
+			}
+			if (s.arr[i].reservationcat.equals("ST")) {
+				System.out.println(s.show(i));
+				noofvacancies--;
+				noofstcat--;
+			}
+		}
+		for (int i = cnt; i < noofstudents; i++) {
+			if (noofbccat == 0) {
+				break;
+			}
+			if (s.arr[i].reservationcat.equals("BC")) {
+				System.out.println(s.show(i));
+				noofvacancies--;
+				noofbccat--;
+			}
+		}
+		for (int i = cnt; i < noofstudents; i++) {
+			if (noofsccat == 0) {
+				break;
+			}
+			if (s.arr[i].reservationcat.equals("SC")) {
+				System.out.println(s.show(i));
+				noofvacancies--;
+				noofsccat--;
+			}
 		}
 	}
 }

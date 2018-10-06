@@ -1,14 +1,18 @@
 class StudentInfo implements Comparable<StudentInfo>{
 	String studentname;
-	int dateofbirth;
+	int year;
+	int month;
+	int date;
 	int marks1;
 	int marks2;
 	int marks3;
 	int totalmarks;
 	String reservationcat;
-	StudentInfo(String n, int dob, int m1, int m2, int m3, int total, String r) {
+	StudentInfo(String n, int y, int m, int d, int m1, int m2, int m3, int total, String r) {
 		studentname = n;
-		dateofbirth = dob;
+		year = y;
+		month = m;
+		date = d;
 		marks1 = m1;
 		marks2 = m2;
 		marks3 = m3;
@@ -34,10 +38,22 @@ class StudentInfo implements Comparable<StudentInfo>{
 		if (marks2 < s.marks2) {
 			return -1;
 		}
-		if (dateofbirth > s.dateofbirth) {
+		if (year > s.year) {
 			return 1;
 		}
-		if (dateofbirth < s.dateofbirth) {
+		if (year < s.year) {
+			return -1;
+		}
+		if (month > s.month) {
+			return 1;
+		}
+		if (month < s.month) {
+			return -1;
+		}
+		if (date > s.date) {
+			return 1;
+		}
+		if (date < s.date) {
 			return -1;
 		}
 		return 0;

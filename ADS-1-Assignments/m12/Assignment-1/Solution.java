@@ -12,8 +12,10 @@ public class Solution {
 		Students s = new Students(noofstudents);
 		while (n != 0) {
 			String[] arr = sc.nextLine().split(",");
-			arr[1] = arr[1].split("-")[2];
-			s.add(new StudentInfo(arr[0], Integer.parseInt(arr[1]), Integer.parseInt(arr[2]),
+			int year = Integer.parseInt(arr[1].split("-")[2]);
+			int month = Integer.parseInt(arr[1].split("-")[1]);
+			int date = Integer.parseInt(arr[1].split("-")[0]);
+			s.add(new StudentInfo(arr[0], year, month, date, Integer.parseInt(arr[2]),
 			                      Integer.parseInt(arr[3]), Integer.parseInt(arr[4]), Integer.parseInt(arr[5]),
 			                      arr[6]));
 			n--;

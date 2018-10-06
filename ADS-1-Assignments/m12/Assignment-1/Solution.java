@@ -54,18 +54,18 @@ public class Solution {
 				noofvacancies--;
 				noofstcat--;
 			}
-			else if (noofsccat == 0) {
+			if (noofsccat == 0) {
 				break;
 			} 
-			if (s.arr[i].reservationcat.equals("SC")) {
+			else if (s.arr[i].reservationcat.equals("SC")) {
 				System.out.println(s.show(i));
 				noofvacancies--;
 				noofsccat--;
 			}
-			else if (noofvacancies == 0) {
+			if (noofvacancies == 0) {
 				break;
 			}
-			if (s.arr[i].reservationcat.equals("Open")) {
+			else if (s.arr[i].reservationcat.equals("Open")) {
 				System.out.println(s.show(i));
 				noofvacancies--;
 			}

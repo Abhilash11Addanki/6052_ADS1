@@ -49,19 +49,19 @@ public class Solution {
 			if (noofstcat == 0) {
 				break;
 			}
-			if (s.arr[i].reservationcat.equals("ST")) {
+			else if (s.arr[i].reservationcat.equals("ST")) {
 				System.out.println(s.show(i));
 				noofvacancies--;
 				noofstcat--;
 			}
-			if (noofsccat == 0) {
+			else if (noofsccat == 0) {
 				break;
 			} else if (s.arr[i].reservationcat.equals("SC")) {
 				System.out.println(s.show(i));
 				noofvacancies--;
 				noofsccat--;
 			}
-			if (noofvacancies == 0) {
+			else if (noofvacancies == 0) {
 				break;
 			}else if (s.arr[i].reservationcat.equals("Open")) {
 				System.out.println(s.show(i));

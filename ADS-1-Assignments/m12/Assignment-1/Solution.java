@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.util.Arrays;
+import java.util.*;
 public class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -85,7 +84,8 @@ public class Solution {
 			}
 		}
 
-		Arrays.sort(reservstu);
+		//System.out.println(Arrays.toString(reservstu));
+		Arrays.sort(reservstu, Collections.reverseOrder());
 		for (StudentInfo stuu : reservstu) {
 			System.out.println(stuu);
 		}

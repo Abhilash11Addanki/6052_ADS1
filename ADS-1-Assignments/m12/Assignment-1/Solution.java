@@ -69,7 +69,7 @@ public class Solution {
 			if (noofvacancies == 0) {
 				break;
 			}
-			if (s.arr[i].reservationcat.equals("OPEN")) {
+			if (s.arr[i].reservationcat.equals("Open")) {
 				System.out.println(s.show(i));
 				noofvacancies--;
 			}

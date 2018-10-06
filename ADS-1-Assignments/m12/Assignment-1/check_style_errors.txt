@@ -14,10 +14,11 @@ Starting audit...
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:29:38: Parameter i should be final. [FinalParameters]
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:29:45: Parameter j should be final. [FinalParameters]
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:34:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:43:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:43:22: Parameter arr should be final. [FinalParameters]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:43:36: 'arr' hides a field. [HiddenField]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:43:41: Parameter i should be final. [FinalParameters]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:43:48: Parameter j should be final. [FinalParameters]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:43: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:44:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:44:22: Parameter arr should be final. [FinalParameters]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:44:36: 'arr' hides a field. [HiddenField]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:44:41: Parameter i should be final. [FinalParameters]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m12\Assignment-1\Students.java:44:48: Parameter j should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 20 errors.
+Checkstyle ends with 21 errors.

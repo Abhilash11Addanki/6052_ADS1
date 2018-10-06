@@ -65,5 +65,14 @@ public class Solution {
 				noofsccat--;
 			}
 		}
+		for (int i = cnt; i < noofstudents; i++) {
+			if (noofvacancies == 0) {
+				break;
+			}
+			if (s.arr[i].reservationcat.equals("OPEN")) {
+				System.out.println(s.show(i));
+				noofvacancies--;
+			}
+		}
 	}
 }

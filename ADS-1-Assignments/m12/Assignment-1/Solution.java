@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 public class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -35,12 +36,18 @@ public class Solution {
 			noofunreversedcat--;
 			cnt++;
 		}
+
+		StudentInfo[] reservstu = new StudentInfo[noofvacancies - noofunreversedcat];
+		//System.out.println(reservstu.length);
+		int sizee = 0;
+
 		for (int i = cnt; i < noofstudents; i++) {
 			if (noofbccat == 0) {
 				break;
 			}
 			if (s.arr[i].reservationcat.equals("BC")) {
-				System.out.println(s.show(i));
+				reservstu[sizee++] = s.show(i);
+				//System.out.println();
 				noofvacancies--;
 				noofbccat--;
 			}
@@ -50,7 +57,8 @@ public class Solution {
 				break;
 			}
 			if (s.arr[i].reservationcat.equals("ST")) {
-				System.out.println(s.show(i));
+				reservstu[sizee++] = s.show(i);
+				//System.out.println(s.show(i));
 				noofvacancies--;
 				noofstcat--;
 			}
@@ -60,7 +68,8 @@ public class Solution {
 				break;
 			}
 			if (s.arr[i].reservationcat.equals("SC")) {
-				System.out.println(s.show(i));
+				reservstu[sizee++] = s.show(i);
+				//System.out.println(s.show(i));
 				noofvacancies--;
 				noofsccat--;
 			}
@@ -70,9 +79,15 @@ public class Solution {
 				break;
 			}
 			if (s.arr[i].reservationcat.equals("Open")) {
-				System.out.println(s.show(i));
+				reservstu[sizee++] = s.show(i);
+				//System.out.println(s.show(i));
 				noofvacancies--;
 			}
+		}
+
+		Arrays.sort(reservstu);
+		for (StudentInfo stuu : reservstu) {
+			System.out.println(stuu);
 		}
 	}
 }

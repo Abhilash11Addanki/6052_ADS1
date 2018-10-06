@@ -23,10 +23,8 @@ class Students {
 		//You can modify the code in this method.
 		arr[size++] = item;
 	}
-	String show(int i) {
-		String s = "";
-		s += arr[i].studentname + "," + Integer.toString(arr[i].totalmarks) + "," + arr[i].reservationcat;
-		return s;
+	StudentInfo show(int i) {
+		return arr[i];
 	}
 	void exch(StudentInfo[] arr, int i, int j) {
 		StudentInfo s = arr[j];

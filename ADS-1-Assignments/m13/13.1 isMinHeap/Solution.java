@@ -16,9 +16,9 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         String datatype = sc.nextLine();
         int testcases = Integer.parseInt(sc.nextLine());
-        switch(datatype) {
+        switch (datatype) {
             case "String":
-            while(testcases-- != 0) {
+            while (testcases-- != 0) {
                 String[] arr = sc.nextLine().split(",");
                 String[] strarr = new String[arr.length + 1];
                 for (int j = 0; j < strarr.length - 1; j++) {
@@ -29,7 +29,7 @@ public final class Solution {
             }
             break;
             case "Integer":
-            while(testcases-- != 0) {
+            while (testcases-- != 0) {
                 String[] arr = sc.nextLine().split(",");
                 Integer[] intarr = new Integer[arr.length + 1];
                 for (int j = 0; j < intarr.length - 1; j++) {
@@ -40,7 +40,7 @@ public final class Solution {
             }
             break;
             case "Float":
-            while(testcases-- != 0) {
+            while (testcases-- != 0) {
                 String line = sc.nextLine();
                 if (line.equals("")) {
                     System.out.println("false");
@@ -56,7 +56,7 @@ public final class Solution {
             }
             break;
             case "Double":
-            while(testcases-- != 0) {
+            while (testcases-- != 0) {
                 String[] arr = sc.nextLine().split(",");
                 Double[] doublearr = new Double[arr.length + 1];
                 for (int j = 0; j < doublearr.length - 1; j++) {

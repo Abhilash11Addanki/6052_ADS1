@@ -2,7 +2,7 @@
  * Class for minimum pq.
  * @param      <Key>  The key
  */
-public class MinPQ<Key extends Comparable<Key>> {
+class MinPQ<Key extends Comparable<Key>> {
     /**
      * Constructs the object.
      */
@@ -14,7 +14,7 @@ public class MinPQ<Key extends Comparable<Key>> {
      */
     public void isMinHeap(final Key[] arr) {
         int k = arr.length - 1;
-        while(k > 1) {
+        while (k > 1) {
             if (arr[k].compareTo(arr[k / 2]) >= 0) {
                 k--;
             } else {

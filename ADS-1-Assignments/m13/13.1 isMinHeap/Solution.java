@@ -32,6 +32,10 @@ public final class Solution {
 			case "Float":
 			while(testcases-- != 0) {
 				String[] arr = sc.nextLine().split(",");
+				if (arr.length == 1) {
+					System.out.println("false");
+					break;
+				}
 				Float[] floatarr = new Float[arr.length + 1];
 				for (int j = 0; j < floatarr.length - 1; j++) {
 					floatarr[j + 1] = Float.parseFloat(arr[j]);
@@ -42,12 +46,7 @@ public final class Solution {
 			break;
 			case "Double":
 			while(testcases-- != 0) {
-				String line = sc.nextLine();
-				if (line.equals("")) {
-					System.out.println("false");
-					break;
-				}
-				String[] arr = line.split(",");
+				String[] arr = sc.nextLine().split(",");
 				Double[] doublearr = new Double[arr.length + 1];
 				for (int j = 0; j < doublearr.length - 1; j++) {
 					doublearr[j + 1] = Double.parseDouble(arr[j]);

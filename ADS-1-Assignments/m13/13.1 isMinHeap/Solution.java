@@ -43,6 +43,10 @@ public final class Solution {
 			case "Double":
 			while(testcases-- != 0) {
 				String[] arr = sc.nextLine().split(",");
+				if (arr.length == 0) {
+					System.out.println("false");
+					break;
+				}
 				Double[] doublearr = new Double[arr.length + 1];
 				for (int j = 0; j < doublearr.length - 1; j++) {
 					doublearr[j + 1] = Double.parseDouble(arr[j]);

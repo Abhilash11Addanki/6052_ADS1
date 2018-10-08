@@ -42,11 +42,12 @@ public final class Solution {
 			break;
 			case "Double":
 			while(testcases-- != 0) {
-				String[] arr = sc.nextLine().split(",");
-				if (arr.length == 0) {
+				String line = sc.nextLine();
+				if (line.equals("")) {
 					System.out.println("false");
 					break;
 				}
+				String[] arr = line.split(",");
 				Double[] doublearr = new Double[arr.length + 1];
 				for (int j = 0; j < doublearr.length - 1; j++) {
 					doublearr[j + 1] = Double.parseDouble(arr[j]);

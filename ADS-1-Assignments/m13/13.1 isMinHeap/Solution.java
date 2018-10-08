@@ -31,11 +31,12 @@ public final class Solution {
 			break;
 			case "Float":
 			while(testcases-- != 0) {
-				String[] arr = sc.nextLine().split(",");
-				if (arr.length == 1) {
+				String line = sc.nextLine();
+				if (line.equals("")) {
 					System.out.println("false");
 					break;
 				}
+				String[] arr = line.split(",");
 				Float[] floatarr = new Float[arr.length + 1];
 				for (int j = 0; j < floatarr.length - 1; j++) {
 					floatarr[j + 1] = Float.parseFloat(arr[j]);

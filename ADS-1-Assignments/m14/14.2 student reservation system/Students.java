@@ -9,7 +9,7 @@ class Students {
     /**
      * size of array.
      */
-    int size;
+    private int size;
     /**
      * Constructs the object.
      * @param      s     size of array.
@@ -39,11 +39,11 @@ class Students {
      * @param      i     index.
      * @param      j     index.
      */
-    void exch(final StudentInfo[] arr, final int i,
+    void exch(final StudentInfo[] a, final int i,
         final int j) {
-        StudentInfo s = arr[j];
-        arr[j] = arr[i];
-        arr[i] = s;
+        StudentInfo s = a[j];
+        a[j] = a[i];
+        a[i] = s;
     }
     /**
      * sort method.

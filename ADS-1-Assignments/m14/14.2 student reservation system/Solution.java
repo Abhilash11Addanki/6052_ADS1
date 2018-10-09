@@ -30,9 +30,9 @@ public final class Solution {
             int month = Integer.parseInt(arr[1].split("-")[1]);
             int date = Integer.parseInt(arr[1].split("-")[0]);
             s.add(new StudentInfo(arr[0], year, month, date,
-                                  Integer.parseInt(arr[2]),
-                                  Integer.parseInt(arr[3]), Integer.parseInt(arr[4]),
-                                  Integer.parseInt(arr[5]), arr[6]));
+             Integer.parseInt(arr[2]),
+             Integer.parseInt(arr[3]), Integer.parseInt(arr[4]),
+             Integer.parseInt(arr[5]), arr[6]));
             n--;
         }
         s.sort();

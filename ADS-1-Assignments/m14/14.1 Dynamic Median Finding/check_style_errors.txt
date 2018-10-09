@@ -1,0 +1,4 @@
+Starting audit...
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.1 Dynamic Median Finding\Solution.java:2: Missing a Javadoc comment. [JavadocType]
+Audit done.
+Checkstyle ends with 1 errors.

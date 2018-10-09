@@ -17,10 +17,8 @@ public final class Solution {
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int noofstudents = Integer.parseInt(sc.nextLine());
-        int noofvacancies = Integer.parseInt(
-        	sc.nextLine());
-        int noofunreversedcat = Integer.parseInt(
-        	sc.nextLine());
+        int noofvacancies = Integer.parseInt(sc.nextLine());
+        int noofunreversedcat = Integer.parseInt(sc.nextLine());
         int noofbccat = Integer.parseInt(sc.nextLine());
         int noofsccat = Integer.parseInt(sc.nextLine());
         int noofstcat = Integer.parseInt(sc.nextLine());

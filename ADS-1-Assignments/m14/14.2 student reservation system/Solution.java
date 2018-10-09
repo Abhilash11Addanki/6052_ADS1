@@ -17,8 +17,10 @@ public final class Solution {
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int noofstudents = Integer.parseInt(sc.nextLine());
-        int noofvacancies = Integer.parseInt(sc.nextLine());
-        int noofunreversedcat = Integer.parseInt(sc.nextLine());
+        int noofvacancies = Integer.parseInt(
+        	sc.nextLine());
+        int noofunreversedcat = Integer.parseInt(
+        	sc.nextLine());
         int noofbccat = Integer.parseInt(sc.nextLine());
         int noofsccat = Integer.parseInt(sc.nextLine());
         int noofstcat = Integer.parseInt(sc.nextLine());
@@ -26,11 +28,14 @@ public final class Solution {
         Students s = new Students(noofstudents);
         while (n != 0) {
             String[] arr = sc.nextLine().split(",");
-            int year = Integer.parseInt(arr[1].split("-")[2]);
-            int month = Integer.parseInt(arr[1].split("-")[1]);
-            int date = Integer.parseInt(arr[1].split("-")[0]);
-            s.add(new StudentInfo(arr[0], year, month, date,
-             Integer.parseInt(arr[2]),
+            int year = Integer.parseInt(arr[1].split("-")
+            	[2]);
+            int month = Integer.parseInt(arr[1].split("-")
+            	[1]);
+            int date = Integer.parseInt(arr[1].split("-")
+            	[0]);
+            s.add(new StudentInfo(arr[0], year, month,
+            	date, Integer.parseInt(arr[2]),
              Integer.parseInt(arr[3]), Integer.parseInt(arr[4]),
              Integer.parseInt(arr[5]), arr[6]));
             n--;
@@ -50,8 +55,8 @@ public final class Solution {
             noofunreversedcat--;
             cnt++;
         }
-        StudentInfo[] reservstu = new StudentInfo[noofvacancies
-                - noofunreversedcat];
+        StudentInfo[] reservstu = new 
+        StudentInfo[noofvacancies - noofunreversedcat];
         int sizee = 0;
         for (int i = cnt; i < noofstudents; i++) {
             if (noofbccat == 0) {
@@ -92,7 +97,8 @@ public final class Solution {
                 noofvacancies--;
             }
         }
-        Arrays.sort(reservstu, Collections.reverseOrder());
+        Arrays.sort(reservstu,
+        	Collections.reverseOrder());
         for (StudentInfo stuu : reservstu) {
             System.out.println(stuu);
         }

@@ -5,7 +5,7 @@ class Students {
     /**
      * arr array of type StudentInfo.
      */
-    StudentInfo[] arr;
+    private StudentInfo[] arr;
     /**
      * size of array.
      */
@@ -17,6 +17,9 @@ class Students {
     Students(final int s) {
         arr = new StudentInfo[s];
         size = 0;
+    }
+    StudentInfo getarr(int i) {
+    	return arr[i];
     }
     /**
      * add method.

@@ -65,7 +65,7 @@ public final class Solution {
             if (noofbccat == 0) {
                 break;
             }
-            if (s.arr[i].reservationcat.
+            if (s.getarr(i).reservationcat.
                     equals("BC")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
@@ -76,7 +76,7 @@ public final class Solution {
             if (noofstcat == 0) {
                 break;
             }
-            if (s.arr[i].reservationcat.
+            if (s.getarr(i).reservationcat.
                     equals("ST")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
@@ -87,7 +87,7 @@ public final class Solution {
             if (noofsccat == 0) {
                 break;
             }
-            if (s.arr[i].reservationcat.
+            if (s.getarr(i).reservationcat.
                     equals("SC")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
@@ -98,7 +98,7 @@ public final class Solution {
             if (noofvacancies == 0) {
                 break;
             }
-            if (s.arr[i].reservationcat.
+            if (s.getarr(i).reservationcat.
                     equals("Open")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;

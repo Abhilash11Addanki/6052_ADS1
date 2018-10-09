@@ -9,7 +9,6 @@ public final class Solution {
      * Constructs the object.
      */
     private Solution() {
-
     }
     /**
      * main method to drive the program.
@@ -30,7 +29,8 @@ public final class Solution {
             int year = Integer.parseInt(arr[1].split("-")[2]);
             int month = Integer.parseInt(arr[1].split("-")[1]);
             int date = Integer.parseInt(arr[1].split("-")[0]);
-            s.add(new StudentInfo(arr[0], year, month, date, Integer.parseInt(arr[2]),
+            s.add(new StudentInfo(arr[0], year, month, date,
+            	Integer.parseInt(arr[2]),
             Integer.parseInt(arr[3]), Integer.parseInt(arr[4]),
             Integer.parseInt(arr[5]), arr[6]));
             n--;
@@ -50,8 +50,8 @@ public final class Solution {
             noofunreversedcat--;
             cnt++;
         }
-        StudentInfo[] reservstu = new StudentInfo[noofvacancies - noofunreversedcat];
-        //System.out.println(reservstu.length);
+        StudentInfo[] reservstu = new StudentInfo[noofvacancies
+        - noofunreversedcat];
         int sizee = 0;
 
         for (int i = cnt; i < noofstudents; i++) {
@@ -60,7 +60,6 @@ public final class Solution {
             }
             if (s.arr[i].reservationcat.equals("BC")) {
                 reservstu[sizee++] = s.show(i);
-                //System.out.println();
                 noofvacancies--;
                 noofbccat--;
             }
@@ -71,7 +70,6 @@ public final class Solution {
             }
             if (s.arr[i].reservationcat.equals("ST")) {
                 reservstu[sizee++] = s.show(i);
-                //System.out.println(s.show(i));
                 noofvacancies--;
                 noofstcat--;
             }
@@ -82,7 +80,6 @@ public final class Solution {
             }
             if (s.arr[i].reservationcat.equals("SC")) {
                 reservstu[sizee++] = s.show(i);
-                //System.out.println(s.show(i));
                 noofvacancies--;
                 noofsccat--;
             }
@@ -93,15 +90,13 @@ public final class Solution {
             }
             if (s.arr[i].reservationcat.equals("Open")) {
                 reservstu[sizee++] = s.show(i);
-                //System.out.println(s.show(i));
                 noofvacancies--;
             }
         }
-
-        //System.out.println(Arrays.toString(reservstu));
         Arrays.sort(reservstu, Collections.reverseOrder());
         for (StudentInfo stuu : reservstu) {
             System.out.println(stuu);
         }
     }
 }
+

@@ -122,6 +122,10 @@ public class MinPQ<Key> {
         if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
         return min;
     }
+    /**
+     * swim method.
+     * @param      k    index.
+     */
     private void swim(final int k) {
     	int k1 = k;
         while (k1 > 1 && greater(k1 / 2, k1)) {
@@ -129,6 +133,10 @@ public class MinPQ<Key> {
             k1 = k1 / 2;
         }
     }
+    /**
+     * sink method.
+     * @param      k    index.
+     */
     private void sink(final int k) {
     	int k1 = k;
         while (2 * k1 <= n) {
@@ -139,6 +147,12 @@ public class MinPQ<Key> {
             k1 = j;
         }
     }
+    /**
+     * greater method.
+     * @param      i     index.
+     * @param      j     index.
+     * @return     true or false.
+     */
     private boolean greater(final int i, final int j) {
         if (comparator == null) {
             return ((Comparable<Key>) pq[i]).compareTo(pq[j]) > 0;
@@ -146,14 +160,28 @@ public class MinPQ<Key> {
             return comparator.compare(pq[i], pq[j]) > 0;
         }
     }
+    /**
+     * exch method to swap the elements.
+     * @param      i     index.
+     * @param      j     index.
+     */
     private void exch(final int i, final int j) {
         Key swap = pq[i];
         pq[i] = pq[j];
         pq[j] = swap;
     }
+    /**
+     * Determines if minimum heap.
+     * @return     True if minimum heap, False otherwise.
+     */
     private boolean isMinHeap() {
         return isMinHeap(1);
     }
+    /**
+     * Determines if minimum heap.
+     * @param      k     index.
+     * @return     True if minimum heap, False otherwise.
+     */
     private boolean isMinHeap(final int k) {
         if (k > n) return true;
         int left = 2 * k;

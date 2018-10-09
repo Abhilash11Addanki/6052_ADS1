@@ -34,8 +34,8 @@ class Students {
         return arr[i];
     }
     /**
-     * exch method of which swaps the elements.
-     * @param      arr   The arr
+     * exch method to swap the elements.
+     * @param      a     array of type StudentInfo.
      * @param      i     index.
      * @param      j     index.
      */
@@ -60,13 +60,13 @@ class Students {
     /**
      * less method which compares the elements of.
      * array.
-     * @param      arr   The arr
+     * @param      a   The arr
      * @param      i     index.
      * @param      j     index.
      * @return     true or false.
      */
-    boolean less(final StudentInfo[] arr, final int i,
+    boolean less(final StudentInfo[] a, final int i,
         final int j) {
-        return  arr[i].compareTo(arr[j]) < 0;
+        return  a[i].compareTo(a[j]) < 0;
     }
 }

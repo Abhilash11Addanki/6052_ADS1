@@ -16,6 +16,10 @@ public final class Solution {
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
+        final int three = 3;
+        final int four = 4;
+        final int five = 5;
+        final int six = 6;
         int noofstudents = Integer.parseInt(sc.nextLine());
         int noofvacancies = Integer.parseInt(sc.nextLine());
         int noofunreversedcat = Integer.parseInt(sc.nextLine());
@@ -27,16 +31,16 @@ public final class Solution {
         while (n != 0) {
             String[] arr = sc.nextLine().split(",");
             int year = Integer.parseInt(
-            	arr[1].split("-")[2]);
+            arr[1].split("-")[2]);
             int month = Integer.parseInt(
-            	arr[1].split("-")[1]);
+            arr[1].split("-")[1]);
             int date = Integer.parseInt(
-            	arr[1].split("-")[0]);
+            arr[1].split("-")[0]);
             s.add(new StudentInfo(arr[0], year, month,
-            	date, Integer.parseInt(arr[2]),
-             Integer.parseInt(arr[3]),
-             Integer.parseInt(arr[4]),
-             Integer.parseInt(arr[5]), arr[6]));
+            date, Integer.parseInt(arr[2]),
+            Integer.parseInt(arr[three]),
+            Integer.parseInt(arr[four]),
+            Integer.parseInt(arr[five]), arr[six]));
             n--;
         }
         s.sort();
@@ -54,15 +58,15 @@ public final class Solution {
             noofunreversedcat--;
             cnt++;
         }
-        StudentInfo[] reservstu = new 
-        StudentInfo[noofvacancies - noofunreversedcat];
+        StudentInfo[] reservstu = new StudentInfo[noofvacancies
+        - noofunreversedcat];
         int sizee = 0;
         for (int i = cnt; i < noofstudents; i++) {
             if (noofbccat == 0) {
                 break;
             }
             if (s.arr[i].reservationcat.
-            	equals("BC")) {
+                    equals("BC")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
                 noofbccat--;
@@ -73,7 +77,7 @@ public final class Solution {
                 break;
             }
             if (s.arr[i].reservationcat.
-            	equals("ST")) {
+                    equals("ST")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
                 noofstcat--;
@@ -84,7 +88,7 @@ public final class Solution {
                 break;
             }
             if (s.arr[i].reservationcat.
-            	equals("SC")) {
+                    equals("SC")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
                 noofsccat--;
@@ -95,13 +99,13 @@ public final class Solution {
                 break;
             }
             if (s.arr[i].reservationcat.
-            	equals("Open")) {
+                    equals("Open")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
             }
         }
         Arrays.sort(reservstu,
-        	Collections.reverseOrder());
+                    Collections.reverseOrder());
         for (StudentInfo stuu : reservstu) {
             System.out.println(stuu);
         }

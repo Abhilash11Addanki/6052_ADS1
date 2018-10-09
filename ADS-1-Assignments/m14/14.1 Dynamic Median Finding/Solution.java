@@ -47,7 +47,7 @@ final class Solution {
                 double min = obj.getMin();
                 double max = obj.getMax();
                 median = (min + max) / 2.0;
-                System.out.println(median);
+                System.out.println();
             }
         }
     }

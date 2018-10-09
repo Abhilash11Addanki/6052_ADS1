@@ -1,8 +1,7 @@
 Starting audit...
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:8:19: Variable 'arr' must be private and have accessor methods. [VisibilityModifier]
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:12:9: Variable 'size' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:16:24: Expected @param tag for 's'. [JavadocMethod]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:41:35: 'arr' hides a field. [HiddenField]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:67:38: 'arr' hides a field. [HiddenField]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:42:35: 'arr' hides a field. [HiddenField]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:68:38: 'arr' hides a field. [HiddenField]
 Audit done.
-Checkstyle ends with 5 errors.
+Checkstyle ends with 4 errors.

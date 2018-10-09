@@ -12,6 +12,7 @@ class Students {
     int size;
     /**
      * Constructs the object.
+     * @param      s     size of array.
      */
     Students(final int s) {
         arr = new StudentInfo[s];

@@ -18,7 +18,13 @@ class Students {
         arr = new StudentInfo[s];
         size = 0;
     }
-    StudentInfo getarr(int i) {
+    /**
+     * gets the element of array at specific.
+     * index.
+     * @param      i     index.
+     * @return     element of type StudentInfo.
+     */
+    StudentInfo getarr(final int i) {
     	return arr[i];
     }
     /**

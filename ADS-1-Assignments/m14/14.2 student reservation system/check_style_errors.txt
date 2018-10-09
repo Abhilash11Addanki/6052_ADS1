@@ -1,6 +1,4 @@
 Starting audit...
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:21:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:21:24: Parameter i should be final. [FinalParameters]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:22:5: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m14\14.2 student reservation system\Students.java:28:5: File contains tab characters (this is the first instance). [FileTabCharacter]
 Audit done.
-Checkstyle ends with 3 errors.
+Checkstyle ends with 1 errors.

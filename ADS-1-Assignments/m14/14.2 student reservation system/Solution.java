@@ -30,9 +30,9 @@ public final class Solution {
             int month = Integer.parseInt(arr[1].split("-")[1]);
             int date = Integer.parseInt(arr[1].split("-")[0]);
             s.add(new StudentInfo(arr[0], year, month, date,
-            	Integer.parseInt(arr[2]),
-            Integer.parseInt(arr[3]), Integer.parseInt(arr[4]),
-            Integer.parseInt(arr[5]), arr[6]));
+                                  Integer.parseInt(arr[2]),
+                                  Integer.parseInt(arr[3]), Integer.parseInt(arr[4]),
+                                  Integer.parseInt(arr[5]), arr[6]));
             n--;
         }
         s.sort();
@@ -51,27 +51,43 @@ public final class Solution {
             cnt++;
         }
         StudentInfo[] reservstu = new StudentInfo[noofvacancies
-        - noofunreversedcat];
+                - noofunreversedcat];
         int sizee = 0;
-
         for (int i = cnt; i < noofstudents; i++) {
-            if (noofbccat == 0 || noofstcat == 0
-            	|| noofsccat == 0 || noofvacancies == 0) {
+            if (noofbccat == 0) {
                 break;
             }
             if (s.arr[i].reservationcat.equals("BC")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
                 noofbccat--;
-            } else if (s.arr[i].reservationcat.equals("ST")) {
+            }
+        }
+        for (int i = cnt; i < noofstudents; i++) {
+            if (noofstcat == 0) {
+                break;
+            }
+            if (s.arr[i].reservationcat.equals("ST")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
                 noofstcat--;
-            } else if (s.arr[i].reservationcat.equals("SC")) {
+            }
+        }
+        for (int i = cnt; i < noofstudents; i++) {
+            if (noofsccat == 0) {
+                break;
+            }
+            if (s.arr[i].reservationcat.equals("SC")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
                 noofsccat--;
-            } else if (s.arr[i].reservationcat.equals("Open")) {
+            }
+        }
+        for (int i = cnt; i < noofstudents; i++) {
+            if (noofvacancies == 0) {
+                break;
+            }
+            if (s.arr[i].reservationcat.equals("Open")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
             }

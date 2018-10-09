@@ -55,40 +55,23 @@ public final class Solution {
         int sizee = 0;
 
         for (int i = cnt; i < noofstudents; i++) {
-            if (noofbccat == 0) {
+            if (noofbccat == 0 || noofstcat == 0
+            	|| noofsccat == 0 || noofvacancies == 0) {
                 break;
             }
             if (s.arr[i].reservationcat.equals("BC")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
                 noofbccat--;
-            }
-        }
-        for (int i = cnt; i < noofstudents; i++) {
-            if (noofstcat == 0) {
-                break;
-            }
-            if (s.arr[i].reservationcat.equals("ST")) {
+            } else if (s.arr[i].reservationcat.equals("ST")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
                 noofstcat--;
-            }
-        }
-        for (int i = cnt; i < noofstudents; i++) {
-            if (noofsccat == 0) {
-                break;
-            }
-            if (s.arr[i].reservationcat.equals("SC")) {
+            } else if (s.arr[i].reservationcat.equals("SC")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
                 noofsccat--;
-            }
-        }
-        for (int i = cnt; i < noofstudents; i++) {
-            if (noofvacancies == 0) {
-                break;
-            }
-            if (s.arr[i].reservationcat.equals("Open")) {
+            } else if (s.arr[i].reservationcat.equals("Open")) {
                 reservstu[sizee++] = s.show(i);
                 noofvacancies--;
             }

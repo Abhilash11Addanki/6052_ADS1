@@ -1,3 +1,6 @@
+/**
+ * Class for dynamic median.
+ */
 class DynamicMedian {
     /**
      *the object to access of minheap.

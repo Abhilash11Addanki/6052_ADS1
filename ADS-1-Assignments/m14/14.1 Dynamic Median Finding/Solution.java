@@ -1,4 +1,7 @@
 import java.util.Scanner;
+/**
+ * Solution class.
+ */
 final class Solution {
     /**
      *an empty constructor.

@@ -38,6 +38,9 @@ class StudentInfo implements Comparable<StudentInfo> {
      * reservationcat of type String.
      */
     String reservationcat;
+    StudentInfo() {
+        
+    }
     /**
      * Constructs the object.
      * @param      n      studentname.

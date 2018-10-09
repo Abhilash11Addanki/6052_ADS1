@@ -25,7 +25,7 @@ class Students {
      * @return     element of type StudentInfo.
      */
     StudentInfo getarr(final int i) {
-    	return arr[i];
+        return arr[i];
     }
     /**
      * add method.

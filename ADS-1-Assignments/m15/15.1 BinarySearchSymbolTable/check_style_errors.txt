@@ -6,6 +6,6 @@ Starting audit...
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:3:9: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:3:33: Parameter args should be final. [FinalParameters]
 [ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:6: Line is longer than 80 characters (found 103). [LineLength]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:30: Line is longer than 80 characters (found 99). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:30: Line is longer than 80 characters (found 98). [LineLength]
 Audit done.
 Checkstyle ends with 8 errors.

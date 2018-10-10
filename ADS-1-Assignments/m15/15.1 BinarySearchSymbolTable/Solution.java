@@ -13,6 +13,24 @@ public class Solution {
 			case "max":
 				System.out.println(bs.max());
 				break;
+			case "floor":
+				System.out.println(bs.floor(tokens[1]));
+				break;
+			case "rank":
+				System.out.println(bs.rank(tokens[1]));
+				break;
+			case "deleteMin":
+				bs.deleteMin();
+				break;
+			case "contains":
+				System.out.println(bs.contains(tokens[1]));
+				break;
+			case "keys":
+				System.out.println(bs.keys());
+				break;
+			case "get":
+				System.out.println(bs.keys());
+				break;
 			default:
 				break;
 			}

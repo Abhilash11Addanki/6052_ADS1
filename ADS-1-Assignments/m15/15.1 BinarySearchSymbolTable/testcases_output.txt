@@ -16,6 +16,11 @@ X 7
 null
 Your Output: 
 X
+R
+1
+true
+Queue@1134affc
+Queue@d041cf
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -36,6 +41,15 @@ false
 null
 Your Output: 
 Y
+Queue@1134affc
+Y
+null
+Y
+null
+O
+1
+false
+Queue@d041cf
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -61,6 +75,17 @@ true
 T
 Your Output: 
 X
+Queue@1134affc
+0
+0
+0
+0
+0
+9
+9
+true
+Queue@d041cf
+T
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -83,7 +108,12 @@ true
 13
 P
 Your Output: 
+Queue@1134affc
 Y
+12
+true
+Queue@d041cf
+P
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
@@ -101,5 +131,10 @@ S 0
 T 6
 Y 1
 Your Output: 
+M
+Queue@1134affc
 Y
+7
+true
+Queue@d041cf
 ----------------------------------------

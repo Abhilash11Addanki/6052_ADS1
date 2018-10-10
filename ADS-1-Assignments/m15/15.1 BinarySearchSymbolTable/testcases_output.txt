@@ -19,7 +19,15 @@ X
 R
 1
 true
-Queue@1134affc
+C
+E
+H
+L
+M
+P
+R
+S
+X
 null
 ----------------------------------------
 ########## Testcase 1: Failed ##########
@@ -41,7 +49,12 @@ false
 null
 Your Output: 
 Y
-Queue@1134affc
+O
+Q
+S
+T
+U
+Y
 Y
 null
 Y
@@ -75,7 +88,15 @@ true
 T
 Your Output: 
 X
-Queue@1134affc
+E
+L
+M
+O
+P
+R
+S
+T
+X
 0
 0
 0
@@ -108,7 +129,19 @@ true
 13
 P
 Your Output: 
-Queue@1134affc
+B
+C
+E
+H
+I
+L
+M
+N
+P
+R
+S
+X
+Y
 Y
 12
 true
@@ -136,5 +169,12 @@ null
 Y
 7
 true
-Queue@1134affc
+B
+E
+L
+M
+O
+S
+T
+Y
 ----------------------------------------

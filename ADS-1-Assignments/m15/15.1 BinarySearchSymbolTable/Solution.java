@@ -26,7 +26,10 @@ public class Solution {
 				System.out.println(bs.contains(tokens[1]));
 				break;
 			case "keys":
-				System.out.println(bs.keys());
+				for (String s: bs.keys()) {
+					System.out.println(s);
+				}
+				//System.out.println(bs.keys());
 				break;
 			case "get":
 			System.out.println(bs.get(tokens[1]));

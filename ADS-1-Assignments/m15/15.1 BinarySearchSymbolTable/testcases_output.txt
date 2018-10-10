@@ -20,6 +20,7 @@ R
 1
 true
 Queue@1134affc
+null
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -48,6 +49,7 @@ null
 O
 1
 false
+null
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -82,6 +84,7 @@ Queue@1134affc
 9
 9
 true
+5
 T
 ----------------------------------------
 ########## Testcase 3: Failed ##########
@@ -109,6 +112,7 @@ Queue@1134affc
 Y
 12
 true
+13
 P
 ----------------------------------------
 ########## Testcase 4: Failed ##########
@@ -128,6 +132,7 @@ T 6
 Y 1
 Your Output: 
 M
+null
 Y
 7
 true

@@ -2,7 +2,7 @@
  * Queue class.
  * @param      <Item>  The item
  */
-public class Queue<Item> {
+public class Queue<Item> implements Iterable<Item>{
     /**
      * first of type Node.
      */
@@ -63,5 +63,25 @@ public class Queue<Item> {
         if (isEmpty()) first = last;
         else           oldlast.next = last;
         n++;
+    }
+        public Iterator<Item> iterator()  {
+        return new ListIterator<Item>(first);  
+    }
+    // an iterator, doesn't implement remove() since it's optional
+    private class ListIterator<Item> implements Iterator<Item> {
+        private Node<Item> current;
+
+        public ListIterator(Node<Item> first) {
+            current = first;
+        }
+
+        public boolean hasNext()  { return current != null;                     }
+
+        public Item next() {
+            if (!hasNext()) throw new NoSuchElementException();
+            Item item = current.item;
+            current = current.next; 
+            return item;
+        }
     }
 }

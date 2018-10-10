@@ -27,7 +27,7 @@ public class Solution {
 				break;
 			case "keys":
 				for (String s: bs.keys()) {
-					System.out.println(s);
+					System.out.println(s + " " + Integer.toString(bs.rank(s)));
 				}
 				//System.out.println(bs.keys());
 				break;

@@ -19,15 +19,15 @@ X
 R
 1
 true
-C
-E
-H
-L
-M
-P
-R
-S
-X
+C 0
+E 1
+H 2
+L 3
+M 4
+P 5
+R 6
+S 7
+X 8
 null
 ----------------------------------------
 ########## Testcase 1: Failed ##########
@@ -49,12 +49,12 @@ false
 null
 Your Output: 
 Y
-O
-Q
-S
-T
-U
-Y
+O 0
+Q 1
+S 2
+T 3
+U 4
+Y 5
 Y
 null
 Y
@@ -88,15 +88,15 @@ true
 T
 Your Output: 
 X
-E
-L
-M
-O
-P
-R
-S
-T
-X
+E 0
+L 1
+M 2
+O 3
+P 4
+R 5
+S 6
+T 7
+X 8
 0
 0
 0
@@ -129,19 +129,19 @@ true
 13
 P
 Your Output: 
-B
-C
-E
-H
-I
-L
-M
-N
-P
-R
-S
-X
-Y
+B 0
+C 1
+E 2
+H 3
+I 4
+L 5
+M 6
+N 7
+P 8
+R 9
+S 10
+X 11
+Y 12
 Y
 12
 true
@@ -169,12 +169,12 @@ null
 Y
 7
 true
-B
-E
-L
-M
-O
-S
-T
-Y
+B 0
+E 1
+L 2
+M 3
+O 4
+S 5
+T 6
+Y 7
 ----------------------------------------

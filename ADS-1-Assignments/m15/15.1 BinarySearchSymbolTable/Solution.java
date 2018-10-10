@@ -29,7 +29,6 @@ public class Solution {
 				System.out.println(bs.keys());
 				break;
 			case "get":
-				System.out.println(bs.keys());
 				break;
 			default:
 				break;

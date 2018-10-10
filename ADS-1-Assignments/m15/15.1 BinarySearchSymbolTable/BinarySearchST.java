@@ -3,7 +3,7 @@
  * @param      <Key>    The key
  * @param      <Value>  The value
  */
-public class BinarySearchST <Key extends Comparable<Key>, Value> {
+public class BinarySearchST<Key extends Comparable<Key>, Value> {
     /**
      * keys array of type Key.
      */
@@ -18,11 +18,11 @@ public class BinarySearchST <Key extends Comparable<Key>, Value> {
     private int size = 0;
     /**
      * Constructs the object.
-     * @param      size  The size
+     * @param      size1  The size
      */
-    BinarySearchST(final int size) {
-        keys = (Key[]) new Comparable[size];
-        values = (Value[]) new Object[size];
+    BinarySearchST(final int size1) {
+        keys = (Key[]) new Comparable[size1];
+        values = (Value[]) new Object[size1];
     }
     /**
      * Determines if empty.

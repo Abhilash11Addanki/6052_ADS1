@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m15\15.1 BinarySearchSymbolTable\Solution.java:18: Line is longer than 80 characters (found 95). [LineLength]
 Audit done.
-Checkstyle ends with 1 errors.

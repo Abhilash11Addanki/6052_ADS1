@@ -86,10 +86,10 @@ public class Queue<Item> implements Iterable<Item> {
         private Node<Item> current;
         /**
          * Constructs the object.
-         * @param      first  The first
+         * @param      f  The first
          */
-        ListIterator(final Node<Item> first) {
-            current = first;
+        ListIterator(final Node<Item> f) {
+            current = f;
         }
         /**
          * Determines if it has next.

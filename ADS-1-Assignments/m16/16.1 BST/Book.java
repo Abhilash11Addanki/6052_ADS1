@@ -1,4 +1,3 @@
-
 abstract class Dummy {
 	abstract String getName();
 }

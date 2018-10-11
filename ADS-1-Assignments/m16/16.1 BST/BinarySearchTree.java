@@ -1,6 +1,6 @@
-class BinarySearchTree<Key extends BookBase, Value> {
+class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	private Node root;
-	private class Node {
+	public class Node {
 		private Key key;
 		private Value value;
 		private Node left, right;
@@ -9,17 +9,15 @@ class BinarySearchTree<Key extends BookBase, Value> {
 			value = v;
 		}
 	}
-	BinarySearchTree() {
-	}
-	Value get(Key key) {
+	Value get(Key k) {
 		Node n = root;
-		if (key == null) {
+		if (k == null) {
 			return null;
 		}
 		if (n == null) {
 			return null;
 		}
-		int cmp = key.getName().compareTo(n.key.getName());
+		int cmp = k.compareTo(n.key);
 		if (cmp < 0) {
 			n = n.left;
 		} else if (cmp > 0) {
@@ -29,18 +27,18 @@ class BinarySearchTree<Key extends BookBase, Value> {
 		}
 		return null;
 	}
-	void put(Key key, Value val) {
-		root = put(root, key, val);
+	void put(Key k, Value val) {
+		root = put(root, k, val);
 	}
-	private Node put(Node n, Key key, Value value) {
+	private Node put(Node n, Key k, Value value) {
 		if (n == null) {
-			return new Node(key, value);
+			return new Node(k, value);
 		}
-		int cmp = key.getName().compareTo(n.key.getName());
+		int cmp = k.compareTo(n.key);
 		if (cmp < 0) {
-			n.left = put(n.left, key, value);
+			n.left = put(n.left, k, value);
 		} else if (cmp > 0) {
-			n.right = put(n.right, key, value);
+			n.right = put(n.right, k, value);
 		} else {
 			n.value = value;
 		}

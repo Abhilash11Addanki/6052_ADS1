@@ -1,27 +1,17 @@
-abstract class BookBase {
-	abstract String getName();
-}
-
-class Book extends BookBase implements Comparable<Book> {
+class Book implements Comparable<Book> {
 	private String name;
 	private String author;
-	private String price;
+	private double price;
 	Book(final String n, final String a,
-		final String p) {
+		final double p) {
 		name = n;
 		author = a;
 		price = p;
 	}
 	String getName() {
-		return name;
+		return this.name;
 	}
-	String getAuthor() {
-		return author;
-	}
-	String getPrice() {
-		return price;
-	}
-	public int compareTo(Book b) {
-		return -1;
+	public int compareTo(final Book b) {
+		return this.getName().compareTo(b.getName());
 	}
 }

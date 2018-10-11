@@ -22,10 +22,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 			n = n.left;
 		} else if (cmp > 0) {
 			n = n.right;
-		} else {
-			return n.value;
 		}
-		return null;
+		return n.value;
 	}
 	void put(Key k, Value val) {
 		root = put(root, k, val);

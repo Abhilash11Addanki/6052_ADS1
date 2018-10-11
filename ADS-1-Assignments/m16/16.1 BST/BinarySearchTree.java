@@ -1,7 +1,7 @@
 /**
  * Class for binary search tree.
  * @param      <Key>     The key
- * @param      <Values>  The values
+ * @param      <Value>  The values
  */
 class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**.
@@ -27,8 +27,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
         /**.
          * Constructs the object.
          *
-         * @param      key1  The key 1
-         * @param      val   The value
+         * @param      k  The key 1
+         * @param      v   The value
          */
         Node(final Key k, final Value v) {
             key = k;

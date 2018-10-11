@@ -20,10 +20,14 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		int cmp = k.compareTo(n.key);
 		if (cmp < 0) {
 			n = n.left;
-		} else if (cmp > 0) {
+		}
+		if (cmp > 0) {
 			n = n.right;
 		}
-		return n.value;
+		if (cmp == 0) {
+			return n.value;
+		}
+		return null;
 	}
 	void put(Key k, Value val) {
 		root = put(root, k, val);

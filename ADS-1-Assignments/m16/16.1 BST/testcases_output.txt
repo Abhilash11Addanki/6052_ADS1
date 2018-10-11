@@ -11,16 +11,16 @@ Expected Output:
 7
 2
 Your Output: 
-2
-2
-2
-2
+null
+null
+null
+null
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
 null
 7
 Your Output: 
-2
-2
+null
+null
 ----------------------------------------

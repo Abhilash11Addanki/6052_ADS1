@@ -5,9 +5,9 @@ abstract class BookBase {
 class Book extends BookBase implements Comparable<Book> {
 	private String name;
 	private String author;
-	private float price;
+	private String price;
 	Book(final String n, final String a,
-		final float p) {
+		final String p) {
 		name = n;
 		author = a;
 		price = p;
@@ -18,7 +18,7 @@ class Book extends BookBase implements Comparable<Book> {
 	String getAuthor() {
 		return author;
 	}
-	float getPrice() {
+	String getPrice() {
 		return price;
 	}
 	public int compareTo(Book b) {

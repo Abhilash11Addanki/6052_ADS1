@@ -1,4 +1,9 @@
-class BinarySearchTree<Key extends Comparable<Key>, Values> {
+/**
+ * Class for binary search tree.
+ * @param      <Key>     The key
+ * @param      <Values>  The values
+ */
+class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**.
      * starting element in the BST.
      */
@@ -14,24 +19,20 @@ class BinarySearchTree<Key extends Comparable<Key>, Values> {
         /**.
          * value of the book in Book class
          */
-        private Values value;
+        private Value value;
         /**.
-         * Right node of the BST
+         * Left and Right node of the BST
          */
-        private Node right;
-        /**.
-         * Left node of BST.
-         */
-        private Node left;
+        private Node left, right;
         /**.
          * Constructs the object.
          *
          * @param      key1  The key 1
          * @param      val   The value
          */
-        Node(final Key key1, final Values val) {
-            this.key = key1;
-            this.value = val;
+        Node(final Key k, final Value v) {
+            key = k;
+            value = v;
         }
 
     }
@@ -43,7 +44,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Values> {
      * @param      key    The key
      * @param      value  The value
      */
-    public void put(final Key key, final Values value) {
+    public void put(final Key key, final Value value) {
         if (key == null) {
             return;
         }
@@ -62,7 +63,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Values> {
      * @return     returns node
      */
     public Node put(final Node node, final Key key,
-                    final Values value) {
+                    final Value value) {
         if (node == null) {
             return new Node(key, value);
         }
@@ -84,7 +85,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Values> {
      *
      * @return     returns the value.
      */
-    public Values get(final Key key) {
+    public Value get(final Key key) {
         return get(root, key);
     }
     /**.
@@ -97,7 +98,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Values> {
      *
      * @return     returns the value of that key.
      */
-    private Values get(final Node node, final Key key) {
+    private Value get(final Node node, final Key key) {
         if (node == null) {
             return null;
         }

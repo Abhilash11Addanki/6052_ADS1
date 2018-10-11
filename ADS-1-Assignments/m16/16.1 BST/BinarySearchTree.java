@@ -1,4 +1,4 @@
-class BinarySearchTree<Key extends Dummy, Value> {
+class BinarySearchTree<Key extends BookBase, Value> {
 	private Node root;
 	private class Node {
 		private Key key;

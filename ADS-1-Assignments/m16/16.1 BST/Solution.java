@@ -14,7 +14,7 @@ public class Solution {
 				break;
 			case "get":
 				key = new Book(tokens[1], tokens[2],
-				               Integer.parseInt(tokens[3]));
+				               Float.parseFloat(tokens[3]));
 				System.out.println(bst.get(key));
 				break;
 			default:

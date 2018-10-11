@@ -1,8 +1,8 @@
-abstract class Dummy {
+abstract class BookBase {
 	abstract String getName();
 }
 
-class Book extends Dummy implements Comparable<Book> {
+class Book extends BookBase implements Comparable<Book> {
 	private String name;
 	private String author;
 	private float price;

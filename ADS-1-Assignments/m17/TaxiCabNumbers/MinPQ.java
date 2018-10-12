@@ -58,11 +58,12 @@ public class MinPQ<Key> {
     public MinPQ(final Key[] keys) {
         n = keys.length;
         pq = (Key[]) new Object[keys.length + 1];
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++) {
             pq[i + 1] = keys[i];
-        for (int k = n / 2; k >= 1; k--)
+        }
+        for (int k = n / 2; k >= 1; k--) {
             sink(k);
-        assert isMinHeap();
+        }
     }
     /**
      * Returns true if this priority queue is empty.
@@ -88,6 +89,7 @@ public class MinPQ<Key> {
     }
     /**
      * helper function to double the size of the heap array.
+     * @param      capacity  The capacity
      */
     private void resize(final int capacity) {
         assert capacity > n;
@@ -103,7 +105,9 @@ public class MinPQ<Key> {
      */
     public void insert(final Key x) {
         // double size of array if necessary
-        if (n == pq.length - 1) resize(2 * pq.length);
+        if (n == pq.length - 1) {
+            resize(2 * pq.length);
+        }
         // add x, and percolate it up to maintain heap invariant
         pq[++n] = x;
         swim(n);
@@ -116,13 +120,16 @@ public class MinPQ<Key> {
         Key min = pq[1];
         exch(1, n--);
         sink(1);
-        pq[n + 1] = null;   // to avoid loiterig and help with garbage collection
-        if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
+        pq[n + 1] = null;
+        if ((n > 0) && (n == (pq.length - 1) / 2 + 2)) {
+            resize(pq.length / 2);
+        }
         return min;
     }
-    /***************************************************************************
-     * Helper functions to restore the heap invariant.
-     ***************************************************************************/
+    /**
+     * swim method.
+     * @param      k     index.
+     */
     private void swim(final int k) {
         int k1 = k;
         while (k1 > 1 && greater(k1 / 2, k1)) {
@@ -138,15 +145,22 @@ public class MinPQ<Key> {
         int k1 = k;
         while (2 * k1 <= n) {
             int j = 2 * k1;
-            if (j < n && greater(j, j + 1)) j++;
-            if (!greater(k1, j)) break;
+            if (j < n && greater(j, j + 1)) {
+                j++;
+            }
+            if (!greater(k1, j)) {
+                break;
+            }
             exch(k1, j);
             k1 = j;
         }
     }
-    /***************************************************************************
-     * Helper functions for compares and swaps.
-     ***************************************************************************/
+    /**
+     * greater method to compare the elements.
+     * @param      i     index.
+     * @param      j     index.
+     * @return     true or false.
+     */
     private boolean greater(final int i, final int j) {
         if (comparator == null) {
             return ((Comparable<Key>) pq[i]).compareTo(pq[j]) > 0;
@@ -163,25 +177,5 @@ public class MinPQ<Key> {
         Key swap = pq[i];
         pq[i] = pq[j];
         pq[j] = swap;
-    }
-    /**
-     * Determines if minimum heap.
-     * @return     True if minimum heap, False otherwise.
-     */
-    private boolean isMinHeap() {
-        return isMinHeap(1);
-    }
-    /**
-     * Determines if minimum heap.
-     * @param      k    index.
-     * @return     True if minimum heap, False otherwise.
-     */
-    private boolean isMinHeap(final int k) {
-        if (k > n) return true;
-        int left = 2 * k;
-        int right = 2 * k + 1;
-        if (left  <= n && greater(k, left))  return false;
-        if (right <= n && greater(k, right)) return false;
-        return isMinHeap(left) && isMinHeap(right);
     }
 }

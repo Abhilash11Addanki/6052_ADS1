@@ -13,7 +13,8 @@ public final class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        int range = 600;
+        final int sixhun = 600;
+        int range = sixhun;
         Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
         int noofways = sc.nextInt();
@@ -40,8 +41,9 @@ public final class Solution {
                 }
             }
             temp = s.getSum();
-            if (s.getNumberTwo() < range)
+            if (s.getNumberTwo() < range) {
                 pq.insert(new CubeSum(s.getNumberOne(), s.getNumberTwo() + 1));
+            }
         }
     }
 }

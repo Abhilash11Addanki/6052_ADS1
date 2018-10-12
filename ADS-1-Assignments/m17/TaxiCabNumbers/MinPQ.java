@@ -35,23 +35,24 @@ public class MinPQ<Key> {
      * Initializes an empty priority queue with the given initial capacity,
      * using the given comparator.
      * @param  initCapacity the initial capacity of this priority queue
-     * @param  comparator the order in which to compare the keys
+     * @param  comp the order in which to compare the keys
      */
-    public MinPQ(final int initCapacity, final Comparator<Key> comparator) {
-        this.comparator = comparator;
+    public MinPQ(final int initCapacity, final Comparator<Key> comp) {
+        this.comparator = comp;
         pq = (Key[]) new Object[initCapacity + 1];
         n = 0;
     }
     /**
      * Initializes an empty priority queue using the given comparator.
-     * @param  comparator the order in which to compare the keys
+     * @param  comp the order in which to compare the keys
      */
-    public MinPQ(final Comparator<Key> comparator) {
-        this(1, comparator);
+    public MinPQ(final Comparator<Key> comp) {
+        this(1, comp);
     }
     /**
      * Initializes a priority queue from the array of keys.
-     * Takes time proportional to the number of keys, using sink-based heap construction.
+     * Takes time proportional to the number of keys,
+     * using sink-based heap construction.
      * @param  keys the array of keys
      */
     public MinPQ(final Key[] keys) {

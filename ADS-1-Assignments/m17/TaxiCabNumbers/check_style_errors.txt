@@ -1,5 +1,2 @@
 Starting audit...
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m17\TaxiCabNumbers\Solution.java:16:21: '600' is a magic number. [MagicNumber]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m17\TaxiCabNumbers\Solution.java:43: 'if' construct must use '{}'s. [NeedBraces]
 Audit done.
-Checkstyle ends with 2 errors.

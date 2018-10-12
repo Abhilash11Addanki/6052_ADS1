@@ -50,10 +50,26 @@ public class MinPQ<Key> {
         return n == 0;
     }
     /**
+     * helper function to double the size of the heap array.
+     * @param      capacity  The capacity
+     */
+    private void resize(final int capacity) {
+        assert capacity > n;
+        Key[] temp = (Key[]) new Object[capacity];
+        for (int i = 1; i <= n; i++) {
+            temp[i] = pq[i];
+        }
+        pq = temp;
+    }
+    /**
      * Adds a new key to this priority queue.
      * @param  x the key to add to this priority queue
      */
     public void insert(final Key x) {
+        // double size of array if necessary
+        if (n == pq.length - 1) {
+            resize(2 * pq.length);
+        }
         // add x, and percolate it up to maintain heap invariant
         pq[++n] = x;
         swim(n);
@@ -67,6 +83,9 @@ public class MinPQ<Key> {
         exch(1, n--);
         sink(1);
         pq[n + 1] = null;
+        if ((n > 0) && (n == (pq.length - 1) / 2 + 2)) {
+            resize(pq.length / 2);
+        }
         return min;
     }
     /**

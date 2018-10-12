@@ -52,6 +52,7 @@ public class MinPQ<Key> {
     /**
      * helper function to double the size of the heap array.
      * @param      capacity  The capacity
+     * The time complexity for this method is O(N)
      */
     private void resize(final int capacity) {
         assert capacity > n;
@@ -64,6 +65,7 @@ public class MinPQ<Key> {
     /**
      * Adds a new key to this priority queue.
      * @param  x the key to add to this priority queue
+     * The time complexity for this method is O(1)
      */
     public void insert(final Key x) {
         // double size of array if necessary
@@ -77,6 +79,7 @@ public class MinPQ<Key> {
     /**
      * Removes and returns a smallest key on this priority queue.
      * @return a smallest key on this priority queue
+     * The time complexity for this method O(log N)
      */
     public Key delMin() {
         Key min = pq[1];
@@ -91,6 +94,7 @@ public class MinPQ<Key> {
     /**
      * swim method.
      * @param      k     index.
+     * The time complexity for this method is O(log N)
      */
     private void swim(final int k) {
         int k1 = k;
@@ -102,6 +106,7 @@ public class MinPQ<Key> {
     /**
      * sink method.
      * @param      k     index.
+     * The time complexity for this method is O(log N)
      */
     private void sink(final int k) {
         int k1 = k;

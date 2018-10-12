@@ -16,7 +16,6 @@ public class MinPQ<Key> {
      * optional comparator.
      */
     private Comparator<Key> comparator;
-
     /**
      * Initializes an empty priority queue with the given initial capacity.
      * @param  initCapacity the initial capacity of this priority queue
@@ -49,13 +48,6 @@ public class MinPQ<Key> {
      */
     public boolean isEmpty() {
         return n == 0;
-    }
-    /**
-     * Returns the number of keys on this priority queue.
-     * @return the number of keys on this priority queue
-     */
-    public int size() {
-        return n;
     }
     /**
      * Returns a smallest key on this priority queue.

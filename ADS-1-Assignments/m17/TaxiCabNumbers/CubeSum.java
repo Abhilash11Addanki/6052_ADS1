@@ -51,8 +51,12 @@ public class CubeSum implements Comparable<CubeSum> {
      * @return     integer.
      */
     public int compareTo(final CubeSum that) {
-        if (sum < that.sum) return -1;
-        if (sum > that.sum) return +1;
+        if (sum < that.sum) {
+            return -1;
+        }
+        if (sum > that.sum) {
+            return +1;
+        }
         return 0;
     }
 }

@@ -43,13 +43,6 @@ public class MinPQ<Key> {
         n = 0;
     }
     /**
-     * Initializes an empty priority queue using the given comparator.
-     * @param  comp the order in which to compare the keys
-     */
-    public MinPQ(final Comparator<Key> comp) {
-        this(1, comp);
-    }
-    /**
      * Initializes a priority queue from the array of keys.
      * Takes time proportional to the number of keys,
      * using sink-based heap construction.

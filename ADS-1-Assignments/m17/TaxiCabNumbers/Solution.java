@@ -1,9 +1,19 @@
 import java.util.Scanner;
+/**
+ * Solution class.
+ */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution() {
     }
-    public static void main(String[] args) {
-        int range = 550;
+    /**
+     * main method to drive the program.
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        int range = 600;
         Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
         int noofways = sc.nextInt();
@@ -17,21 +27,21 @@ public final class Solution {
         // find smallest sum, print it out, and update
         while (!pq.isEmpty()) {
             CubeSum s = pq.delMin();
-            if (temp == s.sum) {
+            if (temp == s.getSum()) {
                 count++;
             } else {
                 count = 0;
             }
             if (count == noofways - 1) {
                 number--;
+                if (number == 0) {
+                    System.out.println(s.getSum());
+                    break;
+                }
             }
-            if (number == 0) {
-                System.out.println(s.sum);
-                break;
-            }
-            temp = s.sum;
-            if (s.j < number)
-                pq.insert(new CubeSum(s.i, s.j + 1));
+            temp = s.getSum();
+            if (s.getNumberTwo() < range)
+                pq.insert(new CubeSum(s.getNumberOne(), s.getNumberTwo() + 1));
         }
     }
 }

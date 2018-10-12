@@ -50,13 +50,6 @@ public class MinPQ<Key> {
         return n == 0;
     }
     /**
-     * Returns a smallest key on this priority queue.
-     * @return a smallest key on this priority queue.
-     */
-    public Key min() {
-        return pq[1];
-    }
-    /**
      * helper function to double the size of the heap array.
      * @param      capacity  The capacity
      */

@@ -1,0 +1,9 @@
+Starting audit...
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m17\TaxiCabNumbers\Solution.java:2: Missing a Javadoc comment. [JavadocType]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m17\TaxiCabNumbers\Solution.java:3:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m17\TaxiCabNumbers\Solution.java:5:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m17\TaxiCabNumbers\Solution.java:5:29: Parameter args should be final. [FinalParameters]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m17\TaxiCabNumbers\Solution.java:6:21: '550' is a magic number. [MagicNumber]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m17\TaxiCabNumbers\Solution.java:33: 'if' construct must use '{}'s. [NeedBraces]
+Audit done.
+Checkstyle ends with 6 errors.

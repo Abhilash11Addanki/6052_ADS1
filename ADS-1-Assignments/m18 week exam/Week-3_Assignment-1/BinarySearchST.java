@@ -1,22 +1,20 @@
 import java.util.ArrayList;
 /**
  * Class for binary search st.
- *
  * @param      <Key>    The key
  * @param      <Value>  The value
  */
 class BinarySearchST<Key extends Comparable<Key>, Value> {
-
     /**
-     * keys array of Key type.
+     * keys array of type Key.
      */
     private Key[] keys;
     /**
-     * Values array of value type.
+     * values array of type Value.
      */
     private Value[] values;
     /**
-     * size of arrays.
+     * size of array.
      */
     private int n;
     /**
@@ -26,7 +24,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * Constructs the object.
-     *
      * @param      capacity  The capacity
      */
     BinarySearchST(final int capacity) {
@@ -35,15 +32,13 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * size of array.
-     *
-     * @return     { description_of_the_return_value }
+     * @return     integer.
      */
     public int size() {
         return n;
     }
     /**
      * Determines if empty.
-     *
      * @return     True if empty, False otherwise.
      */
     public boolean isEmpty() {
@@ -51,7 +46,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * resize array.
-     *
      * @param      capacity  The capacity
      */
     public void resize(final int capacity) {
@@ -66,11 +60,9 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * inserts the value at particular key.
-     *
      * @param      k     The key.
      * @param      v     The value.
-     *
-     * Time complexity : log(N).
+     * Time complexity for this method is log(N).
      */
     public void put(final Key k, final Value v) {
         if (k == null) {
@@ -98,9 +90,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * Checks if the key is present or not.
-     *
      * @param      k    The key.
-     *
      * @return     True or false.
      */
     public boolean contains(final Key k) {
@@ -108,7 +98,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * delete the key.
-     *
      * @param      key   The key
      */
     public void delete(final Key key) {
@@ -137,13 +126,10 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
 
     /**
-     * Gives the value associated with the key.
-     *
+     * Gives the value of the key.
      * @param      k     The key.
-     *
      * @return     The value of the given key.
-     *
-     * Time complexity : log(N)
+     * Time complexity for this method is log(N)
      */
     public Value get(final Key k) {
         if (isEmpty()) {
@@ -162,7 +148,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * Method to find maximum key.
-     *
      * @return     the maximum key.
      */
     public Key max() {
@@ -170,9 +155,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * Method to find the floor for the given key.
-     *
      * @param      key   The key
-     *
      * @return     the floor of the key
      */
     public Key floor(final Key key) {
@@ -224,7 +207,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
     }
     /**
      * Iterate through keys.
-     *
      * @return     keys
      */
     public ArrayList<String> keys() {

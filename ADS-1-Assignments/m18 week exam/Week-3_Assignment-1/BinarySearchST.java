@@ -1,165 +1,208 @@
+import java.util.ArrayList;
 /**
  * Class for binary search st.
+ *
  * @param      <Key>    The key
  * @param      <Value>  The value
  */
-public class BinarySearchST<Key extends Comparable<Key>, Value> {
+class BinarySearchST<Key extends Comparable<Key>, Value> {
+
     /**
-     * keys array of type Key.
+     * keys array of Key type.
      */
     private Key[] keys;
     /**
-     * values array of type Value.
+     * Values array of value type.
      */
     private Value[] values;
     /**
-     * size of type int.
+     * size of arrays.
      */
-    private int size = 0;
+    private int n;
     /**
      * Constructs the object.
-     * @param      size1  The size
      */
-    BinarySearchST(final int size1) {
-        keys = (Key[]) new Comparable[size1];
-        values = (Value[]) new Object[size1];
+    BinarySearchST() {
+    }
+    /**
+     * Constructs the object.
+     *
+     * @param      capacity  The capacity
+     */
+    BinarySearchST(final int capacity) {
+        keys = (Key[]) new Comparable[capacity];
+        values = (Value[]) new Object[capacity];
+    }
+    /**
+     * size of array.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int size() {
+        return n;
     }
     /**
      * Determines if empty.
+     *
      * @return     True if empty, False otherwise.
      */
     public boolean isEmpty() {
-        return size == 0;
+        return n == 0;
     }
     /**
-     * delete method to delete the key.
-     * @param      key   The key
+     * resize array.
+     *
+     * @param      capacity  The capacity
      */
-    public void delete(final Key key) {
-        if (key == null) {
-            return;
+    public void resize(final int capacity) {
+        Key[] tkey = (Key[]) new Comparable[capacity];
+        Value[] tval = (Value[]) new Object[capacity];
+        for (int i = 0; i < n; i++) {
+            tkey[i] = keys[i];
+            tval[i] = values[i];
         }
-        if (isEmpty()) {
-            return;
-        }
-        int i = rank(key);
-        if (i == size || keys[i].compareTo(key) != 0) {
-            return;
-        }
-        for (int j = i; j < size - 1; j++)  {
-            keys[j] = keys[j + 1];
-            values[j] = values[j + 1];
-        }
-        size--;
-        keys[size] = null;
-        values[size] = null;
+        values = tval;
+        keys = tkey;
     }
     /**
-     * put method which inserts the elements into queue.
-     * @param      key    The key
-     * @param      value  The value
+     * inserts the value at particular key.
+     *
+     * @param      k     The key.
+     * @param      v     The value.
+     *
+     * Time complexity : log(N).
      */
-    public void put(final Key key, final Value value) {
-        if (key == null) {
+    public void put(final Key k, final Value v) {
+        if (k == null) {
+            throw new IllegalArgumentException("Null key");
+        }
+        if (v == null) {
+            delete(k);
             return;
         }
-        if (value == null) {
-            delete(key);
+        int i = rank(k);
+        if (i < n && keys[i].compareTo(k) == 0) {
+            values[i] = v;
             return;
         }
-        int i = rank(key);
-        if (i < size && keys[i].compareTo(key) == 0) {
-            values[i] = value;
-            return;
+        if (n == keys.length) {
+            resize(2 * keys.length);
         }
-        for (int j = size; j > i; j--) {
+        for (int j = n; j > i; j--) {
             keys[j] = keys[j - 1];
             values[j] = values[j - 1];
         }
-        keys[i] = key;
-        values[i] = value;
-        size++;
+        keys[i] = k;
+        values[i] = v;
+        n++;
     }
     /**
-     * contains method that checks whether the key is.
-     * present or not.
-     * @param      key   The key
-     * @return     true or false.
+     * Checks if the key is present or not.
+     *
+     * @param      k    The key.
+     *
+     * @return     True or false.
      */
-    public boolean contains(final Key key) {
-        if (key == null) {
-            return false;
-        }
-        return get(key) != null;
+    public boolean contains(final Key k) {
+        return get(k) != null;
     }
     /**
-     * get method that gets the value of key.
+     * delete the key.
+     *
      * @param      key   The key
-     * @return     value of specific key.
      */
-    public Value get(final Key key) {
-        if (key == null) {
-            return null;
-        }
+    public void delete(final Key key) {
+        final int four = 4;
+        final int two = 2;
         if (isEmpty()) {
-            return null;
+            return;
+        }
+        if (key == null) {
+            throw new IllegalArgumentException("argument to delete() is null");
         }
         int i = rank(key);
-        if (i < size && keys[i].compareTo(key) == 0) {
-            return values[i];
+        if (i == n || keys[i].compareTo(key) != 0) {
+            return;
         }
-        return null;
+        for (int j = i; j < n - 1; j++) {
+            keys[j] = keys[j + 1];
+            values[j] = values[j + 1];
+        }
+        n--;
+        keys[n] = null;
+        values[n] = null;
+        if (n > 0 && n == keys.length / four) {
+            resize(keys.length / two);
+        }
+    }
+
+    /**
+     * Gives the value associated with the key.
+     *
+     * @param      k     The key.
+     *
+     * @return     The value of the given key.
+     *
+     * Time complexity : log(N)
+     */
+    public Value get(final Key k) {
+        if (isEmpty()) {
+            return null;
+        }
+        if (k == null) {
+            throw new IllegalArgumentException("Key is null");
+        }
+        int i = rank(k);
+        if (i < n && keys[i].compareTo(k) == 0) {
+            return values[i];
+        } else {
+            return null;
+        }
+
     }
     /**
-     * max method.
-     * @return     key.
+     * Method to find maximum key.
+     *
+     * @return     the maximum key.
      */
     public Key max() {
-        if (isEmpty()) {
-            return null;
-        }
-        return keys[size - 1];
+        return keys[n - 1];
     }
     /**
-     * min method.
-     * @return     key.
-     */
-    public Key min() {
-        if (isEmpty()) {
-            return null;
-        }
-        return keys[0];
-    }
-    /**
-     * floor method.
+     * Method to find the floor for the given key.
+     *
      * @param      key   The key
-     * @return     key.
+     *
+     * @return     the floor of the key
      */
     public Key floor(final Key key) {
         if (key == null) {
-            return null;
+            throw new IllegalArgumentException("argument to floor() is null");
         }
         int i = rank(key);
-        if (i < size && key.compareTo(keys[i]) == 0) {
+        if (i < n && keys[i].compareTo(key) == 0) {
             return keys[i];
         }
         if (i == 0) {
             return null;
+        } else {
+            return keys[i - 1];
         }
-        return keys[i - 1];
     }
     /**
-     * rank method.
+     * Method to find rank of the key.
+     *
      * @param      key   The key
-     * @return     rank of type int.
+     *
+     * @return     The rank of the given key
      */
     public int rank(final Key key) {
         if (key == null) {
-            return 0;
+            throw new IllegalArgumentException("argument to rank() is null");
         }
-        int lo = 0, hi = size - 1;
+        int lo = 0, hi = n - 1;
         while (lo <= hi) {
-            int mid = (lo + hi) / 2;
+            int mid = lo + (hi - lo) / 2;
             int cmp = key.compareTo(keys[mid]);
             if (cmp < 0) {
                 hi = mid - 1;
@@ -172,41 +215,54 @@ public class BinarySearchST<Key extends Comparable<Key>, Value> {
         return lo;
     }
     /**
-     * deleteMin method that deletes minimum key.
+     * Minimum key.
+     *
+     * @return     the minimum key
      */
-    public void deleteMin() {
-        if (isEmpty()) {
-            return;
-        }
-        delete(min());
+    public Key min() {
+        return keys[0];
     }
     /**
-     * keys method which displays the keys.
-     * @return     keys of type Iterable.
+     * Iterate through keys.
+     *
+     * @return     keys
      */
-    public Iterable<Key> keys() {
+    public ArrayList<String> keys() {
         return keys(min(), max());
     }
     /**
-     * keys method which displays the keys.
+     * Method to delete the minimum key.
+     */
+    public void deleteMin() {
+        delete(min());
+    }
+    /**
+     * Iterate through keys.
+     *
      * @param      lo    The lower
      * @param      hi    The higher
-     * @return     keys of type Iterable.
+     *
+     * @return     keys
      */
-    public Iterable<Key> keys(final Key lo, final Key hi) {
-        if (lo == null || hi == null) {
-            return null;
+    public ArrayList<String> keys(final Key lo, final Key hi) {
+        if (lo == null) {
+            throw new IllegalArgumentException(
+                "first argument to keys() is null");
         }
-        Queue<Key> queue = new Queue<Key>();
+        if (hi == null) {
+            throw new IllegalArgumentException(
+                "last argument to keys() is null");
+        }
+        ArrayList<String> l = new ArrayList<>();
         if (lo.compareTo(hi) > 0) {
-            return queue;
+            return l;
         }
         for (int i = rank(lo); i < rank(hi); i++) {
-            queue.enqueue(keys[i]);
+            l.add((String) keys[i]);
         }
         if (contains(hi)) {
-            queue.enqueue(keys[rank(hi)]);
+            l.add((String) keys[rank(hi)]);
         }
-        return queue;
+        return l;
     }
 }

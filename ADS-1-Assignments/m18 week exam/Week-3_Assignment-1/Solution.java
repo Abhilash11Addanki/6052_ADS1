@@ -4,88 +4,70 @@ import java.util.ArrayList;
  * Solution class.
  */
 final class Solution {
-
     /**
      * Constructs the object.
      */
     private Solution() {
 
     }
-
     /**
-     * main method takes input from user.
-     * calls appropriate func
-     * prints output to console.
-     *
+     * main method that drives the program.
      * @param      args  The command line arguments
-     *
-     * Time complexity : O(n)
-     *
-     * based on no of inputs.
+     * Time complexity for this method is O(N)
      */
     public static void main(final String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int noOfStocks = scan.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int noOfStocks = Integer.parseInt(sc.nextLine());
         final int hours = 6;
-        final int limit = 5;
-
-        //to eliminate errod due to int scan.
-        scan.nextLine();
-
-        //binary search symbol table
-        BinarySearchST<String,  Integer> maxST =
+        final int five = 5;
+        BinarySearchST<String, Integer> maxST =
             new BinarySearchST<String, Integer>(noOfStocks);
         BinarySearchST<String, Integer> minST =
             new BinarySearchST<String, Integer>(noOfStocks);
-
         for (int i = 0; i < hours; i++) {
-            //create a min and max pq for every hour.
             MinPQ<Stock> minpq = new MinPQ<Stock>(noOfStocks);
             MaxPQ<Stock> maxpq = new MaxPQ<Stock>(noOfStocks);
-
             for (int j = 0; j < noOfStocks; j++) {
-                String[] tokens = scan.nextLine().split(",");
-                Stock stock = new Stock(tokens[0],
-                                        Double.parseDouble(tokens[1]));
+                String[] input = sc.nextLine().split(",");
+                Stock stock = new Stock(input[0],
+                                        Double.parseDouble(input[1]));
                 minpq.insert(stock);
                 maxpq.insert(stock);
             }
-
-            //print 5 max stocks
-            for (int k = 0; k < limit; k++) {
-                Stock tmpp = maxpq.delMax();
-                Integer f = maxST.get(tmpp.name());
-                if (f != null) {
-                    maxST.put(tmpp.name(), f + 1);
+            for (int k = 0; k < five; k++) {
+                Stock temp = maxpq.delMax();
+                Integer num = maxST.get(temp.name());
+                if (num != null) {
+                    maxST.put(temp.name(), num + 1);
                 } else {
-                    maxST.put(tmpp.name(), 1);
+                    maxST.put(temp.name(), 1);
                 }
-                System.out.println(tmpp);
+                System.out.println(temp);
             }
             System.out.println();
-            //print 5 min stocks
-            for (int k = 0; k < limit; k++) {
-                Stock tmpp = minpq.delMin();
-                Integer f = minST.get(tmpp.name());
-                if (f != null) {
-                    minST.put(tmpp.name(), f + 1);
+
+            for (int k = 0; k < five; k++) {
+                Stock temp = minpq.delMin();
+                Integer num = minST.get(temp.name());
+                if (num != null) {
+                    minST.put(temp.name(), num + 1);
                 } else {
-                    minST.put(tmpp.name(), 1);
+                    minST.put(temp.name(), 1);
                 }
-                System.out.println(tmpp);
+                System.out.println(temp);
             }
             System.out.println();
         }
 
-        int noOfQueries = scan.nextInt();
+        int noOfQueries = sc.nextInt();
         if (noOfQueries == 0) {
             return;
         }
 
-        scan.nextLine();
+        sc.nextLine();
 
         for (int i = 0; i < noOfQueries; i++) {
-            String[] tokens = scan.nextLine().split(",");
+            String[] tokens = sc.nextLine().split(",");
             if (tokens[0].equals("get")) {
                 if (tokens[1].equals("minST")) {
                     Integer freq = minST.get(tokens[2]);

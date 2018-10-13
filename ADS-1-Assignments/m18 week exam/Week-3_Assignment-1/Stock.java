@@ -1,80 +1,55 @@
+/**
+ * Class for stock.
+ */
 class Stock implements Comparable<Stock> {
-
     /**
      * name of the stock.
      */
     private String name;
-
-    /**
-     * getter for name.
-     *
-     * @return     name of stock.
-     *
-     * Time complexity : O(1)
-     * constant time.
-     */
-    String name() {
-        return this.name;
-    }
-
     /**
      * percentage of stock rate.
      */
     private Double percentage;
-
     /**
-     * getter for percentage.
-     *
+     * gets the name of stock.
+     * @return     name of stock.
+     */
+    String name() {
+        return name;
+    }
+    /**
+     * gets the percentage.
      * @return     percentage of stock.
-     *
-     * Time complexity : O(1)
-     * constant time.
      */
     Double percentage() {
-        return this.percentage;
+        return percentage;
     }
-
-
-
     /**
      * Constructs the object.
-     *
-     * @param      namee    The namee
-     * @param      percent  The percent
+     * @param      n    The namee
+     * @param      p  The percent
      */
-    Stock(final String namee, final Double percent) {
-        this.name = namee;
-        this.percentage = percent;
+    Stock(final String n, final Double p) {
+        name = n;
+        percentage = p;
     }
-
     /**
-     * compares the object with other.
-     *
-     * @param      other  The other object
-     *
-     * @return     comparision int flag
-     *
-     * Time complexity : O(1)
-     * constant time.
+     * compareTo method.
+     * @param      stock  The other object
+     * @return     integer
      */
-    public int compareTo(final Stock other) {
-        int temp = this.percentage.compareTo(other.percentage);
-        if (temp != 0) {
-            return temp;
+    public int compareTo(final Stock stock) {
+        int cmp = percentage.compareTo(stock.percentage);
+        if (cmp != 0) {
+            return cmp;
         }
-
-        return this.name.compareTo(other.name);
+        return name.compareTo(stock.name);
     }
-
     /**
      * Returns a string representation of the object.
-     *
-     * @return     String representation of the object.
-     *
-     * Time complexity : O(1)
-     * constant time.
+     * @return     String.
      */
     public String toString() {
-        return this.name + " " + this.percentage;
+        return name + " " + percentage;
     }
 }

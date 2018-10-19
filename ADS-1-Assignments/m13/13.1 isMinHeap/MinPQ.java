@@ -11,7 +11,7 @@ class MinPQ<Key extends Comparable<Key>> {
     /**
      * Determines if minimum heap.
      * @param      arr   The arr
-     * Time complexity for this method is O(log N)
+     * Time complexity for this method is O(N)
      */
     public void isMinHeap(final Key[] arr) {
         int k = arr.length - 1;

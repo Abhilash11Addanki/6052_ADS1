@@ -38,7 +38,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**.
      * This method is to add a key and value to BST.
-     * Time Complexity is O(1).
+     * Time Complexity is O(N).
      * because it calls another put method to add elements.
      *
      * @param      key    The key

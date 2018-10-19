@@ -53,7 +53,7 @@ class QuickSort {
         str += arr[arr.length - 1] + "]";
         return str;
     }
-// time complexity is O(log N)
+// time complexity is O(Nlog N)
 /**.
      * sort method for quick sort.
      * @param      arr  The arguments

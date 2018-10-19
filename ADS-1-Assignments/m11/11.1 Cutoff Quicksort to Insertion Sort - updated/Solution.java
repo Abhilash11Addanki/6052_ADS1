@@ -12,7 +12,7 @@ public final class Solution {
      * main method that drives the program.
      * @param      args  The arguments
      */
-    // time complexity for the main method is N
+    // time complexity for the main method is O(N)
     // Because there is one while loop.
     // while loop iterates until it has next line i.e N times.
     public static void main(final String[] args) {

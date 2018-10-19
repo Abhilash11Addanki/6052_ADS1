@@ -84,7 +84,11 @@ public class MaxPQ<Key> {
         }
         return pq[1];
     }
-    // helper function to double the size of the heap array
+    /**
+     * resize method.
+     * @param      capacity  The capacity
+     * The time complexity for this method is O(N)
+     */
     private void resize(final int capacity) {
         Key[] temp = (Key[]) new Object[capacity];
         for (int i = 1; i <= n; i++) {
@@ -95,6 +99,7 @@ public class MaxPQ<Key> {
     /**
      * Adds a new key to this priority queue.
      * @param  x the new key to add to this priority queue
+     * The time complexity for this method is O(1)
      */
     public void insert(final Key x) {
         // double size of array if necessary
@@ -105,6 +110,7 @@ public class MaxPQ<Key> {
     /**
      * Removes and returns a largest key on this priority queue.
      * @return a largest key on this priority queue
+     * The time complexity for this method O(log N)
      */
     public Key delMax() {
         if (isEmpty()) {
@@ -120,6 +126,7 @@ public class MaxPQ<Key> {
     /**
      * swim method.
      * @param      k     index.
+     * The time complexity for this method is O(log N)
      */
     private void swim(final int k) {
         int k1 = k;
@@ -131,6 +138,7 @@ public class MaxPQ<Key> {
     /**
      * sink method.
      * @param      k     index.
+     * The time complexity for this method is O(log N)
      */
     private void sink(final int k) {
         int k1 = k;

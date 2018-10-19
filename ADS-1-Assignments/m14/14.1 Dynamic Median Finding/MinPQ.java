@@ -89,6 +89,7 @@ public class MinPQ<Key> {
     /**
      * resize method to resize the array.
      * @param      capacity  The capacity
+     * The time complexity for this method is O(N)
      */
     private void resize(final int capacity) {
         assert capacity > n;
@@ -101,6 +102,7 @@ public class MinPQ<Key> {
     /**
      * Adds a new key to this priority queue.
      * @param  x the key to add to this priority queue
+     * The time complexity for this method is O(1)
      */
     public void insert(final Key x) {
         if (n == pq.length - 1) resize(2 * pq.length);
@@ -110,6 +112,7 @@ public class MinPQ<Key> {
     /**
      * Removes and returns a smallest key on this priority queue.
      * @return a smallest key on this priority queue
+     * The time complexity for this method O(log N)
      */
     public Key delMin() {
         if (isEmpty()) {
@@ -125,6 +128,7 @@ public class MinPQ<Key> {
     /**
      * swim method.
      * @param      k    index.
+     * The time complexity for this method is O(log N)
      */
     private void swim(final int k) {
     	int k1 = k;
@@ -136,6 +140,7 @@ public class MinPQ<Key> {
     /**
      * sink method.
      * @param      k    index.
+     * The time complexity for this method is O(log N)
      */
     private void sink(final int k) {
     	int k1 = k;

@@ -23,6 +23,7 @@ class Students {
      * index.
      * @param      i     index.
      * @return     element of type StudentInfo.
+     * Time complexity for this method is O(1).
      */
     StudentInfo getarr(final int i) {
         return arr[i];
@@ -30,6 +31,7 @@ class Students {
     /**
      * add method.
      * @param      item  The item
+     * Time complexity for this method is O(1).
      */
     public void add(final StudentInfo item) {
         arr[size++] = item;
@@ -38,6 +40,7 @@ class Students {
      * show method.
      * @param      i     index.
      * @return     array element of type StudentInfo.
+     * Time complexity for this method is O(1).
      */
     StudentInfo show(final int i) {
         return arr[i];
@@ -56,6 +59,8 @@ class Students {
     }
     /**
      * sort method.
+     * The worst case time complexity
+       for this method is O(N^2).
      */
     void sort() {
         for (int i = 0; i < size - 1; i++) {

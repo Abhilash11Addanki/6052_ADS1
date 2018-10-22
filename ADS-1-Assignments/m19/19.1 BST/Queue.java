@@ -1,4 +1,3 @@
-import java.util.Iterator;
 /**
  * Queue class.
  * @param      <Item>  The item

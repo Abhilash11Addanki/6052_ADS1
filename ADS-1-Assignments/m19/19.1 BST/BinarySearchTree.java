@@ -318,7 +318,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @return     Iterable type.
      */
     public Iterable<Key> keys() {
-        if (isEmpty()) return new Queue<Key>();
+        if (isEmpty()) {
+            return new Queue<Key>();
+        }
         return keys(min(), max());
     }
     /**
@@ -341,11 +343,19 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      */
     private void keys(final Node x, final Queue<Key> queue,
         final Key lo, final Key hi) {
-        if (x == null) return;
+        if (x == null) {
+            return;
+        }
         int cmplo = lo.compareTo(x.key);
         int cmphi = hi.compareTo(x.key);
-        if (cmplo < 0) keys(x.left, queue, lo, hi);
-        if (cmplo <= 0 && cmphi >= 0) queue.enqueue(x.key);
-        if (cmphi > 0) keys(x.right, queue, lo, hi);
+        if (cmplo < 0) {
+            keys(x.left, queue, lo, hi);
+        }
+        if (cmplo <= 0 && cmphi >= 0) {
+            queue.enqueue(x.key);
+        }
+        if (cmphi > 0) {
+            keys(x.right, queue, lo, hi);
+        }
     }
 }

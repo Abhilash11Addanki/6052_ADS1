@@ -24,6 +24,10 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		 * Left and Right node of the BST
 		 */
 		private Node left, right;
+		/**
+		 * size.
+		 */
+		private int size;
 		/**.
 		 * Constructs the object.
 		 *
@@ -35,6 +39,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 			value = v;
 		}
 
+	}
+	public boolean isEmpty() {
+		return size() == 0;
 	}
 	public int size() {
 		return size(root);

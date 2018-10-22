@@ -41,6 +41,7 @@ public class Queue<Item> implements Iterable<Item> {
     /**
      * Returns true if this queue is empty.
      * @return {@code true} if this queue is empty; {@code false} otherwise
+     * Time complexity for this method is O(1).
      */
     public boolean isEmpty() {
         return first == null;
@@ -48,6 +49,7 @@ public class Queue<Item> implements Iterable<Item> {
     /**
      * Returns the number of items in this queue.
      * @return the number of items in this queue
+     * Time complexity for this method is O(1).
      */
     public int size() {
         return n;
@@ -55,6 +57,7 @@ public class Queue<Item> implements Iterable<Item> {
     /**
      * Adds the item to this queue.
      * @param  item the item to add
+     * Time complexity for this method is O(1).
      */
     public void enqueue(final Item item) {
         Node<Item> oldlast = last;
@@ -67,49 +70,5 @@ public class Queue<Item> implements Iterable<Item> {
             oldlast.next = last;
         }
         n++;
-    }
-    /**
-     * iterator method.
-     * @return     Iterator.
-     */
-    public Iterator<Item> iterator()  {
-        return new ListIterator<Item>(first);
-    }
-    /**
-     * Class for list iterator.
-     * @param      <Item>  The item
-     */
-    private class ListIterator<Item> implements Iterator<Item> {
-        /**
-         * current of type Node.
-         */
-        private Node<Item> current;
-        /**
-         * Constructs the object.
-         * @param      f  The first
-         */
-        ListIterator(final Node<Item> f) {
-            current = f;
-        }
-        /**
-         * Determines if it has next.
-         * @return     True if has next, False otherwise.
-         */
-        public boolean hasNext() {
-            return current != null;
-        }
-        /**
-         * next method that returns the elements.
-         *
-         * @return     item.
-         */
-        public Item next() {
-            if (!hasNext()) {
-                return null;
-            }
-            Item item = current.item;
-            current = current.next;
-            return item;
-        }
     }
 }

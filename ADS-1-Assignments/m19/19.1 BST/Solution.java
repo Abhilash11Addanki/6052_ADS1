@@ -12,6 +12,7 @@ public final class Solution {
     /**
      * main method that drives the program.
      * @param      args  The arguments
+     * The time complexity for this method is O(N log N).
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);

@@ -43,6 +43,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * Determines if empty.
      * @return     True if empty, False otherwise.
+     * Time complexity for this method is O(1).
      */
     public boolean isEmpty() {
         return size() == 0;
@@ -50,6 +51,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * size method that returns the size.
      * @return     size of type int.
+     * Time complexity for this method is O(1).
      */
     public int size() {
         return size(root);
@@ -58,6 +60,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * size method that returns the size.
      * @param      x     Node.
      * @return     size of type int.
+     * Time complexity for this method is O(1).
      */
     private int size(final Node x) {
         if (x == null) {
@@ -144,6 +147,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * min method that returns the minimum node.
      * @return     Key of type Book.
+     * Time complexity for this method is O(log N).
      */
     public Key min() {
         return min(root).key;
@@ -152,6 +156,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * min method that returns the minimum node.
      * @param      x     Node.
      * @return     Node.
+     * Time complexity for this method is O(log N).
      */
     private Node min(final Node x) {
         if (x.left == null) {
@@ -163,6 +168,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * max method that returns the maximum node.
      * @return     Key of type Book.
+     * Time complexity for this method is O(log N).
      */
     public Key max() {
         return max(root).key;
@@ -171,6 +177,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * min method that returns the minimum node.
      * @param      x     Node.
      * @return     Node.
+     * Time complexity for this method is O(log N).
      */
     private Node max(final Node x) {
         if (x.right == null) {
@@ -184,6 +191,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * than given node.
      * @param      key   The key
      * @return     Key of type Book.
+     * Time complexity for this method is O(log N).
      */
     public Key floor(final Key key) {
         Node x = floor(root, key);
@@ -199,6 +207,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @param      x     Node.
      * @param      key   The key
      * @return     Node.
+     * Time complexity for this method is O(log N).
      */
     private Node floor(final Node x, final Key key) {
         if (x == null) {
@@ -223,6 +232,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * than given node.
      * @param      key   The key
      * @return     Key of type Book.
+     * Time complexity for this method is O(log N).
      */
     public Key ceiling(final Key key) {
         Node x = ceiling(root, key);
@@ -238,6 +248,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @param      x     Node.
      * @param      key   The key
      * @return     Node.
+     * Time complexity for this method is O(log N).
      */
     private Node ceiling(final Node x, final Key key) {
         if (x == null) {
@@ -261,6 +272,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * select method that returns the node at particular index.
      * @param      k     index.
      * @return     Key of type Book.
+     * Time complexity for this method is O(log N).
      */
     public Key select(final int k) {
         Node x = select(root, k);
@@ -271,6 +283,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @param      x     Node.
      * @param      k     index.
      * @return     Node.
+     * Time complexity for this method is O(log N).
      */
     private Node select(final Node x, final int k) {
         if (x == null) {
@@ -283,79 +296,6 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
             return select(x.right, k - t - 1);
         } else {
             return x;
-        }
-    }
-    /**
-     * rank method that returns the number of nodes less than
-     * given node.
-     * @param      key   The key
-     * @return     rank of type int.
-     */
-    public int rank(final Key key) {
-        return rank(key, root);
-    }
-    /**
-     * rank method that returns the number of nodes less than
-     * given node.
-     * @param      key   The key
-     * @param      x     Node.
-     * @return     rank of type int.
-     */
-    private int rank(final Key key, final Node x) {
-        if (x == null) {
-            return 0;
-        }
-        int cmp = key.compareTo(x.key);
-        if (cmp < 0) {
-            return rank(key, x.left);
-        } else if (cmp > 0) {
-            return 1 + size(x.left) + rank(key, x.right);
-        }
-        return size(x.left);
-    }
-    /**
-     * keys method that prints the nodes.
-     * @return     Iterable type.
-     */
-    public Iterable<Key> keys() {
-        if (isEmpty()) {
-            return new Queue<Key>();
-        }
-        return keys(min(), max());
-    }
-    /**
-     * keys method that prints the nodes.
-     * @param      lo    The lower
-     * @param      hi    The higher
-     * @return     Iterable type.
-     */
-    public Iterable<Key> keys(final Key lo, final Key hi) {
-        Queue<Key> queue = new Queue<Key>();
-        keys(root, queue, lo, hi);
-        return queue;
-    }
-    /**
-     * keys method that prints the node.
-     * @param      x      Node.
-     * @param      queue  The queue
-     * @param      lo     The lower
-     * @param      hi     The higher
-     */
-    private void keys(final Node x, final Queue<Key> queue,
-        final Key lo, final Key hi) {
-        if (x == null) {
-            return;
-        }
-        int cmplo = lo.compareTo(x.key);
-        int cmphi = hi.compareTo(x.key);
-        if (cmplo < 0) {
-            keys(x.left, queue, lo, hi);
-        }
-        if (cmplo <= 0 && cmphi >= 0) {
-            queue.enqueue(x.key);
-        }
-        if (cmphi > 0) {
-            keys(x.right, queue, lo, hi);
         }
     }
 }

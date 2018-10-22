@@ -35,20 +35,20 @@ public final class Solution {
                 System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
                 break;
             case "min":
-                Book b1 = bst.min();
+                b = bst.min();
                 System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
                 break;
             case "select":
-                Book b2 = bst.select(Integer.parseInt(tokens[1]));
+                b = bst.select(Integer.parseInt(tokens[1]));
                 System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
                 break;
             case "floor":
-                Book b3 = bst.floor(new Book(tokens[1],
+                b = bst.floor(new Book(tokens[1],
                                              tokens[2], Double.parseDouble(tokens[2 + 1])));
                 System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
                 break;
             case "ceiling":
-                Book b3 = bst.floor(new Book(tokens[1],
+                b = bst.ceiling(new Book(tokens[1],
                                              tokens[2], Double.parseDouble(tokens[2 + 1])));
                 System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
                 break;

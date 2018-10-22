@@ -34,9 +34,10 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		 * @param      k  The key 1
 		 * @param      v   The value
 		 */
-		Node(final Key k, final Value v) {
+		Node(final Key k, final Value v, final int s) {
 			key = k;
 			value = v;
+			size = s;
 		}
 
 	}
@@ -82,7 +83,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 	public Node put(final Node node, final Key key,
 	                final Value value) {
 		if (node == null) {
-			return new Node(key, value);
+			return new Node(key, value, 1);
 		}
 		int cmp = key.compareTo(node.key);
 		if (cmp < 0) {
@@ -213,8 +214,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
 			return select(x.left, k);
 		} else if (t < k) {
 			return select(x.right, k - t - 1);
+		} else {
+			return x;
 		}
-		return x;
 	}
 	public int rank(Key key) {
 		return rank(key, root);

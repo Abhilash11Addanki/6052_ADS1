@@ -21,7 +21,7 @@ public final class Solution {
             switch (tokens[0]) {
             case "put":
                 Book key = new Book(tokens[1],
-                                    tokens[2], Double.parseDouble(tokens[2 + 1]));
+                    tokens[2], Double.parseDouble(tokens[2 + 1]));
                 int value = Integer.parseInt(tokens[2 + 2]);
                 bst.put(key, value);
                 break;
@@ -32,25 +32,30 @@ public final class Solution {
                 break;
             case "max":
                 Book b = bst.max();
-                System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
+                System.out.println(b.getName() + ", "
+                    + b.getAuthor() + ", " + b.getPrice());
                 break;
             case "min":
                 b = bst.min();
-                System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
+                System.out.println(b.getName() + ", "
+                    + b.getAuthor() + ", " + b.getPrice());
                 break;
             case "select":
                 b = bst.select(Integer.parseInt(tokens[1]));
-                System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
+                System.out.println(b.getName() + ", "
+                    + b.getAuthor() + ", " + b.getPrice());
                 break;
             case "floor":
                 b = bst.floor(new Book(tokens[1],
-                                             tokens[2], Double.parseDouble(tokens[2 + 1])));
-                System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
+                          tokens[2], Double.parseDouble(tokens[2 + 1])));
+                System.out.println(b.getName() + ", "
+                    + b.getAuthor() + ", " + b.getPrice());
                 break;
             case "ceiling":
                 b = bst.ceiling(new Book(tokens[1],
-                                             tokens[2], Double.parseDouble(tokens[2 + 1])));
-                System.out.println(b.getName() + ", " + b.getAuthor() + ", " + b.getPrice());
+                          tokens[2], Double.parseDouble(tokens[2 + 1])));
+                System.out.println(b.getName() + ", "
+                    + b.getAuthor() + ", " + b.getPrice());
                 break;
             default:
                 break;

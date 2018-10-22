@@ -1,2 +1,11 @@
 Starting audit...
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m19\19.1 BST\Solution.java:24: Line is longer than 80 characters (found 82). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m19\19.1 BST\Solution.java:35: Line is longer than 80 characters (found 93). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m19\19.1 BST\Solution.java:39: Line is longer than 80 characters (found 93). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m19\19.1 BST\Solution.java:43: Line is longer than 80 characters (found 93). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m19\19.1 BST\Solution.java:47: Line is longer than 80 characters (found 92). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m19\19.1 BST\Solution.java:48: Line is longer than 80 characters (found 93). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m19\19.1 BST\Solution.java:52: Line is longer than 80 characters (found 92). [LineLength]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m19\19.1 BST\Solution.java:53: Line is longer than 80 characters (found 93). [LineLength]
 Audit done.
+Checkstyle ends with 8 errors.

@@ -33,6 +33,12 @@ class Book implements Comparable<Book> {
     String getName() {
         return name;
     }
+    String getAuthor() {
+        return author;
+    }
+    double getPrice() {
+        return price;
+    }
     /**
      * compareTo method.
      * @param      b     b of type Book.

@@ -40,7 +40,8 @@ public class Queue<Item> implements Iterable<Item> {
     }
     /**
      * Returns true if this queue is empty.
-     * @return {@code true} if this queue is empty; {@code false} otherwise
+     * @return {@code true} if
+     * this queue is empty; {@code false} otherwise
      * Time complexity for this method is O(1).
      */
     public boolean isEmpty() {

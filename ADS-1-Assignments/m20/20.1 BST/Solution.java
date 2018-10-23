@@ -49,12 +49,20 @@ public final class Solution {
             case "floor":
                 b = bst.floor(new Book(tokens[1],
                           tokens[2], Double.parseDouble(tokens[2 + 1])));
+                if (b == null) {
+                    System.out.println("null");
+                    break;
+                }
                 System.out.println(b.getName() + ", "
                     + b.getAuthor() + ", " + b.getPrice());
                 break;
             case "ceiling":
                 b = bst.ceiling(new Book(tokens[1],
                           tokens[2], Double.parseDouble(tokens[2 + 1])));
+                if (b == null) {
+                    System.out.println("null");
+                    break;
+                }
                 System.out.println(b.getName() + ", "
                     + b.getAuthor() + ", " + b.getPrice());
                 break;

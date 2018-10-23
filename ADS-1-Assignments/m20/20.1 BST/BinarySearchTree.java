@@ -320,7 +320,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * Time complexity for this method is O(N).
      */
     private Node delete(final Node x, final Key key) {
-    	Node n = x;
+        Node n = x;
         if (n == null) {
             return null;
         }
@@ -346,6 +346,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**
      * deleteMin method that deletes the minimum node.
+     * Time complexity for this method is O(N).
      */
     public void deleteMin() {
         root = deleteMin(root);
@@ -354,6 +355,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * deleteMin method that deletes the minimum node.
      * @param      x     Node.
      * @return     Node.
+     * Time complexity for this method is O(N).
      */
     private Node deleteMin(final Node x) {
         if (x.left == null) {
@@ -365,6 +367,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**
      * deleteMax method that deletes the maximum node.
+     * Time complexity for this method is O(N).
      */
     public void deleteMax() {
         root = deleteMax(root);
@@ -373,6 +376,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * deleteMax method that deletes the maximum node.
      * @param      x     Node.
      * @return     Node.
+     * Time complexity for this method is O(N).
      */
     private Node deleteMax(final Node x) {
         if (x.right == null) {

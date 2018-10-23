@@ -147,7 +147,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * min method that returns the minimum node.
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key min() {
         return min(root).key;
@@ -156,7 +156,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * min method that returns the minimum node.
      * @param      x     Node.
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node min(final Node x) {
         if (x.left == null) {
@@ -168,7 +168,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * max method that returns the maximum node.
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key max() {
         return max(root).key;
@@ -177,7 +177,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * min method that returns the minimum node.
      * @param      x     Node.
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node max(final Node x) {
         if (x.right == null) {
@@ -191,7 +191,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * than given node.
      * @param      key   The key
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key floor(final Key key) {
         if (isEmpty()) {
@@ -210,7 +210,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @param      x     Node.
      * @param      key   The key
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node floor(final Node x, final Key key) {
         if (x == null) {
@@ -235,7 +235,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * than given node.
      * @param      key   The key
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key ceiling(final Key key) {
         if (isEmpty()) {
@@ -254,7 +254,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @param      x     Node.
      * @param      key   The key
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node ceiling(final Node x, final Key key) {
         if (x == null) {
@@ -278,7 +278,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * select method that returns the node at particular index.
      * @param      k     index.
      * @return     Key of type Book.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     public Key select(final int k) {
         Node x = select(root, k);
@@ -289,7 +289,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @param      x     Node.
      * @param      k     index.
      * @return     Node.
-     * Time complexity for this method is O(log N).
+     * Time complexity for this method is O(N).
      */
     private Node select(final Node x, final int k) {
         if (x == null) {

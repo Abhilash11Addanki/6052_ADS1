@@ -304,22 +304,6 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
             return x;
         }
     }
-    public int rank(Key key, Node x) {
-    	return rank1(key, root);
-    }
-    private int rank1(Key key, Node x) {
-    	if (x == null) {
-    		return 0;
-    	}
-    	int cmp = key.compareTo(x.key);
-    	if (cmp < 0) {
-    		return rank1(key, x.left);
-    	} else if (cmp > 0) {
-    		return 1 + size(x.left) + rank1(key, x.right);
-    	} else {
-    		return size(x.left);
-    	}
-    }
     public void delete(Key key) {
     	root = delete(root, key);
     }

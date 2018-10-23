@@ -194,9 +194,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * Time complexity for this method is O(log N).
      */
     public Key floor(final Key key) {
-    	if (isEmpty()) {
-    		return null;
-    	}
+        if (isEmpty()) {
+            return null;
+        }
         Node x = floor(root, key);
         if (x == null) {
             return null;
@@ -238,9 +238,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * Time complexity for this method is O(log N).
      */
     public Key ceiling(final Key key) {
-    	if (isEmpty()) {
-    		return null;
-    	}
+        if (isEmpty()) {
+            return null;
+        }
         Node x = ceiling(root, key);
         if (x == null) {
             return null;
@@ -310,7 +310,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * Time complexity for this method is O(N).
      */
     public void delete(final Key key) {
-    	root = delete(root, key);
+        root = delete(root, key);
     }
     /**
      * delete method that deletes the particular node.
@@ -319,66 +319,67 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @return     Node.
      * Time complexity for this method is O(N).
      */
-    private Node delete(Node x, Key key) {
-    	if (x == null) {
-    		return null;
-    	}
-    	int cmp = key.compareTo(x.key);
-    	if (cmp < 0) {
-    		x.left = delete(x.left, key);
-    	} else if (cmp > 0) {
-    		x.right = delete(x.right, key);
-    	} else {
-    		if (x.right == null) {
-    			return x.left;
-    		}
-    		if (x.left == null) {
-    			return x.right;
-    		}
-    		Node t = x;
-    		x = min(t.right);
-    		x.right = deleteMin(t.right);
-    		x.left = t.left;
-    	}
-    	x.size = size(x.left) + size(x.right) + 1;
-    	return x;
+    private Node delete(final Node x, final Key key) {
+    	Node n = x;
+        if (n == null) {
+            return null;
+        }
+        int cmp = key.compareTo(n.key);
+        if (cmp < 0) {
+            n.left = delete(n.left, key);
+        } else if (cmp > 0) {
+            n.right = delete(n.right, key);
+        } else {
+            if (n.right == null) {
+                return n.left;
+            }
+            if (n.left == null) {
+                return n.right;
+            }
+            Node t = n;
+            n = min(t.right);
+            n.right = deleteMin(t.right);
+            n.left = t.left;
+        }
+        n.size = size(n.left) + size(n.right) + 1;
+        return n;
     }
     /**
      * deleteMin method that deletes the minimum node.
      */
     public void deleteMin() {
-    	root = deleteMin(root);
+        root = deleteMin(root);
     }
     /**
      * deleteMin method that deletes the minimum node.
      * @param      x     Node.
      * @return     Node.
      */
-    private Node deleteMin(Node x) {
-    	if (x.left == null) {
-    		return x.right;
-    	}
-    	x.left = deleteMin(x.left);
-    	x.size = size(x.left) + size(x.right) + 1;
-    	return x;
+    private Node deleteMin(final Node x) {
+        if (x.left == null) {
+            return x.right;
+        }
+        x.left = deleteMin(x.left);
+        x.size = size(x.left) + size(x.right) + 1;
+        return x;
     }
     /**
      * deleteMax method that deletes the maximum node.
      */
     public void deleteMax() {
-    	root = deleteMax(root);
+        root = deleteMax(root);
     }
     /**
      * deleteMax method that deletes the maximum node.
      * @param      x     Node.
      * @return     Node.
      */
-    private Node deleteMax(Node x) {
-    	if (x.right == null) {
-    		return x.left;
-    	}
-    	x.right = deleteMax(x.right);
-    	x.size = size(x.left) + size(x.right) + 1;
-    	return x;
+    private Node deleteMax(final Node x) {
+        if (x.right == null) {
+            return x.left;
+        }
+        x.right = deleteMax(x.right);
+        x.size = size(x.left) + size(x.right) + 1;
+        return x;
     }
 }

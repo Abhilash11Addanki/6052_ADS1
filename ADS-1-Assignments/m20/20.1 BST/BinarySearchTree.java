@@ -194,6 +194,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * Time complexity for this method is O(log N).
      */
     public Key floor(final Key key) {
+    	if (isEmpty()) {
+    		return null;
+    	}
         Node x = floor(root, key);
         if (x == null) {
             return null;
@@ -235,6 +238,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * Time complexity for this method is O(log N).
      */
     public Key ceiling(final Key key) {
+    	if (isEmpty()) {
+    		return null;
+    	}
         Node x = ceiling(root, key);
         if (x == null) {
             return null;

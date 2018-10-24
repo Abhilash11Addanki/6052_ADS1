@@ -1,0 +1,3 @@
+From the given trees (iii) and (iv) are red-black BST's because the no of black lines in each path is equal.
+1)In (iii) BST the no of black lines in each path is 2.
+2)In (iv) BST the no of black lines in each path is 1.

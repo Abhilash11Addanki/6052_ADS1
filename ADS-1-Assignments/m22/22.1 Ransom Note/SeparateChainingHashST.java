@@ -58,6 +58,9 @@ public class SeparateChainingHashST<Key, Value> {
      * @return     Value of type Integer.
      */
     public Value get(final Key key) {
+        if (get(key) == null) {
+            return null;
+        }
         int i = hash(key);
         return st[i].get(key);
     }

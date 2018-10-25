@@ -16,6 +16,7 @@ class Solution {
 		for (String s : note) {
 			if (mag.contains(s)) {
 				cnt++;
+				mag.delete(s);
 			}
 		}
 		if (cnt == n) {

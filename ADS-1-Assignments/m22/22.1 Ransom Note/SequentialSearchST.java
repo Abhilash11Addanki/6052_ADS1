@@ -1,25 +1,44 @@
+/**
+ * Class for sequential search st.
+ * @param      <Key>    The key
+ * @param      <Value>  The value
+ */
 public class SequentialSearchST<Key, Value> {
-    private int n;           // number of key-value pairs
-    private Node first;      // the linked list of key-value pairs
-
-    // a helper linked list data type
+    /**
+     * number of key-value pairs.
+     */
+    private int n;
+    /**
+     * the linked list of key-value pairs.
+     */
+    private Node first;
+    /**
+     * Class for node.
+     */
     private class Node {
+        /**
+         * key of type String.
+         */
         private Key key;
+        /**
+         * val of type Integer.
+         */
         private Value val;
+        /**
+         * next of type Node.
+         */
         private Node next;
-
+        /**
+         * Constructs the object.
+         * @param      key   The key
+         * @param      val   The value
+         * @param      next  The next
+         */
         public Node(final Key key, final Value val, final Node next)  {
             this.key  = key;
             this.val  = val;
             this.next = next;
         }
-    }
-    /**
-     * Returns the number of key-value pairs in this symbol table.
-     * @return the number of key-value pairs in this symbol table
-     */
-    public int size() {
-        return n;
     }
     /**
      * Checks whether the key is present in the symbol table or not.

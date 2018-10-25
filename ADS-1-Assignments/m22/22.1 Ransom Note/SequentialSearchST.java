@@ -54,9 +54,6 @@ public class SequentialSearchST<Key, Value> {
      * @return     Value of type Integer.
      */
     public Value get(final Key key) {
-        if (get(key) == null) {
-            return null;
-        }
         for (Node x = first; x != null; x = x.next) {
             if (key.equals(x.key)) {
                 return x.val;

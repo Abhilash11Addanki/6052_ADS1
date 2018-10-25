@@ -10,7 +10,7 @@ class Solution {
 		SeparateChainingHashST<String, Integer> mag = new SeparateChainingHashST<String, Integer>();
 		SeparateChainingHashST<String, Integer> notes = new SeparateChainingHashST<String, Integer>();
 		for (int i = 0; i < m; i++) {
-			int count = mag.get(magazine[i]);
+			int count = 0;
 			if (mag.contains(magazine[i])) {
 				mag.put(magazine[i], count + 1);
 			} else {

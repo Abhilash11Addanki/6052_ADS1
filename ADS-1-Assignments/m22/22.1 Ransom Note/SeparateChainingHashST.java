@@ -1,8 +1,25 @@
+/**
+ * Class for separate chaining hash st.
+ * @param      <Key>    The key
+ * @param      <Value>  The value
+ */
 public class SeparateChainingHashST<Key, Value> {
+    /**
+     * initial capacity of hash table.
+     */
     private static final int INIT_CAPACITY = 4;
-    private int n;                                // number of key-value pairs
-    private int m;                                // hash table size
-    private SequentialSearchST<Key, Value>[] st;  // array of linked-list symbol tables
+    /**
+     * number of key-value pairs.
+     */
+    private int n;
+    /**
+     * hash table size.
+     */
+    private int m;
+    /**
+     * array of linked-list symbol tables.
+     */
+    private SequentialSearchST<Key, Value>[] st;
     /**
      * Initializes an empty symbol table.
      */
@@ -13,7 +30,7 @@ public class SeparateChainingHashST<Key, Value> {
      * Initializes an empty symbol table with {@code m} chains.
      * @param m the initial number of chains
      */
-    public SeparateChainingHashST(int m) {
+    public SeparateChainingHashST(final int m) {
         this.m = m;
         st = (SequentialSearchST<Key, Value>[]) new SequentialSearchST[m];
         for (int i = 0; i < m; i++)
@@ -24,7 +41,7 @@ public class SeparateChainingHashST<Key, Value> {
      * @param      key   The key
      * @return     hash code of type int.
      */
-    private int hash(Key key) {
+    private int hash(final Key key) {
         return (key.hashCode() & 0x7fffffff) % m;
     }
     /**

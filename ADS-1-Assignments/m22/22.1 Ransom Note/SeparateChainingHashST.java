@@ -27,7 +27,7 @@ public class SeparateChainingHashST<Key, Value> {
         this(INIT_CAPACITY);
     }
     /**
-     * Initializes an empty symbol table with {@code m1} chains.
+     * Initializes an empty symbol table with {@code m} chains.
      * @param m the initial number of chains
      */
     public SeparateChainingHashST(final int m) {

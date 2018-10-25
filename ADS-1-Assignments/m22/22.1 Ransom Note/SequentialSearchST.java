@@ -15,14 +15,7 @@ public class SequentialSearchST<Key, Value> {
         }
     }
     /**
-     * Initializes an empty symbol table.
-     */
-    public SequentialSearchST() {
-    }
-
-    /**
      * Returns the number of key-value pairs in this symbol table.
-     *
      * @return the number of key-value pairs in this symbol table
      */
     public int size() {

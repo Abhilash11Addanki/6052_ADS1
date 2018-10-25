@@ -8,13 +8,12 @@ public class SequentialSearchST<Key, Value> {
         private Value val;
         private Node next;
 
-        public Node(Key key, Value val, Node next)  {
+        public Node(final Key key, final Value val, final Node next)  {
             this.key  = key;
             this.val  = val;
             this.next = next;
         }
     }
-
     /**
      * Initializes an empty symbol table.
      */
@@ -29,17 +28,6 @@ public class SequentialSearchST<Key, Value> {
     public int size() {
         return n;
     }
-
-    /**
-     * Returns true if this symbol table is empty.
-     *
-     * @return {@code true} if this symbol table is empty;
-     *         {@code false} otherwise
-     */
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
     /**
      * Returns true if this symbol table contains the specified key.
      *
@@ -80,13 +68,7 @@ public class SequentialSearchST<Key, Value> {
      * @param  val the value
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    public void put(Key key, Value val) {
-        if (key == null) throw new IllegalArgumentException("first argument to put() is null");
-        if (val == null) {
-            delete(key);
-            return;
-        }
-
+    public void put(final Key key, final Value val) {
         for (Node x = first; x != null; x = x.next) {
             if (key.equals(x.key)) {
                 x.val = val;
@@ -95,30 +77,6 @@ public class SequentialSearchST<Key, Value> {
         }
         first = new Node(key, val, first);
         n++;
-    }
-
-    /**
-     * Removes the specified key and its associated value from this symbol table
-     * (if the key is in this symbol table).
-     *
-     * @param  key the key
-     * @throws IllegalArgumentException if {@code key} is {@code null}
-     */
-    public void delete(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to delete() is null");
-        first = delete(first, key);
-    }
-
-    // delete key in linked list beginning at Node x
-    // warning: function call stack too large if table is large
-    private Node delete(Node x, Key key) {
-        if (x == null) return null;
-        if (key.equals(x.key)) {
-            n--;
-            return x.next;
-        }
-        x.next = delete(x.next, key);
-        return x;
     }
     /**
      * Returns all keys in the symbol table as an {@code Iterable}.

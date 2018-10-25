@@ -45,13 +45,6 @@ public class SeparateChainingHashST<Key, Value> {
         return (key.hashCode() & 0x7fffffff) % m;
     }
     /**
-     * Returns the number of key-value pairs in this symbol table.
-     * @return the number of key-value pairs in this symbol table
-     */
-    public int size() {
-        return n;
-    }
-    /**
      * Checks whether the key is present in the hash table or not.
      * @param      key   The key
      * @return     true or false.

@@ -44,6 +44,7 @@ public class SequentialSearchST<Key, Value> {
      * Checks whether the key is present in the symbol table or not.
      * @param      key   The key
      * @return     true or false.
+     * Time complexity for this method is O(1).
      */
     public boolean contains(final Key key) {
         return get(key) != null;
@@ -52,6 +53,7 @@ public class SequentialSearchST<Key, Value> {
      * gets the value of the particular key in the symbol table.
      * @param      key   The key
      * @return     Value of type Integer.
+     * Time complexity for this method is O(N).
      */
     public Value get(final Key key) {
         for (Node x = first; x != null; x = x.next) {
@@ -65,6 +67,7 @@ public class SequentialSearchST<Key, Value> {
      * inserts key value pair into the symbol table.
      * @param      key   The key
      * @param      val   The value
+     * Time complexity for this method is O(N).
      */
     public void put(final Key key, final Value val) {
         for (Node x = first; x != null; x = x.next) {

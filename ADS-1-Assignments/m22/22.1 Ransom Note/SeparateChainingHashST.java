@@ -41,6 +41,7 @@ public class SeparateChainingHashST<Key, Value> {
      * hash method that returns the hash code of a particular key.
      * @param      key   The key
      * @return     hash code of type int.
+     * Time complexity for this method is O(N).
      */
     private int hash(final Key key) {
         final int code = 0x7fffffff;
@@ -50,6 +51,7 @@ public class SeparateChainingHashST<Key, Value> {
      * Checks whether the key is present in the hash table or not.
      * @param      key   The key
      * @return     true or false.
+     * Time complexity for this method is O(1).
      */
     public boolean contains(final Key key) {
         return get(key) != null;
@@ -58,6 +60,7 @@ public class SeparateChainingHashST<Key, Value> {
      * gets the value of a particular key from hash table.
      * @param      key   The key
      * @return     Value of type Integer.
+     * Time complexity for this method is O(N).
      */
     public Value get(final Key key) {
         int i = hash(key);
@@ -67,6 +70,7 @@ public class SeparateChainingHashST<Key, Value> {
      * Inserts the key value pair into the hash table.
      * @param      key   The key
      * @param      val   The value
+     * Time complexity for this method is O(N).
      */
     public void put(final Key key, final Value val) {
         int i = hash(key);

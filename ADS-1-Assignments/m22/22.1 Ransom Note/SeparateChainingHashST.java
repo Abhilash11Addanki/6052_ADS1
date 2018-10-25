@@ -43,8 +43,7 @@ public class SeparateChainingHashST<Key, Value> {
      * @return     hash code of type int.
      */
     private int hash(final Key key) {
-        final int code = 0x7fffffff;
-        return (key.hashCode() & code) % m;
+        return (key.hashCode() & 0x7fffffff) % m;
     }
     /**
      * Checks whether the key is present in the hash table or not.

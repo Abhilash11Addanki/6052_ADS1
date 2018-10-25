@@ -3,8 +3,8 @@ Expected Output:
 Yes
 Your Output: 
 Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at SeparateChainingHashST.hash(SeparateChainingHashST.java:47)
-	at SeparateChainingHashST.put(SeparateChainingHashST.java:72)
+	at SeparateChainingHashST.hash(SeparateChainingHashST.java:46)
+	at SeparateChainingHashST.put(SeparateChainingHashST.java:71)
 	at Solution.main(Solution.java:27)
 ----------------------------------------
 ########## Testcase 1: Failed ##########
@@ -12,8 +12,8 @@ Expected Output:
 No
 Your Output: 
 Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at SeparateChainingHashST.hash(SeparateChainingHashST.java:47)
-	at SeparateChainingHashST.put(SeparateChainingHashST.java:72)
+	at SeparateChainingHashST.hash(SeparateChainingHashST.java:46)
+	at SeparateChainingHashST.put(SeparateChainingHashST.java:71)
 	at Solution.main(Solution.java:27)
 ----------------------------------------
 ########## Testcase 2: Failed ##########
@@ -21,8 +21,8 @@ Expected Output:
 No
 Your Output: 
 Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at SeparateChainingHashST.hash(SeparateChainingHashST.java:47)
-	at SeparateChainingHashST.put(SeparateChainingHashST.java:72)
+	at SeparateChainingHashST.hash(SeparateChainingHashST.java:46)
+	at SeparateChainingHashST.put(SeparateChainingHashST.java:71)
 	at Solution.main(Solution.java:27)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
@@ -30,8 +30,8 @@ Expected Output:
 No
 Your Output: 
 Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at SeparateChainingHashST.hash(SeparateChainingHashST.java:47)
-	at SeparateChainingHashST.put(SeparateChainingHashST.java:72)
+	at SeparateChainingHashST.hash(SeparateChainingHashST.java:46)
+	at SeparateChainingHashST.put(SeparateChainingHashST.java:71)
 	at Solution.main(Solution.java:27)
 ----------------------------------------
 ########## Testcase 4: Failed ##########
@@ -39,8 +39,8 @@ Expected Output:
 Yes
 Your Output: 
 Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at SeparateChainingHashST.hash(SeparateChainingHashST.java:47)
-	at SeparateChainingHashST.put(SeparateChainingHashST.java:72)
+	at SeparateChainingHashST.hash(SeparateChainingHashST.java:46)
+	at SeparateChainingHashST.put(SeparateChainingHashST.java:71)
 	at Solution.main(Solution.java:27)
 ----------------------------------------
 ########## Testcase 5: Failed ##########
@@ -48,7 +48,7 @@ Expected Output:
 Yes
 Your Output: 
 Exception in thread "main" java.lang.ArithmeticException: / by zero
-	at SeparateChainingHashST.hash(SeparateChainingHashST.java:47)
-	at SeparateChainingHashST.put(SeparateChainingHashST.java:72)
+	at SeparateChainingHashST.hash(SeparateChainingHashST.java:46)
+	at SeparateChainingHashST.put(SeparateChainingHashST.java:71)
 	at Solution.main(Solution.java:27)
 ----------------------------------------

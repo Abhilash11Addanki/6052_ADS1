@@ -27,11 +27,11 @@ public class SeparateChainingHashST<Key, Value> {
         this(INIT_CAPACITY);
     }
     /**
-     * Initializes an empty symbol table with {@code m} chains.
-     * @param m the initial number of chains
+     * Initializes an empty symbol table with {@code m1} chains.
+     * @param m1 the initial number of chains
      */
-    public SeparateChainingHashST(final int m) {
-        this.m = m;
+    public SeparateChainingHashST(final int m1) {
+        m = m1;
         st = (SequentialSearchST<Key, Value>[]) new SequentialSearchST[m];
         for (int i = 0; i < m; i++) {
             st[i] = new SequentialSearchST<Key, Value>();
@@ -43,7 +43,8 @@ public class SeparateChainingHashST<Key, Value> {
      * @return     hash code of type int.
      */
     private int hash(final Key key) {
-        return (key.hashCode() & 0x7fffffff) % m;
+        final int code = 0x7fffffff;
+        return (key.hashCode() & code) % m;
     }
     /**
      * Checks whether the key is present in the hash table or not.

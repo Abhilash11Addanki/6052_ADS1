@@ -24,12 +24,6 @@ final class Solution {
         SeparateChainingHashST<String, Integer> notes =
             new SeparateChainingHashST<String, Integer>();
         for (int i = 0; i < m; i++) {
-            mag.put(magazine[i], 0);
-        }
-        for (int j = 0; j < n; j++) {
-            notes.put(note[j], 0);
-        }
-        for (int i = 0; i < m; i++) {
             int count = mag.get(magazine[i]);
             if (mag.contains(magazine[i])) {
                 mag.put(magazine[i], count + 1);

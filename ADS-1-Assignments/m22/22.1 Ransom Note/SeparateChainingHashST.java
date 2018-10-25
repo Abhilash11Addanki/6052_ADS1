@@ -31,8 +31,9 @@ public class SeparateChainingHashST<Key, Value> {
      * @param m the initial number of chains
      */
     public SeparateChainingHashST(final int m) {
-        st = (SequentialSearchST<Key, Value>[]) new SequentialSearchST[m];
-        for (int i = 0; i < m; i++) {
+    	int m1 = m;
+        st = (SequentialSearchST<Key, Value>[]) new SequentialSearchST[m1];
+        for (int i = 0; i < m1; i++) {
             st[i] = new SequentialSearchST<Key, Value>();
         }
     }

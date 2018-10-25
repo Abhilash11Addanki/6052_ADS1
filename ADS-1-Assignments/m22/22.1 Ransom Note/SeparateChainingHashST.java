@@ -33,8 +33,9 @@ public class SeparateChainingHashST<Key, Value> {
     public SeparateChainingHashST(final int m) {
         this.m = m;
         st = (SequentialSearchST<Key, Value>[]) new SequentialSearchST[m];
-        for (int i = 0; i < m; i++)
+        for (int i = 0; i < m; i++) {
             st[i] = new SequentialSearchST<Key, Value>();
+        }
     }
     /**
      * hash method that returns the hash code of a particular key.
@@ -75,7 +76,9 @@ public class SeparateChainingHashST<Key, Value> {
      */
     public void put(final Key key, final Value val) {
         int i = hash(key);
-        if (!st[i].contains(key)) n++;
+        if (!st[i].contains(key)) {
+            n++;
+        }
         st[i].put(key, val);
     }
 }

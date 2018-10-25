@@ -10,19 +10,30 @@ class Solution {
 		SeparateChainingHashST<String, Integer> mag = new SeparateChainingHashST<String, Integer>();
 		SeparateChainingHashST<String, Integer> notes = new SeparateChainingHashST<String, Integer>();
 		for (int i = 0; i < m; i++) {
-			mag.put(magazine[i], i);
-		}
-		int cnt = 0;
-		for (String s : note) {
-			if (mag.contains(s)) {
-				cnt++;
-				mag.delete(s);
+			int count = mag.get(magazine[i]);
+			if (mag.contains(magazine[i])) {
+				mag.put(magazine[i], count + 1);
+			} else {
+				mag.put(magazine[i], 1);
 			}
 		}
-		if (cnt == n) {
-			System.out.println("Yes");
-		} else {
-			System.out.println("No");
+		for (int j = 0; j < n; j++) {
+			if (!mag.contains(note[j])) {
+				System.out.println("No");
+				return;
+			} else if (mag.contains(note[j])) {
+				int num = notes.get(note[j]);
+				if (notes.contains(note[j])) {
+					notes.put(note[j], num + 1);
+				} else {
+					notes.put(note[j], 1);
+				}
+				if (notes.get(note[j]) > mag.get(note[j])) {
+					System.out.println("No");
+					return;
+				}
+			}
 		}
+		System.out.println("Yes");
 	}
 }

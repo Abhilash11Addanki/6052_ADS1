@@ -28,12 +28,12 @@ public class SeparateChainingHashST<Key, Value> {
     }
     /**
      * Initializes an empty symbol table with {@code m1} chains.
-     * @param m1 the initial number of chains
+     * @param m the initial number of chains
      */
-    public SeparateChainingHashST(final int m1) {
-        int m2 = m1;
-        st = (SequentialSearchST<Key, Value>[]) new SequentialSearchST[m2];
-        for (int i = 0; i < m2; i++) {
+    public SeparateChainingHashST(final int m) {
+        int m1 = m;
+        st = (SequentialSearchST<Key, Value>[]) new SequentialSearchST[m1];
+        for (int i = 0; i < m1; i++) {
             st[i] = new SequentialSearchST<Key, Value>();
         }
     }

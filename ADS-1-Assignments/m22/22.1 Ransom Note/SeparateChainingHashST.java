@@ -35,47 +35,28 @@ public class SeparateChainingHashST<Key, Value> {
         return n;
     }
     /**
-     * Returns true if this symbol table is empty.
-     * @return {@code true} if this symbol table is empty;
-     *         {@code false} otherwise
+     * Checks whether the key is present in the hash table or not.
+     * @param      key   The key
+     * @return     true or false.
      */
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-    /**
-     * Returns true if this symbol table contains the specified key.
-     * @param  key the key
-     * @return {@code true} if this symbol table contains {@code key};
-     *         {@code false} otherwise
-     * @throws IllegalArgumentException if {@code key} is {@code null}
-     */
-    public boolean contains(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to contains() is null");
+    public boolean contains(final Key key) {
         return get(key) != null;
     }
     /**
-     * Returns the value associated with the specified key in this symbol table.
-     * @param  key the key
-     * @return the value associated with {@code key} in the symbol table;
-     *         {@code null} if no such value
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * gets the value of a particular key from hash table.
+     * @param      key   The key
+     * @return     Value of type Integer.
      */
-    public Value get(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to get() is null");
+    public Value get(final Key key) {
         int i = hash(key);
         return st[i].get(key);
     }
     /**
-     * Inserts the specified key-value pair into the symbol table, overwriting the old
-     * value with the new value if the symbol table already contains the specified key.
-     * Deletes the specified key (and its associated value) from this symbol table
-     * if the specified value is {@code null}.
-     * @param  key the key
-     * @param  val the value
-     * @throws IllegalArgumentException if {@code key} is {@code null}
+     * Inserts the key value pair into the hash table.
+     * @param      key   The key
+     * @param      val   The value
      */
-    public void put(Key key, Value val) {
-        if (key == null) throw new IllegalArgumentException("first argument to put() is null");
+    public void put(final Key key, final Value val) {
         int i = hash(key);
         if (!st[i].contains(key)) n++;
         st[i].put(key, val);

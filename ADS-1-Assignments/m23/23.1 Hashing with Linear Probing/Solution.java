@@ -19,7 +19,12 @@ final class Solution {
 				lp.delete(tokens[1]);
 				break;
 			case "display":
-				lp.display();
+				String str = "{";
+				for (String s : lp.keys()) {
+					str += (s + ":" + lp.get(s) + ", ");
+				}
+				str = str.replaceAll(", $", "");
+				System.out.println(str + "}");
 				break;
 			}
 		}

@@ -77,9 +77,6 @@ public class LinearProbingHashST<Key, Value> {
             delete(key);
             return;
         }
-        if (n >= m / 2) {
-            resize(2 * m);
-        }
         int i;
         for (i = hash(key); keys[i] != null; i = (i + 1) % m) {
             if (keys[i].equals(key)) {
@@ -133,23 +130,5 @@ public class LinearProbingHashST<Key, Value> {
             i = (i + 1) % m;
         }
         n--;
-        if (n > 0 && n <= m / 8) resize(m / 2);
-    }
-    /**
-    * if the array size fills by half the array gets resized.
-    * doubled the size of the previous array.
-    *Time complexity of the fucntion is N.
-    * @param      capacity  The capacity
-    */
-    private void resize(int capacity) {
-        LinearProbingHashST<Key, Value> temp = new LinearProbingHashST<Key, Value>(capacity);
-        for (int i = 0; i < m; i++) {
-            if (keys[i] != null) {
-                temp.put(keys[i], vals[i]);
-            }
-        }
-        keys = temp.keys;
-        vals = temp.vals;
-        m = temp.m;
     }
 }

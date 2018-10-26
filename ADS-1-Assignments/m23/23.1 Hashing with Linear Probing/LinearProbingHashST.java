@@ -127,6 +127,7 @@ public class LinearProbingHashST<Key, Value> {
             i = (i + 1) % m;
         }
         n--;
+        if (n > 0 && n <= m / 8) resize(m / 2);
     }
     /**
     * if the array size fills by half the array gets resized.

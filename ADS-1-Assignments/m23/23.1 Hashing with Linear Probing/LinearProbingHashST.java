@@ -40,7 +40,7 @@ class LinearProbingHashST<Key, Value> {
         for (int i = 0; i < m - 1; i++) {
             System.out.print(keys[i] + ":" + values[i] + ", ");
         }
-        System.out.print(keys[m] + ":" + values[m]);
+        System.out.print(keys[m - 1] + ":" + values[m - 1]);
     }
     public void delete(Key key) {
         int i = hash(key);

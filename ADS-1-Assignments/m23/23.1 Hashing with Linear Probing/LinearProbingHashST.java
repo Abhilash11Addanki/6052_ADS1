@@ -70,6 +70,10 @@ public class LinearProbingHashST<Key, Value> {
      * @param      val   The value
      */
     public void put(final Key key, final Value val) {
+        if (val == null) {
+            delete(key);
+            return;
+        }
         int i;
         for (i = hash(key); keys[i] != null; i = (i + 1) % m) {
             if (keys[i].equals(key)) {

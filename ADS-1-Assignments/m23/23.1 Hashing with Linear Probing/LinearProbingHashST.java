@@ -33,7 +33,8 @@ public class LinearProbingHashST<Key, Value> {
         this(INIT_CAPACITY);
     }
     /**
-     * Initializes an empty symbol table with the specified initial capacity.
+     * Initializes an empty symbol table
+     *  with the specified initial capacity.
      * @param capacity the initial capacity
      */
     public LinearProbingHashST(final int capacity) {
@@ -71,7 +72,7 @@ public class LinearProbingHashST<Key, Value> {
      * @return     hash value of type int.
      * Time complexity for this method is O(log N)*
      * (*) represents that in some cases the time complexity may be
-     * O(N) 
+     * O(N)
      */
     private int hash(final Key key) {
         final int eleven = 11;

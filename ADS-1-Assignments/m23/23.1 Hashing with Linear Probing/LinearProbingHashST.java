@@ -1,3 +1,4 @@
+import java.util.*;
 public class LinearProbingHashST<Key, Value> {
     private static final int INIT_CAPACITY = 4;
 
@@ -25,8 +26,14 @@ public class LinearProbingHashST<Key, Value> {
         keys = (Key[])   new Object[m];
         vals = (Value[]) new Object[m];
     }
-    public Key[] keys() {
-        return keys;
+    public Iterable<Key> keys() {
+        Queue<Key> queue = new LinkedList<Key>();
+        for (int i = 0; i < m; i++) {
+            if (keys[i] != null) {
+                queue.add(keys[i]);
+            }
+        }
+        return queue;
     }
     /**
      * Returns the number of key-value pairs in this symbol table.
@@ -62,7 +69,7 @@ public class LinearProbingHashST<Key, Value> {
 
     // hash function for keys - returns value between 0 and M-1
     private int hash(Key key) {
-        return (key.hashCode() & 0x7fffffff) % m;
+        return 11 * (key.hashCode() & 0x7fffffff) % m;
     }
 
     // resizes the hash table to the given capacity by re-hashing all of the keys

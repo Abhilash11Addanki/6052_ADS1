@@ -46,6 +46,7 @@ public class LinearProbingHashST<Key, Value> {
      * checks whether the key is present in symbol table or not.
      * @param      key   The key
      * @return     true or false.
+     * Time complexity for this method is O(1).
      */
     public boolean contains(final Key key) {
         return get(key) != null;
@@ -53,6 +54,7 @@ public class LinearProbingHashST<Key, Value> {
     /**
      * keys method that adds the keys into the queue.
      * @return     queue of type Iterable.
+     * Time complexity for this method is O(N).
      */
     public Iterable<Key> keys() {
         Queue<Key> queue = new LinkedList<Key>();
@@ -67,6 +69,9 @@ public class LinearProbingHashST<Key, Value> {
      * hash function for keys - returns value between 0 and M-1.
      * @param      key   The key
      * @return     hash value of type int.
+     * Time complexity for this method is O(log N)*
+     * (*) represents that in some cases the time complexity may be
+     * O(N) 
      */
     private int hash(final Key key) {
         final int eleven = 11;
@@ -77,6 +82,9 @@ public class LinearProbingHashST<Key, Value> {
      * Inserts the key value pair to the symbol table.
      * @param      key   The key
      * @param      val   The value
+     * Time complexity for this method is O(log N)*
+     * (*) represents that in some cases the time complexity may be
+     * O(N)
      */
     public void put(final Key key, final Value val) {
         if (val == null) {
@@ -101,6 +109,9 @@ public class LinearProbingHashST<Key, Value> {
      * Returns the value associated with the specified key.
      * @param      key   The key
      * @return     value of the specified key of type Value.
+     * Time complexity for this method is O(log N)*
+     * (*) represents that in some cases the time complexity may be
+     * O(N)
      */
     public Value get(final Key key) {
         for (int i = hash(key); keys[i] != null; i = (i + 1) % m) {
@@ -113,6 +124,9 @@ public class LinearProbingHashST<Key, Value> {
     /**
      * deletes the specified key from the symbol table.
      * @param      key   The key
+     * Time complexity for this method is O(log N)*
+     * (*) represents that in some cases the time complexity may be
+     * O(N)
      */
     public void delete(final Key key) {
         if (!contains(key)) {
@@ -149,6 +163,7 @@ public class LinearProbingHashST<Key, Value> {
     * doubled the size of the previous array.
     *Time complexity of the fucntion is N.
     * @param      capacity  The capacity
+     * Time complexity for this method is O(N).
     */
     private void resize(final int capacity) {
         LinearProbingHashST<Key, Value> temp =

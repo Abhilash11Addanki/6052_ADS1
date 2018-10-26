@@ -14,14 +14,15 @@ class LinearProbingHashST<Key, Value> {
         values = (Value[]) new Object[m];
     }
     public void put(Key key, Value val) {
-        for (int i = hash(key); keys[i] != null; i = (i + 1) % m) {
+        int i;
+        for (i = hash(key); keys[i] != null; i = (i + 1) % m) {
             if (keys[i].equals(key)) {
                 values[i] = val;
                 return;
             }
-            keys[i] = key;
-            values[i] = val;
         }
+        keys[i] = key;
+        values[i] = val;
         n++;
     }
     private int hash(Key key) {
@@ -37,10 +38,12 @@ class LinearProbingHashST<Key, Value> {
     }
     public void display() {
         System.out.print("{");
-        for (int i = 0; i < m - 1; i++) {
+        for (int i = 0; i < m; i++) {
+            if (i == m - 1) {
+                System.out.print(keys[i] + ":" + values[i]);
+            }
             System.out.print(keys[i] + ":" + values[i] + ", ");
         }
-        System.out.print(keys[m - 1] + ":" + values[m - 1]);
     }
     public void delete(Key key) {
         int i = hash(key);

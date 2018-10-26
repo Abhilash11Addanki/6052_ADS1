@@ -1,9 +1,2 @@
 Starting audit...
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m23\23.1 Hashing with Linear Probing\Solution.java:2: Missing a Javadoc comment. [JavadocType]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m23\23.1 Hashing with Linear Probing\Solution.java:3:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m23\23.1 Hashing with Linear Probing\Solution.java:3:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m23\23.1 Hashing with Linear Probing\Solution.java:5:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m23\23.1 Hashing with Linear Probing\Solution.java:7: Line is longer than 80 characters (found 84). [LineLength]
-[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m23\23.1 Hashing with Linear Probing\Solution.java:11: switch without "default" clause. [MissingSwitchDefault]
 Audit done.
-Checkstyle ends with 6 errors.

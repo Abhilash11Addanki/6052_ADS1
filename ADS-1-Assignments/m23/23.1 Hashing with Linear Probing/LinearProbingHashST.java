@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.Queue;
 import java.util.LinkedList;
 /**
@@ -43,6 +42,11 @@ public class LinearProbingHashST<Key, Value> {
         keys = (Key[])   new Object[m];
         vals = (Value[]) new Object[m];
     }
+    /**
+     * checks whether the key is present in symbol table or not.
+     * @param      key   The key
+     * @return     true or false.
+     */
     public boolean contains(final Key key) {
         return get(key) != null;
     }
@@ -65,7 +69,9 @@ public class LinearProbingHashST<Key, Value> {
      * @return     hash value of type int.
      */
     private int hash(final Key key) {
-        return 11 * (key.hashCode() & 0x7fffffff) % m;
+        final int eleven = 11;
+        final int code = 0x7fffffff;
+        return eleven * (key.hashCode() & code) % m;
     }
     /**
      * Inserts the key value pair to the symbol table.
@@ -133,7 +139,10 @@ public class LinearProbingHashST<Key, Value> {
             i = (i + 1) % m;
         }
         n--;
-        if (n > 0 && n <= m / 8) resize(m / 2);
+        final int eight = 8;
+        if (n > 0 && n <= m / eight) {
+            resize(m / 2);
+        }
     }
     /**
     * if the array size fills by half the array gets resized.
@@ -141,8 +150,9 @@ public class LinearProbingHashST<Key, Value> {
     *Time complexity of the fucntion is N.
     * @param      capacity  The capacity
     */
-    private void resize(int capacity) {
-        LinearProbingHashST<Key, Value> temp = new LinearProbingHashST<Key, Value>(capacity);
+    private void resize(final int capacity) {
+        LinearProbingHashST<Key, Value> temp =
+            new LinearProbingHashST<Key, Value>(capacity);
         for (int i = 0; i < m; i++) {
             if (keys[i] != null) {
                 temp.put(keys[i], vals[i]);

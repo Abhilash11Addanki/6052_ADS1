@@ -43,6 +43,9 @@ public class LinearProbingHashST<Key, Value> {
         keys = (Key[])   new Object[m];
         vals = (Value[]) new Object[m];
     }
+    public boolean contains(final Key key) {
+        return get(key) != null;
+    }
     /**
      * keys method that adds the keys into the queue.
      * @return     queue of type Iterable.
@@ -106,6 +109,9 @@ public class LinearProbingHashST<Key, Value> {
      * @param      key   The key
      */
     public void delete(final Key key) {
+        if (!contains(key)) {
+            return;
+        }
         // find position i of key
         int i = hash(key);
         while (!key.equals(keys[i])) {

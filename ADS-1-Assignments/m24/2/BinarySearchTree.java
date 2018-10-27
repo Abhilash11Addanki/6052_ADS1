@@ -128,7 +128,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @throws IllegalArgumentException if either {@code lo} or {@code hi}
      *         is {@code null}
      */
-    public Iterable<Key> keys(Key lo, Key hi) {
+    public Iterable<Key> keys(final Key lo, final Key hi) {
         if (lo == null) throw new IllegalArgumentException("first argument to keys() is null");
         if (hi == null) throw new IllegalArgumentException("second argument to keys() is null");
 
@@ -136,8 +136,15 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
         keys(root, queue, lo, hi);
         return queue;
     }
-
-    private void keys(Node x, Queue<Key> queue, Key lo, Key hi) {
+    /**
+     * keys method.
+     * @param      x      Node.
+     * @param      queue  The queue
+     * @param      lo     The lower
+     * @param      hi     The higher
+     */
+    private void keys(final Node x, final Queue<Key> queue,
+        final Key lo, final Key hi) {
         if (x == null) return;
         int cmplo = lo.compareTo(x.key);
         int cmphi = hi.compareTo(x.key);
@@ -154,24 +161,32 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     public Key min() {
         return min(root).key;
     }
-
-    private Node min(Node x) {
+    /**
+     * min method that returns smallest key.
+     * @param      x     Node.
+     * @return     Node.
+     */
+    private Node min(final Node x) {
         if (x.left == null) return x;
         else                return min(x.left);
     }
-
     /**
      * Returns the largest key in the symbol table.
-     *
      * @return the largest key in the symbol table
-     * @throws NoSuchElementException if the symbol table is empty
      */
     public Key max() {
         return max(root).key;
     }
-
-    private Node max(Node x) {
-        if (x.right == null) return x;
-        else                 return max(x.right);
+    /**
+     * max method that returns largest key.
+     * @param      x     Node.
+     * @return     Node.
+     */
+    private Node max(final Node x) {
+        if (x.right == null) {
+            return x;
+        } else {
+            return max(x.right);
+        }
     }
 }

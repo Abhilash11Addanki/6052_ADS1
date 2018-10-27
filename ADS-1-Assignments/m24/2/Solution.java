@@ -2,8 +2,8 @@ import java.util.Scanner;
 class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		SeparateChainingHashST<Double, String> h =
-		    new SeparateChainingHashST();
+		BinarySearchTree<Double, String> h =
+		    new BinarySearchTree();
 		int n = Integer.parseInt(sc.nextLine());
 		while (n-- != 0) {
 			String[] inp = sc.nextLine().split(",");

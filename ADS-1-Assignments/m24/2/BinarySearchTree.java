@@ -115,7 +115,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**
      * returns the keys.
-     * @return     keys of type Iterable.
+     * @return     keys of type 
      */
     public Iterable<Key> keys() {
         return keys(min(), max());
@@ -140,6 +140,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      */
     private void keys(final Node x, final Queue<Key> queue,
         final Key lo, final Key hi) {
+        if (x == null) return;
         int cmplo = lo.compareTo(x.key);
         int cmphi = hi.compareTo(x.key);
         if (cmplo < 0) keys(x.left, queue, lo, hi);

@@ -142,15 +142,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
         final Key lo, final Key hi) {
         int cmplo = lo.compareTo(x.key);
         int cmphi = hi.compareTo(x.key);
-        if (cmplo < 0) {
-            keys(x.left, queue, lo, hi);
-        }
-        if (cmplo <= 0 && cmphi >= 0) {
-            queue.add(x.key);
-        }
-        if (cmphi > 0) {
-            keys(x.right, queue, lo, hi);
-        }
+        if (cmplo < 0) keys(x.left, queue, lo, hi);
+        if (cmplo <= 0 && cmphi >= 0) queue.add(x.key);
+        if (cmphi > 0) keys(x.right, queue, lo, hi);
     }
     /**
     * Returns the smallest key in the symbol table.
@@ -167,11 +161,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @return     Node.
      */
     private Node min(final Node x) {
-        if (x.left == null) {
-            return x;
-        } else {
-            return min(x.left);
-        }
+        if (x.left == null) return x;
+        else                return min(x.left);
     }
     /**
      * Returns the largest key in the symbol table.

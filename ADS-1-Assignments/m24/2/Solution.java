@@ -20,16 +20,16 @@ class Solution {
 					}
 				}
 				break;
-			case "LE":
+			case "GE":
 				for (Double marks : h.keys()) {
-					if (marks <= Double.parseDouble(tokens[1])) {
+					if (marks >= Double.parseDouble(tokens[1])) {
 						System.out.println(h.get(marks));
 					}
 				}
 				break;
-			case "GE":
+			case "LE":
 				for (Double marks : h.keys()) {
-					if (marks >= Double.parseDouble(tokens[1])) {
+					if (marks <= Double.parseDouble(tokens[1])) {
 						System.out.println(h.get(marks));
 					}
 				}

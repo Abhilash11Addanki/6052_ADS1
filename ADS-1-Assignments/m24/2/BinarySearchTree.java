@@ -113,25 +113,20 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
             return node.value;
         }
     }
+    /**
+     * returns the keys.
+     * @return     keys of type Iterable.
+     */
     public Iterable<Key> keys() {
         return keys(min(), max());
     }
-
     /**
-     * Returns all keys in the symbol table in the given range,
-     * as an {@code Iterable}.
-     *
-     * @param  lo minimum endpoint
-     * @param  hi maximum endpoint
-     * @return all keys in the symbol table between {@code lo}
-     *         (inclusive) and {@code hi} (inclusive)
-     * @throws IllegalArgumentException if either {@code lo} or {@code hi}
-     *         is {@code null}
+     * returns the keys.
+     * @param      lo    The lower
+     * @param      hi    The higher
+     * @return     keys of type Iterable.
      */
     public Iterable<Key> keys(final Key lo, final Key hi) {
-        if (lo == null) throw new IllegalArgumentException("first argument to keys() is null");
-        if (hi == null) throw new IllegalArgumentException("second argument to keys() is null");
-
         Queue<Key> queue = new LinkedList<Key>();
         keys(root, queue, lo, hi);
         return queue;
@@ -145,12 +140,17 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      */
     private void keys(final Node x, final Queue<Key> queue,
         final Key lo, final Key hi) {
-        if (x == null) return;
         int cmplo = lo.compareTo(x.key);
         int cmphi = hi.compareTo(x.key);
-        if (cmplo < 0) keys(x.left, queue, lo, hi);
-        if (cmplo <= 0 && cmphi >= 0) queue.add(x.key);
-        if (cmphi > 0) keys(x.right, queue, lo, hi);
+        if (cmplo < 0) {
+            keys(x.left, queue, lo, hi);
+        }
+        if (cmplo <= 0 && cmphi >= 0) {
+            queue.add(x.key);
+        }
+        if (cmphi > 0) {
+            keys(x.right, queue, lo, hi);
+        }
     }
     /**
     * Returns the smallest key in the symbol table.
@@ -167,8 +167,11 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @return     Node.
      */
     private Node min(final Node x) {
-        if (x.left == null) return x;
-        else                return min(x.left);
+        if (x.left == null) {
+            return x;
+        } else {
+            return min(x.left);
+        }
     }
     /**
      * Returns the largest key in the symbol table.

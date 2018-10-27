@@ -40,7 +40,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**.
      * This method is to add a key and value to BST.
-     * Time Complexity is O(N).
+     * Time Complexity is O(log N)*.
+     * For worst case time complexity may be O(N).
      * because it calls another put method to add elements.
      *
      * @param      key    The key
@@ -54,6 +55,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**.
      * This method is to add element to BST
+     * Time complexity is O(log N)*.
      * Time Complexity is O(N) for worst case.
      * element is added until it reaches to the
      * position it should added at.
@@ -81,10 +83,9 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**.
      * This method is to return the value of that key
-     * Time Complexity is O(N)
-     *
+     * Time Complexity is O(log N)*
+     * For worst case time complexity is O(N).
      * @param      key   The key
-     *
      * @return     returns the value.
      */
     public Value get(final Key key) {
@@ -92,8 +93,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**.
      * This method is to return the value of that key
-     * Time Complexity is O(N)
-     *
+     * Time Complexity is O(log N)*
+     * For worst case it may be O(N).
      * @param      node  the node where the book details and
      *                   values.
      * @param      key   The key
@@ -116,6 +117,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * returns the keys.
      * @return     keys of type Iterable.
+     * Time complexity is O(N).
      */
     public Iterable<Key> keys() {
         return keys(min(), max());
@@ -125,6 +127,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @param      lo    The lower
      * @param      hi    The higher
      * @return     keys of type Iterable.
+     * Time complexity is O(N).
      */
     public Iterable<Key> keys(final Key lo, final Key hi) {
         Queue<Key> queue = new LinkedList<Key>();
@@ -137,6 +140,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @param      queue  The queue
      * @param      lo     The lower
      * @param      hi     The higher
+     * Time complexity for this method is O(N) since it is
+     * calling recursively.
      */
     private void keys(final Node x, final Queue<Key> queue,
         final Key lo, final Key hi) {
@@ -158,6 +163,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
     * Returns the smallest key in the symbol table.
     * @return the smallest key in the symbol table
+     * Time complexity is O(N).
     */
     public Key min() {
         return min(root).key;
@@ -166,6 +172,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * min method that returns smallest key.
      * @param      x     Node.
      * @return     Node.
+     * Time complexity is O(N) since it is calling its
+     * method recursively.
      */
     private Node min(final Node x) {
         if (x.left == null) {
@@ -177,6 +185,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     /**
      * Returns the largest key in the symbol table.
      * @return the largest key in the symbol table
+     * Time complexity is O(N).
      */
     public Key max() {
         return max(root).key;
@@ -185,6 +194,8 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * max method that returns largest key.
      * @param      x     Node.
      * @return     Node.
+     * Time complexity is O(N) since it is calling its
+     * method recursively.
      */
     private Node max(final Node x) {
         if (x.right == null) {

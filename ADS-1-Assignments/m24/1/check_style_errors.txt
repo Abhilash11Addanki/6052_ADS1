@@ -1,0 +1,21 @@
+Starting audit...
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:1: Missing a Javadoc comment. [JavadocType]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:2:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:2:12: Name 'roll_number' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:2:12: Variable 'roll_number' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:3:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:3:12: Name 'student_name' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:3:12: Variable 'student_name' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:4:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:4:12: Name 'total_marks' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:4:12: Variable 'total_marks' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:5:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:5:13: Parameter number should be final. [FinalParameters]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:5:28: Parameter name should be final. [FinalParameters]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:5:41: Parameter marks should be final. [FinalParameters]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:10:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:13:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:16:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\abhil\OneDrive\Desktop\ADS1\6052_ADS1\ADS-1-Assignments\m24\1\Student.java:19:5: Missing a Javadoc comment. [JavadocMethod]
+Audit done.
+Checkstyle ends with 18 errors.

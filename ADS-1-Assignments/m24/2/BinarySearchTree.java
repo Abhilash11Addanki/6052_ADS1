@@ -76,8 +76,6 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
             node.left = put(node.left, key, value);
         } else if (cmp > 0) {
             node.right = put(node.right, key, value);
-        } else if (cmp == 0) {
-            node.left = put(node.left, key, value);
         } else {
             node.value = value;
         }

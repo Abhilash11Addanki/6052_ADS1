@@ -115,7 +115,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**
      * returns the keys.
-     * @return     keys of type 
+     * @return     keys of type Iterable.
      */
     public Iterable<Key> keys() {
         return keys(min(), max());
@@ -149,9 +149,7 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
     /**
     * Returns the smallest key in the symbol table.
-    *
     * @return the smallest key in the symbol table
-    * @throws NoSuchElementException if the symbol table is empty
     */
     public Key min() {
         return min(root).key;
@@ -162,8 +160,11 @@ class BinarySearchTree<Key extends Comparable<Key>, Value> {
      * @return     Node.
      */
     private Node min(final Node x) {
-        if (x.left == null) return x;
-        else                return min(x.left);
+        if (x.left == null) {
+            return x;
+        } else {
+            return min(x.left);
+        }
     }
     /**
      * Returns the largest key in the symbol table.

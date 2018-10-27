@@ -1,5 +1,4 @@
-import java.util.Queue;
-import java.util.LinkedList;
+import java.util.*;
 /**
  * Class for separate chaining hash st.
  * @param      <Key>    The key
@@ -87,11 +86,11 @@ public class SeparateChainingHashST<Key, Value> {
         st[i].put(key, val);
     }
     public Iterable<Key> keys() {
-        Queue<Key> queue = new LinkedList<Key>();
+        ArrayList<Key> keys = new ArrayList();
         for (int i = 0; i < m; i++) {
             for (Key key : st[i].keys())
-                queue.add(key);
+                keys.add(key);
         }
-        return queue;
+        return keys;
     }
 }

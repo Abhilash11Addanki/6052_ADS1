@@ -17,6 +17,8 @@ class Solution {
 				for (Double marks : h.keys()) {
 					if (marks >= Double.parseDouble(tokens[1]) && marks <= Double.parseDouble(tokens[2])) {
 						System.out.println(h.get(marks));
+					} else {
+						System.out.println("null");
 					}
 				}
 				break;

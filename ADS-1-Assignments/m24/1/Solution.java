@@ -11,6 +11,12 @@ final class Solution {
     /**
      * main method that drives the program.
      * @param      args  The arguments
+     * Time complexity for this method is O(N * M)
+     * for worst case where N is main method and
+     * M is for hash method.
+     * Time complexity for this method is O(N log N)
+     * for average case where N is for main method and
+     * log N is for hash method.
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);

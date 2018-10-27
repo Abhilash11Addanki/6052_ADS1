@@ -85,7 +85,7 @@ public class SeparateChainingHashST<Key, Value> {
         }
         st[i].put(key, val);
     }
-    public Iterable<Key> keys() {
+    public ArrayList<Key> keys() {
         ArrayList<Key> keys = new ArrayList();
         for (int i = 0; i < m; i++) {
             for (Key key : st[i].keys())

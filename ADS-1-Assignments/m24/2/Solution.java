@@ -14,36 +14,36 @@ final class Solution {
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
-        BinarySearchTree<Double, String> h =
+        BinarySearchTree<Student, String> h =
             new BinarySearchTree();
         int n = Integer.parseInt(sc.nextLine());
         while (n-- != 0) {
             String[] inp = sc.nextLine().split(",");
-            h.put(Double.parseDouble(inp[2]), inp[1]);
+            h.put(new Student(inp[0], inp[1], Double.parseDouble(inp[2])), inp[0]);
         }
         int testcases = Integer.parseInt(sc.nextLine());
         while (testcases-- != 0) {
             String[] tokens = sc.nextLine().split(" ");
             switch (tokens[0]) {
             case "BE":
-                for (Double marks : h.keys()) {
-                    if (marks >= Double.parseDouble(tokens[1])
-                            && marks <= Double.parseDouble(tokens[2])) {
-                        System.out.println(h.get(marks));
+                for (Student s : h.keys()) {
+                    if (s.getTotalMarks() >= Double.parseDouble(tokens[1])
+                            && s.getTotalMarks() <= Double.parseDouble(tokens[2])) {
+                        System.out.println(s.getStudentName());
                     }
                 }
                 break;
             case "GE":
-                for (Double marks : h.keys()) {
-                    if (marks >= Double.parseDouble(tokens[1])) {
-                        System.out.println(h.get(marks));
+                for (Student s : h.keys()) {
+                    if (s.getTotalMarks() >= Double.parseDouble(tokens[1])) {
+                        System.out.println(s.getStudentName());
                     }
                 }
                 break;
             case "LE":
-                for (Double marks : h.keys()) {
-                    if (marks <= Double.parseDouble(tokens[1])) {
-                        System.out.println(h.get(marks));
+                for (Student s : h.keys()) {
+                    if (s.getTotalMarks() <= Double.parseDouble(tokens[1])) {
+                        System.out.println(s.getStudentName());
                     }
                 }
                 break;

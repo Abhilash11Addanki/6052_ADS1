@@ -19,7 +19,8 @@ final class Solution {
         int n = Integer.parseInt(sc.nextLine());
         while (n-- != 0) {
             String[] inp = sc.nextLine().split(",");
-            h.put(new Student(inp[0], inp[1], Double.parseDouble(inp[2])), inp[0]);
+            h.put(new Student(inp[0], inp[1],
+                Double.parseDouble(inp[2])), inp[0]);
         }
         int testcases = Integer.parseInt(sc.nextLine());
         while (testcases-- != 0) {
@@ -28,7 +29,7 @@ final class Solution {
             case "BE":
                 for (Student s : h.keys()) {
                     if (s.getTotalMarks() >= Double.parseDouble(tokens[1])
-                            && s.getTotalMarks() <= Double.parseDouble(tokens[2])) {
+                    && s.getTotalMarks() <= Double.parseDouble(tokens[2])) {
                         System.out.println(s.getStudentName());
                     }
                 }

@@ -5,15 +5,15 @@ class Student implements Comparable<Student> {
     /**
      * roll number of Student.
      */
-    private String roll_number;
+    private String rollnumber;
     /**
      * name of the Student.
      */
-    private String student_name;
+    private String studentname;
     /**
      * total marks of the Student.
      */
-    private double total_marks;
+    private double totalmarks;
     /**
      * Constructs the object.
      * @param      roll   The roll
@@ -22,30 +22,30 @@ class Student implements Comparable<Student> {
      */
     Student(final String roll, final String name,
         final double marks) {
-        roll_number = roll;
-        student_name = name;
-        total_marks = marks;
+        rollnumber = roll;
+        studentname = name;
+        totalmarks = marks;
     }
     /**
      * Gets the roll number.
      * @return     The roll number.
      */
     String getRollNumber() {
-        return roll_number;
+        return rollnumber;
     }
     /**
      * Gets the student name.
      * @return     The student name.
      */
     String getStudentName() {
-        return student_name;
+        return studentname;
     }
     /**
      * Gets the total marks.
      * @return     The total marks.
      */
     double getTotalMarks() {
-        return total_marks;
+        return totalmarks;
     }
     /**
      * compareTo method that compares the marks
@@ -54,20 +54,12 @@ class Student implements Comparable<Student> {
      * @return     integer.
      */
     public int compareTo(final Student s) {
-        if (total_marks > s.total_marks) {
+        if (totalmarks > s.totalmarks) {
             return 1;
         }
-        if (total_marks < s.total_marks) {
+        if (totalmarks < s.totalmarks) {
             return -1;
         }
-        return roll_number.compareTo(s.roll_number);
-    }
-    /**
-     * Returns a string representation of the object.
-     * @return     String representation of the object.
-     */
-    public String toString() {
-        return roll_number + student_name
-        + Double.toString(total_marks);
+        return rollnumber.compareTo(s.rollnumber);
     }
 }
